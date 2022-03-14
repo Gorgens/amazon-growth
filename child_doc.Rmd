@@ -1,0 +1,23 @@
+---
+title: "child_doc.Rmd"
+output: html_document
+---
+
+## Importing a child document
+
+Authors can break long manuscripts into more manageable pieces by placing each chapter or section in their own Markdown file and using the R Markdown `child` option. Though most of the text (and code) in this document is contained in the file `computed_manuscript.Rmd`, the text for this section comes from `child_doc.Rmd`. Citations that are created in the child automatically get inserted into the final document, making it possible to create a single, unified bibliography. For instance, here's a reference for the [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).[@xieMarkdownCookbook2020]
+
+```{r third-dataset}
+df3 <- read_csv('data/example-data-3.csv')
+really_final_data <- rbind(final_data, df3)
+```
+
+In this child document, we'll add a third set of numbers to our growing dataset (Table \@ref(tab:show-table-3); note that the table, figure and section numbering in this child document matches that of the larger manuscript). 
+
+The new dataset describes **`r nrow(df3)`** samples. Folding them into our existing data gives us **`r nrow(really_final_data)`** subjects, with **`r really_final_data %>% filter(class == 'Group 1') %>% nrow()`** in Group 1, **`r really_final_data %>% filter(class == 'Group 2') %>% nrow()`** in Group 2, and **`r really_final_data %>% filter(class == 'Group 3') %>% nrow()`** in Group 3. The new concentration distribution is shown graphically in Figure \@ref(fig:plot-data-2).
+
+```{r plot-data-2, fig.cap="Metabolite concentration of final clinical trial dataset", fig.height=3, fig.width=4}
+# plot the data
+create_plot(really_final_data)
+
+```

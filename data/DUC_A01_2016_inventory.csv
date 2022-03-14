@@ -1,0 +1,1170 @@
+area,plot,tree,common.name,scientific.name,family.name,DBH,type,Dead,D.class,date,UTM.Easting,UTM.Northing
+DUC_A01,2,001a,macucu,Licania guianensis,Chrysobalanaceae,49.6,O,FALSE,NA,20160824,840127.0705,9674180.998
+DUC_A01,2,001b,uxirana,Sacoglottis guianensis,Humiriaceae,43.6,O,FALSE,NA,20160824,840098.9678,9674177.868
+DUC_A01,2,002a,mapatirana,Pourouma minor,Urticaceae,31.5,O,FALSE,NA,20160824,840126.4377,9674180.705
+DUC_A01,2,002b,abiurana,Pouteria gongrijpii,Sapotaceae,39.2,O,FALSE,NA,20160824,840109.4829,9674171.803
+DUC_A01,2,003a,roxinho,Peltogyne lecointei,Fabaceae,10,O,FALSE,NA,20160824,840125.6847,9674181.313
+DUC_A01,2,003b,morta,NA,NA,47.5,O,TRUE,3,20160824,840108.5953,9674164.922
+DUC_A01,2,004a,breu branco,Protium paniculatum,Burseraceae,10.4,O,FALSE,NA,20160824,840121.6534,9674182.069
+DUC_A01,2,004b,mandioqueira,Qualea paraensis,Vochysiaceae,91.1,O,FALSE,NA,20160824,840104.6273,9674162.057
+DUC_A01,2,005a,breu branco,Protium paniculatum,Burseraceae,12.6,O,FALSE,NA,20160824,840124.4989,9674176.588
+DUC_A01,2,005b,merauba,Mouriri collocarpa,Melastomataceae,39.6,O,FALSE,NA,20160824,840101.3595,9674162.085
+DUC_A01,2,006a,matamata preto,Eschweilera ovata,Lecythidaceae,10.1,O,FALSE,NA,20160824,840125.5157,9674174.195
+DUC_A01,2,006b,tamaguare,NA,NA,49.4,O,FALSE,NA,20160824,840098.799,9674162.781
+DUC_A01,2,007a,guajara branco,Pouteria sp.,Sapotaceae,43.8,O,FALSE,NA,20160824,840129.2892,9674167.459
+DUC_A01,2,007b,tento,Ormosia grossa,Fabaceae,58,O,FALSE,NA,20160824,840115.3264,9674157.288
+DUC_A01,2,008a,louro preto,Ocotea cernua,Lauraceae,10.1,O,FALSE,NA,20160824,840129.6711,9674166.442
+DUC_A01,2,008b,mandioqueira,Qualea paraensis,Vochysiaceae,52,O,FALSE,NA,20160824,840105.793,9674140.291
+DUC_A01,2,009a,iperana,Eperua bijuga,Fabaceae,33.7,O,FALSE,NA,20160824,840131.6045,9674166.598
+DUC_A01,2,010a,muirapiranga,Brosimum rubescens,Moraceae,25.4,O,FALSE,NA,20160824,840132.578,9674163.94
+DUC_A01,2,011a,breu branco,Protium paniculatum,Burseraceae,21.9,O,FALSE,NA,20160824,840130.7248,9674163.112
+DUC_A01,2,012a,ucuuba da varzea,NA,NA,27.2,O,FALSE,NA,20160824,840130.9237,9674162.844
+DUC_A01,2,013a,macucu,Licania guianensis,Chrysobalanaceae,34,O,FALSE,NA,20160824,840130.5667,9674158.653
+DUC_A01,2,014a,pataua,Oenocarpus bataua,Arecaceae,19.5,P,FALSE,NA,20160824,840130.401,9674158.58
+DUC_A01,2,015a,seringueira,Hevea brasiliensis,Euphorbiaceae,49.4,O,FALSE,NA,20160824,840126.0146,9674153.337
+DUC_A01,2,016a,iperana,Eperua bijuga,Fabaceae,22,O,FALSE,NA,20160824,840136.3746,9674145.698
+DUC_A01,2,017a,tamaguare,NA,NA,18.5,O,FALSE,NA,20160824,840139.0329,9674143.646
+DUC_A01,2,018a,carana,NA,NA,12.9,O,FALSE,NA,20160824,840137.2526,9674139.242
+DUC_A01,2,019a,morta,NA,NA,13.7,O,TRUE,1,20160824,840137.2162,9674139.109
+DUC_A01,2,020a,morta,NA,NA,16.1,O,TRUE,1,20160824,840137.1405,9674139.077
+DUC_A01,2,021a,muirapiranga,Brosimum rubescens,Moraceae,18.3,O,FALSE,NA,20160824,840127.4822,9674135.129
+DUC_A01,2,022a,fava rosa,NA,NA,16.2,O,FALSE,NA,20160824,840126.9463,9674141.662
+DUC_A01,2,023a,guajara branco,Pouteria sp.,Sapotaceae,32.4,O,FALSE,NA,20160824,840126.7735,9674142.055
+DUC_A01,2,024a,pataua,Oenocarpus bataua,Arecaceae,20.9,P,FALSE,NA,20160824,840126.5927,9674142.679
+DUC_A01,2,025a,louro preto,Ocotea cernua,Lauraceae,10.2,O,FALSE,NA,20160824,840125.5431,9674145.501
+DUC_A01,2,026a,inga branco,Inga thibaudiana,Fabaceae,11.3,O,FALSE,NA,20160824,840126.1705,9674147.765
+DUC_A01,2,027a,pataua,Oenocarpus bataua,Arecaceae,20.2,P,FALSE,NA,20160824,840122.2905,9674147.248
+DUC_A01,2,028a,mamorana,Eriotheca globosa,Malvaceae,10.8,O,FALSE,NA,20160824,840122.7035,9674145.908
+DUC_A01,2,029a,pataua,Oenocarpus bataua,Arecaceae,19.3,P,FALSE,NA,20160824,840124.116,9674150.975
+DUC_A01,2,030a,ucuubarana,Iryanthera paraensis,Myristicaceae,10.8,O,FALSE,NA,20160824,840123.0014,9674151.308
+DUC_A01,2,031a,cumaru,Dipteryx odorata,Fabaceae,40,O,FALSE,NA,20160824,840122.6137,9674152.193
+DUC_A01,2,032a,pataua,Oenocarpus bataua,Arecaceae,15.4,P,FALSE,NA,20160824,840124.2517,9674152.914
+DUC_A01,2,033a,pataua,Oenocarpus bataua,Arecaceae,16,P,FALSE,NA,20160824,840123.9772,9674156.795
+DUC_A01,2,034a,macucu,Licania guianensis,Chrysobalanaceae,19.4,O,FALSE,NA,20160824,840123.1453,9674156.425
+DUC_A01,2,035a,axixa,Sterculia pruriens,Malvaceae,55.4,O,FALSE,NA,20160824,840120.0157,9674161.39
+DUC_A01,2,036a,mandioqueira,Qualea paraensis,Vochysiaceae,24.4,O,FALSE,NA,20160824,840120.8839,9674164.141
+DUC_A01,2,037a,tamaguare,NA,NA,27,O,FALSE,NA,20160824,840120.9698,9674164.18
+DUC_A01,2,038a,morta,NA,NA,24,O,TRUE,1,20160824,840117.2281,9674163.787
+DUC_A01,2,039a,morta,NA,NA,38.8,O,TRUE,4,20160824,840116.7175,9674170.522
+DUC_A01,2,040a,tinteiro,Miconia poeppigii,Melastomataceae,36.3,O,FALSE,NA,20160824,840114.0724,9674170.728
+DUC_A01,2,041a,ucurana,Sloanea guianensis,Elaeocarpaceae,27,O,FALSE,NA,20160824,840113.6464,9674172.187
+DUC_A01,2,042a,pincel de macaco,NA,NA,17.2,O,FALSE,NA,20160824,840112.7145,9674175.306
+DUC_A01,2,043a,pintadinho,Poeppigia procera,Fabaceae,47.9,O,FALSE,NA,20160824,840116.7797,9674178.02
+DUC_A01,2,044a,guajara branco,Pouteria sp.,Sapotaceae,33,O,FALSE,NA,20160824,840115.4202,9674181.31
+DUC_A01,2,045a,breu branco,Protium paniculatum,Burseraceae,10.8,O,FALSE,NA,20160824,840115.3378,9674181.509
+DUC_A01,2,046a,envira,Xylopia sp.,Annonaceae,22.7,O,FALSE,NA,20160824,840108.7275,9674181.859
+DUC_A01,4,001a,joao mole,Neea oppositifolia,Nyctaginaceae,19.1,O,FALSE,NA,20160830,841204.2869,9674667.625
+DUC_A01,4,001b,quinarana,Geissospermum sericeum,Apocynaceae,43.8,O,FALSE,NA,20160830,841183.4839,9674639.903
+DUC_A01,4,002a,matamata preto,Eschweilera ovata,Lecythidaceae,11.6,O,FALSE,NA,20160830,841205.6452,9674668.532
+DUC_A01,4,002b,cupiuba,Goupia glabra,Goupiaceae,51,O,FALSE,NA,20160830,841202.9324,9674628.956
+DUC_A01,4,003a,ripeira,Eschweilera micrantha,Lecythidaceae,35.2,O,FALSE,NA,20160830,841203.7324,9674662.782
+DUC_A01,4,003b,abiurana,Pouteria gongrijpii,Sapotaceae,44.5,O,FALSE,NA,20160830,841206.2026,9674625.996
+DUC_A01,4,004a,breu brrote,NA,NA,16.6,O,FALSE,NA,20160830,841202.1322,9674661.751
+DUC_A01,4,004b,mamorana,Eriotheca globosa,Malvaceae,63.3,O,FALSE,NA,20160830,841207.7528,9674621.732
+DUC_A01,4,005a,ripeira,Eschweilera micrantha,Lecythidaceae,16.2,O,FALSE,NA,20160830,841202.0576,9674661.708
+DUC_A01,4,005b,inga vermelho,Inga alba,Fabaceae,44.3,O,FALSE,NA,20160830,841200.8213,9674613.783
+DUC_A01,4,006a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,11,O,FALSE,NA,20160830,841203.5034,9674660.628
+DUC_A01,4,006b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,57.3,O,FALSE,NA,20160830,841191.9934,9674620.854
+DUC_A01,4,007a,breu branco,Protium paniculatum,Burseraceae,10.6,O,FALSE,NA,20160830,841203.2784,9674660.5
+DUC_A01,4,007b,abiurana,Pouteria gongrijpii,Sapotaceae,54.3,O,FALSE,NA,20160830,841187.4799,9674627.355
+DUC_A01,4,008a,matamata preto,Eschweilera ovata,Lecythidaceae,11.2,O,FALSE,NA,20160830,841202.6512,9674659.806
+DUC_A01,4,008b,seringarana,Micrandra minor,Euphorbiaceae,42.3,O,FALSE,NA,20160830,841185.9317,9674628.856
+DUC_A01,4,009a,jataua,Trichilia micrantha,Meliaceae,17.2,O,FALSE,NA,20160830,841202.2694,9674659.812
+DUC_A01,4,009b,seringarana,Micrandra minor,Euphorbiaceae,47.3,O,FALSE,NA,20160830,841180.8783,9674644.624
+DUC_A01,4,010a,abacabeira,NA,NA,10.6,O,FALSE,NA,20160830,841209.6385,9674661.973
+DUC_A01,4,011a,breu barrote,Tetragastris panamensis,Burseraceae,19,O,FALSE,NA,20160830,841206.5499,9674656.745
+DUC_A01,4,012a,jarana vermelha,NA,NA,73.9,O,FALSE,NA,20160830,841208.7683,9674654.061
+DUC_A01,4,013a,tento,Ormosia coccinea,Fabaceae,30.1,O,FALSE,NA,20160830,841213.318,9674654.093
+DUC_A01,4,014a,breu branco,Protium paniculatum,Burseraceae,12.9,O,FALSE,NA,20160830,841210.8701,9674651.86
+DUC_A01,4,015a,mamorana,Eriotheca globosa,Malvaceae,17,O,FALSE,NA,20160830,841211.7379,9674650.434
+DUC_A01,4,016a,andirobarana,Guarea guidonia,Meliaceae,18,O,FALSE,NA,20160830,841211.6241,9674650.26
+DUC_A01,4,017a,taguari,NA,NA,10.4,O,FALSE,NA,20160830,841208.9517,9674645.713
+DUC_A01,4,018a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,42.5,O,FALSE,NA,20160830,841208.9579,9674645.274
+DUC_A01,4,019a,joao mole,Neea oppositifolia,Nyctaginaceae,16.8,O,FALSE,NA,20160830,841217.0178,9674646.785
+DUC_A01,4,020a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,18,O,FALSE,NA,20160830,841216.3289,9674645.529
+DUC_A01,4,021a,breu branco,Protium paniculatum,Burseraceae,10.9,O,FALSE,NA,20160830,841215.9431,9674644.88
+DUC_A01,4,022a,morta,NA,NA,12,O,TRUE,2,20160830,841214.2889,9674643.343
+DUC_A01,4,023a,tanenbuco amarelo,NA,NA,49.1,O,FALSE,NA,20160830,841213.7563,9674641.515
+DUC_A01,4,024a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,11.2,O,FALSE,NA,20160830,841216.8685,9674643.142
+DUC_A01,4,025a,muirapiranga,Brosimum rubescens,Moraceae,13.7,O,FALSE,NA,20160830,841216.8356,9674642.792
+DUC_A01,4,026a,breu barrote,Tetragastris panamensis,Burseraceae,12.8,O,FALSE,NA,20160830,841215.4324,9674639.847
+DUC_A01,4,027a,coco pau,Couepia robusta,Chrysobalanaceae,41.6,O,FALSE,NA,20160830,841214.1842,9674639.531
+DUC_A01,4,028a,abacabeira,NA,NA,13.8,O,FALSE,NA,20160830,841214.2852,9674637.382
+DUC_A01,4,029a,abiurana branca,Pouteria guianensis,Sapotaceae,20.7,O,FALSE,NA,20160830,841215.7124,9674636.466
+DUC_A01,4,030a,louro pimenta,Ocotea canaliculata,Lauraceae,34.4,O,FALSE,NA,20160830,841215.0271,9674635.566
+DUC_A01,4,031a,abiurana branca,Pouteria guianensis,Sapotaceae,22,O,FALSE,NA,20160830,841216.9097,9674634.329
+DUC_A01,4,032a,caripe,Licania octandra,Chrysobalanaceae,12.6,O,FALSE,NA,20160830,841219.6309,9674636.482
+DUC_A01,4,033a,envira preta,Guatteria schomburgkiana,Annonaceae,14,O,FALSE,NA,20160830,841220.8176,9674633.553
+DUC_A01,4,034a,breu barrote,Tetragastris panamensis,Burseraceae,19.7,O,FALSE,NA,20160830,841216.5906,9674631.757
+DUC_A01,4,035a,abiurana,Pouteria gongrijpii,Sapotaceae,11.9,O,FALSE,NA,20160830,841216.5808,9674628.043
+DUC_A01,4,036a,breu branco,Protium paniculatum,Burseraceae,25.2,O,FALSE,NA,20160830,841216.6608,9674627.647
+DUC_A01,4,037a,acaizeiro,NA,NA,10.1,O,FALSE,NA,20160830,841224.2841,9674631.206
+DUC_A01,4,038a,inhare,Helicostylis tomentosa,Moraceae,10.1,O,FALSE,NA,20160830,841222.8852,9674628.975
+DUC_A01,4,039a,capueiro,Rinorea guianensis,Violaceae,10,O,FALSE,NA,20160830,841222.8872,9674628.538
+DUC_A01,4,040a,envira preta,Guatteria schomburgkiana,Annonaceae,11.7,O,FALSE,NA,20160830,841223.6456,9674626.718
+DUC_A01,4,041a,louro preto,Nectandra cuspidata,Lauraceae,10.5,O,FALSE,NA,20160830,841226.7564,9674626.478
+DUC_A01,4,042a,inga xixica,Inga heterophylla,Fabaceae,10.2,O,FALSE,NA,20160830,841226.631,9674626.308
+DUC_A01,4,043a,sucupira preta,Bowdichia nitida,Fabaceae,26.7,O,FALSE,NA,20160830,841215.5149,9674622.1
+DUC_A01,4,044a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,47,O,FALSE,NA,20160830,841213.5766,9674620.725
+DUC_A01,4,045a,breu barrote,Tetragastris panamensis,Burseraceae,14.5,O,FALSE,NA,20160830,841213.4533,9674620.773
+DUC_A01,4,046a,liana,NA,NA,17.7,L,FALSE,NA,20160830,841210.8573,9674621.116
+DUC_A01,4,047a,tento,Ormosia grossa,Fabaceae,15.2,O,FALSE,NA,20160830,841209.1993,9674620.732
+DUC_A01,4,048a,breu barrote,Tetragastris panamensis,Burseraceae,14.7,O,FALSE,NA,20160830,841209.961,9674624.756
+DUC_A01,4,049a,jataua,Trichilia micrantha,Meliaceae,28.7,O,FALSE,NA,20160830,841208.2457,9674628.639
+DUC_A01,4,050a,inhare,Helicostylis tomentosa,Moraceae,10.5,O,FALSE,NA,20160830,841205.7345,9674632.979
+DUC_A01,4,051a,acariquara,Minquartia guianensis,Olacaceae,42.8,O,FALSE,NA,20160830,841202.277,9674636.378
+DUC_A01,4,052a,abiurana,Pouteria gongrijpii,Sapotaceae,35.8,O,FALSE,NA,20160830,841193.7009,9674638.085
+DUC_A01,4,053a,fava saboeiro,Abarema jupunba,Fabaceae,12.3,O,FALSE,NA,20160830,841203.3394,9674643.693
+DUC_A01,4,054a,inhare,Helicostylis tomentosa,Moraceae,15.3,O,FALSE,NA,20160830,841203.4177,9674643.735
+DUC_A01,4,055a,morta,NA,NA,10.8,O,TRUE,1,20160830,841202.1209,9674645.994
+DUC_A01,4,056a,matamata preto,Eschweilera ovata,Lecythidaceae,31.9,O,FALSE,NA,20160830,841200.9903,9674646.804
+DUC_A01,4,057a,parajuba,Manilkara bidentata,Sapotaceae,13.1,O,FALSE,NA,20160830,841200.3565,9674649.311
+DUC_A01,4,058a,tento,Ormosia grossa,Fabaceae,12.1,O,FALSE,NA,20160830,841200.2011,9674649.446
+DUC_A01,4,059a,jarana,Lecythis lurida,Lecythidaceae,37.8,O,FALSE,NA,20160830,841200.4933,9674651.149
+DUC_A01,4,060a,matamata,Eschweilera parviflora,Lecythidaceae,15.2,O,FALSE,NA,20160830,841200.4214,9674650.668
+DUC_A01,4,061a,mandioqueira,Qualea paraensis,Vochysiaceae,61.1,O,FALSE,NA,20160830,841199.2178,9674651.873
+DUC_A01,4,062a,abiurana branca,Pouteria guianensis,Sapotaceae,13.5,O,FALSE,NA,20160830,841195.936,9674651.357
+DUC_A01,4,063a,ucuuba vermelha,Virola mollissima,Myristicaceae,11.9,O,FALSE,NA,20160830,841196.425,9674656.037
+DUC_A01,4,064a,tento,Ormosia coccinea,Fabaceae,27.3,O,FALSE,NA,20160830,841196.006,9674658.675
+DUC_A01,4,065a,matamata preto,Eschweilera ovata,Lecythidaceae,43,O,FALSE,NA,20160830,841193.6544,9674657.654
+DUC_A01,4,066a,morta,NA,NA,33,O,TRUE,2,20160830,841193.2974,9674661.43
+DUC_A01,4,067a,casca seca,Licania canescens,Chrysobalanaceae,11.8,O,FALSE,NA,20160830,841192.6064,9674662.579
+DUC_A01,4,068a,catauari,Couepia racemosa,Chrysobalanaceae,14.6,O,FALSE,NA,20160830,841195.5813,9674664.216
+DUC_A01,5,001a,pataua,Oenocarpus bataua,Arecaceae,20.5,P,FALSE,NA,20160830,841245.0043,9674466.817
+DUC_A01,5,001b,faveira amargosa,NA,NA,68,O,FALSE,NA,20160830,841236.418,9674466.597
+DUC_A01,5,002a,pataua,Oenocarpus bataua,Arecaceae,14.9,P,FALSE,NA,20160830,841243.4613,9674462.485
+DUC_A01,5,002b,uxirana,Sacoglottis guianensis,Humiriaceae,36.5,O,FALSE,NA,20160830,841235.9028,9674458.544
+DUC_A01,5,003a,morta,NA,NA,19.3,O,TRUE,2,20160830,841252.9738,9674466.852
+DUC_A01,5,003b,uxirana,Sacoglottis guianensis,Humiriaceae,42.7,O,FALSE,NA,20160830,841226.8564,9674446.669
+DUC_A01,5,004a,pataua,Oenocarpus bataua,Arecaceae,17,P,FALSE,NA,20160830,841245.6572,9674459.291
+DUC_A01,5,004b,fava arara tucupi,Parkia multijuga,Fabaceae,40.1,O,FALSE,NA,20160830,841231.5892,9674448.947
+DUC_A01,5,005a,pataua,Oenocarpus bataua,Arecaceae,17.5,P,FALSE,NA,20160830,841252.7677,9674463.386
+DUC_A01,5,005b,morta,NA,NA,41,O,TRUE,NA,20160830,841226.6782,9674447.131
+DUC_A01,5,006a,pataua,Oenocarpus bataua,Arecaceae,17.6,P,FALSE,NA,20160830,841249.5885,9674460.697
+DUC_A01,5,006b,cumaru,Dipteryx odorata,Fabaceae,50,O,FALSE,NA,20160830,841227.5675,9674430.624
+DUC_A01,5,007a,pataua,Oenocarpus bataua,Arecaceae,18.8,P,FALSE,NA,20160830,841245.9297,9674455.26
+DUC_A01,5,007b,guajara branco,Pouteria sp.,Sapotaceae,60,O,FALSE,NA,20160830,841241.2683,9674437.61
+DUC_A01,5,008a,pataua,Oenocarpus bataua,Arecaceae,22.2,P,FALSE,NA,20160830,841252.6434,9674458.044
+DUC_A01,5,008b,louro preto,Nectandra cuspidata,Lauraceae,38,O,FALSE,NA,20160830,841236.5131,9674430.045
+DUC_A01,5,009a,pataua,Oenocarpus bataua,Arecaceae,19,P,FALSE,NA,20160830,841254.9834,9674456.505
+DUC_A01,5,009b,morta,NA,NA,100,O,TRUE,NA,20160830,841242.5258,9674428.309
+DUC_A01,5,010a,faveira amargosa,NA,NA,11.7,O,FALSE,NA,20160830,841247.5266,9674447.423
+DUC_A01,5,011a,muirapiranga,Brosimum rubescens,Moraceae,20.9,O,FALSE,NA,20160830,841251.2896,9674447.448
+DUC_A01,5,012a,pataua,Oenocarpus bataua,Arecaceae,20.2,P,FALSE,NA,20160830,841246.5431,9674444.023
+DUC_A01,5,013a,matamata vermelho,Eschweilera coriacea,Lecythidaceae,17.1,O,FALSE,NA,20160830,841251.168,9674443.054
+DUC_A01,5,014a,embauba branca,Cecropia palmata,Urticaceae,12,O,FALSE,NA,20160830,841247.743,9674439.045
+DUC_A01,5,015a,embauba branca,Cecropia palmata,Urticaceae,16.8,O,FALSE,NA,20160830,841247.5097,9674438.795
+DUC_A01,5,016a,embauba toren,Cecropia engleriana,Urticaceae,18.9,O,FALSE,NA,20160830,841247.4603,9674438.326
+DUC_A01,5,017a,breu branco,Protium paniculatum,Burseraceae,12.7,O,FALSE,NA,20160830,841252.9642,9674441.203
+DUC_A01,5,018a,morta,NA,NA,18.6,O,TRUE,1,20160830,841252.3627,9674437.358
+DUC_A01,5,019a,zaguari,NA,NA,14.1,O,FALSE,NA,20160830,841258.6579,9674447.722
+DUC_A01,5,020a,faveira,Parkia sp.,Fabaceae,16.5,O,FALSE,NA,20160830,841259.5417,9674444.634
+DUC_A01,5,021a,inga amarelo,Inga sp.,Fabaceae,18.8,O,FALSE,NA,20160830,841258.5086,9674441.654
+DUC_A01,5,022a,ucuuba vermelha,Virola mollissima,Myristicaceae,16,O,FALSE,NA,20160830,841256.7364,9674439.063
+DUC_A01,5,023a,acai,Euterpe oleracea,Arecaceae,13,P,FALSE,NA,20160830,841259.4967,9674440.866
+DUC_A01,5,024a,uxirana,Sacoglottis guianensis,Humiriaceae,11.8,O,FALSE,NA,20160830,841259.09,9674440.831
+DUC_A01,5,025a,matamata preto,Eschweilera ovata,Lecythidaceae,18.1,O,FALSE,NA,20160830,841252.3151,9674433.498
+DUC_A01,5,026a,mamorana,Eriotheca globosa,Malvaceae,13.7,O,FALSE,NA,20160830,841256.9411,9674435.291
+DUC_A01,5,027a,morta,NA,NA,63,O,TRUE,NA,20160830,841261.2018,9674439.776
+DUC_A01,5,028a,matamata branco,Eschweilera coriacea,Lecythidaceae,15.8,O,FALSE,NA,20160830,841254.4626,9674430.894
+DUC_A01,5,029a,cumaru,Dipteryx odorata,Fabaceae,41,O,FALSE,NA,20160830,841252.4154,9674427.164
+DUC_A01,5,030a,faveira amargosa,NA,NA,38,O,FALSE,NA,20160830,841252.8476,9674426.222
+DUC_A01,5,031a,envira preta,Guatteria schomburgkiana,Annonaceae,11,O,FALSE,NA,20160830,841255.8568,9674427.717
+DUC_A01,5,032a,iperana,Eperua bijuga,Fabaceae,12.3,O,FALSE,NA,20160830,841260.2121,9674433.235
+DUC_A01,5,033a,mamorana,Eriotheca globosa,Malvaceae,27,O,FALSE,NA,20160830,841261.3686,9674431.268
+DUC_A01,5,034a,iperana,Eperua bijuga,Fabaceae,14.3,O,FALSE,NA,20160830,841254.1185,9674428.254
+DUC_A01,5,035a,muirapiranga,Brosimum rubescens,Moraceae,23,O,FALSE,NA,20160830,841254.8419,9674432.23
+DUC_A01,5,036a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,14,O,FALSE,NA,20160830,841256.9183,9674427.632
+DUC_A01,5,037a,ucuuba vermelha,Virola mollissima,Myristicaceae,10.6,O,FALSE,NA,20160830,841257.7948,9674428.089
+DUC_A01,5,038a,iperana,Eperua bijuga,Fabaceae,21.2,O,FALSE,NA,20160830,841262.3182,9674434.683
+DUC_A01,5,039a,casca seca,Licania canescens,Chrysobalanaceae,13.3,O,FALSE,NA,20160830,841254.9379,9674441.313
+DUC_A01,5,040a,pataua,Oenocarpus bataua,Arecaceae,22,P,FALSE,NA,20160830,841256.5507,9674445.079
+DUC_A01,5,041a,acai,Euterpe oleracea,Arecaceae,10.6,P,FALSE,NA,20160830,841256.2996,9674451.753
+DUC_A01,5,042a,pataua,Oenocarpus bataua,Arecaceae,24.6,P,FALSE,NA,20160830,841251.7406,9674451.574
+DUC_A01,5,043a,pataua,Oenocarpus bataua,Arecaceae,19,P,FALSE,NA,20160830,841255.2424,9674455.7
+DUC_A01,5,044a,uxirana,Sacoglottis guianensis,Humiriaceae,16.4,O,FALSE,NA,20160830,841249.8456,9674454.987
+DUC_A01,5,045a,morta,NA,NA,16.5,O,TRUE,2,20160830,841249.977,9674456.554
+DUC_A01,5,046a,ucuuba vermelha,Virola elongata,Myristicaceae,14.5,O,FALSE,NA,20160830,841245.436,9674456.705
+DUC_A01,5,047a,acai,Euterpe oleracea,Arecaceae,14,P,FALSE,NA,20160830,841253.013,9674460.257
+DUC_A01,5,048a,muirapiranga,Brosimum rubescens,Moraceae,14.9,O,FALSE,NA,20160830,841249.0181,9674459.109
+DUC_A01,5,049a,inhare,Helicostylis tomentosa,Moraceae,26.9,O,FALSE,NA,20160830,841247.852,9674462.615
+DUC_A01,5,050a,caripe,Licania octandra,Chrysobalanaceae,24.1,O,FALSE,NA,20160830,841245.9218,9674465.078
+DUC_A01,5,051a,pataua,Oenocarpus bataua,Arecaceae,18.5,P,FALSE,NA,20160830,841252.5018,9674465.236
+DUC_A01,7,001a,inhare,Helicostylis tomentosa,Moraceae,26.8,O,FALSE,NA,20160828,840371.9444,9673519.303
+DUC_A01,7,001b,guariuba,Clarisia racemosa,Moraceae,36.3,O,FALSE,NA,20160828,840359.317,9673502.696
+DUC_A01,7,002a,macucu,Licania guianensis,Chrysobalanaceae,14.9,O,FALSE,NA,20160828,840370.3152,9673515.884
+DUC_A01,7,002b,virola/ucuuba preta,NA,NA,38.8,O,FALSE,NA,20160828,840348.9935,9673494.63
+DUC_A01,7,003a,muiratinga,Maquira coriacea,Moraceae,40,O,FALSE,NA,20160828,840365.4801,9673514.663
+DUC_A01,7,003b,acariquara,Minquartia guianensis,Olacaceae,40,O,FALSE,NA,20160828,840361.5493,9673493.661
+DUC_A01,7,004a,bacaba,Oenocarpus bacaba,Arecaceae,13.9,P,FALSE,NA,20160828,840365.936,9673513.498
+DUC_A01,7,004b,muiracatiara rajada,NA,NA,62.8,O,FALSE,NA,20160828,840362.696,9673484.443
+DUC_A01,7,005a,inhare,Helicostylis tomentosa,Moraceae,23.5,O,FALSE,NA,20160828,840371.3108,9673514.483
+DUC_A01,7,005b,morta,NA,NA,41.5,O,TRUE,1,20160828,840368.4037,9673480.056
+DUC_A01,7,006a,matamata preto,Eschweilera ovata,Lecythidaceae,16.6,O,FALSE,NA,20160828,840371.6023,9673514.208
+DUC_A01,7,006b,inhare,Helicostylis tomentosa,Moraceae,53.5,O,FALSE,NA,20160828,840361.031,9673470.434
+DUC_A01,7,007a,seringarana,Micrandra minor,Euphorbiaceae,13.2,O,FALSE,NA,20160828,840373.1845,9673511.956
+DUC_A01,7,007b,abiurana,Pouteria gongrijpii,Sapotaceae,52,O,FALSE,NA,20160828,840362.7485,9673469.253
+DUC_A01,7,008a,morta,NA,NA,12.2,O,TRUE,3,20160828,840375.4968,9673510.207
+DUC_A01,7,008b,angelim rajado,Zygia racemosa,Fabaceae,43.5,O,FALSE,NA,20160828,840369.4159,9673471.431
+DUC_A01,7,009a,coquirana,Chrysophyllum sanguinolentum,Sapotaceae,23.3,O,FALSE,NA,20160828,840374.5201,9673507.042
+DUC_A01,7,009b,mandioqueira,Qualea paraensis,Vochysiaceae,48.5,O,FALSE,NA,20160828,840372.7934,9673469.584
+DUC_A01,7,010a,jarana,Lecythis lurida,Lecythidaceae,13.3,O,FALSE,NA,20160828,840375.3273,9673506.094
+DUC_A01,7,010b,inga vermelho,Inga alba,Fabaceae,45.8,O,FALSE,NA,20160828,840355.4469,9673459.072
+DUC_A01,7,011a,gombeira,Swartzia laevicarpa,Fabaceae,13.4,O,FALSE,NA,20160828,840372.0027,9673507.085
+DUC_A01,7,011b,matamata preto,Eschweilera ovata,Lecythidaceae,35,O,FALSE,NA,20160828,840352.2239,9673463.15
+DUC_A01,7,012a,macucu,Licania guianensis,Chrysobalanaceae,23.3,O,FALSE,NA,20160828,840371.9677,9673504.489
+DUC_A01,7,012b,piquiarana,Caryocar glabrum,Caryocaraceae,91.5,O,FALSE,NA,20160828,840351.2421,9673479.759
+DUC_A01,7,013a,mandioqueira,Qualea paraensis,Vochysiaceae,41.2,O,FALSE,NA,20160828,840369.0262,9673506.802
+DUC_A01,7,013b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,35.4,O,FALSE,NA,20160828,840345.6141,9673482.43
+DUC_A01,7,014a,carapanauba,Aspidosperma excelsum,Apocynaceae,59,O,FALSE,NA,20160828,840370.1774,9673503.845
+DUC_A01,7,014b,quinarana,Geissospermum sericeum,Apocynaceae,41.8,O,FALSE,NA,20160828,840350.0133,9673487.194
+DUC_A01,7,015a,inhare,Helicostylis tomentosa,Moraceae,30,O,FALSE,NA,20160828,840370.3935,9673503.529
+DUC_A01,7,015b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,42,O,FALSE,NA,20160828,840346.1468,9673490.518
+DUC_A01,7,016a,inga vermelho,Inga alba,Fabaceae,39.7,O,FALSE,NA,20160828,840370.3732,9673499.814
+DUC_A01,7,016b,morta,NA,NA,36.2,O,TRUE,1,20160828,840337.1957,9673491.613
+DUC_A01,7,017a,ucuuba terra firme,Virola sebifera,Myristicaceae,12.3,O,FALSE,NA,20160828,840371.5074,9673496.942
+DUC_A01,7,018a,jatereu,Lecythis idatimon,Lecythidaceae,18.2,O,FALSE,NA,20160828,840371.5782,9673496.762
+DUC_A01,7,019a,tanibuca,Terminalia amazonia,Combretaceae,31.8,O,FALSE,NA,20160828,840373.4296,9673497.819
+DUC_A01,7,020a,macaranduba,Manilkara huberi,Sapotaceae,26.5,O,FALSE,NA,20160828,840378.9627,9673500.549
+DUC_A01,7,021a,breu branco,Protium paniculatum,Burseraceae,20.4,O,FALSE,NA,20160828,840378.917,9673498.703
+DUC_A01,7,022a,abiu rosadinho,Pouteria reticulata,Sapotaceae,11.1,O,FALSE,NA,20160828,840377.4367,9673497.412
+DUC_A01,7,023a,inhare,Helicostylis tomentosa,Moraceae,15.5,O,FALSE,NA,20160828,840377.4696,9673497.323
+DUC_A01,7,024a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,38.7,O,FALSE,NA,20160828,840378.8661,9673496.413
+DUC_A01,7,025a,seringarana,Micrandra minor,Euphorbiaceae,61.7,O,FALSE,NA,20160828,840379.3234,9673492.783
+DUC_A01,7,026a,gombeira,Swartzia laevicarpa,Fabaceae,12.2,O,FALSE,NA,20160828,840379.2249,9673493.05
+DUC_A01,7,027a,abiu rosadinha,NA,NA,24.8,O,FALSE,NA,20160828,840378.5901,9673491.245
+DUC_A01,7,028a,urucurana,Sloanea guianensis,Elaeocarpaceae,28,O,FALSE,NA,20160828,840381.5167,9673491.518
+DUC_A01,7,029a,acariquara,Minquartia guianensis,Olacaceae,17.4,O,FALSE,NA,20160828,840380.9034,9673486.207
+DUC_A01,7,030a,caripe,Licania octandra,Chrysobalanaceae,18.9,O,FALSE,NA,20160828,840377.4741,9673484.008
+DUC_A01,7,031a,acai,Euterpe oleracea,Arecaceae,13.2,P,FALSE,NA,20160828,840381.362,9673483.849
+DUC_A01,7,032a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,11.5,O,FALSE,NA,20160828,840381.3593,9673482.29
+DUC_A01,7,033a,inhare,Helicostylis tomentosa,Moraceae,15.9,O,FALSE,NA,20160828,840378.4356,9673480.47
+DUC_A01,7,034a,inga branco,Inga thibaudiana,Fabaceae,15.4,O,FALSE,NA,20160828,840381.4951,9673477.557
+DUC_A01,7,035a,matamata branco,Eschweilera coriacea,Lecythidaceae,13.2,O,FALSE,NA,20160828,840384.6776,9673480.514
+DUC_A01,7,036a,mututi,Pterocarpus sp.,Fabaceae,25.4,O,FALSE,NA,20160828,840384.4801,9673480.38
+DUC_A01,7,037a,burra leteira,NA,NA,21.2,O,FALSE,NA,20160828,840385.6215,9673479.497
+DUC_A01,7,038a,morta,NA,NA,41.4,O,TRUE,3,20160828,840386.5876,9673477.503
+DUC_A01,7,039a,matamata branco,Eschweilera coriacea,Lecythidaceae,12.1,O,FALSE,NA,20160828,840381.8636,9673473.837
+DUC_A01,7,040a,breu branco,Protium paniculatum,Burseraceae,10.1,O,FALSE,NA,20160828,840380.6272,9673474.684
+DUC_A01,7,041a,louro amarelo,Aniba parviflora,Lauraceae,19.1,O,FALSE,NA,20160828,840380.0667,9673474.638
+DUC_A01,7,042a,bacaba,Oenocarpus bacaba,Arecaceae,17.2,P,FALSE,NA,20160828,840376.6414,9673467.445
+DUC_A01,7,043a,matamata preto,Eschweilera ovata,Lecythidaceae,16.5,O,FALSE,NA,20160828,840375.8881,9673467.852
+DUC_A01,7,044a,morta,NA,NA,94.5,O,TRUE,3,20160828,840374.5333,9673470.44
+DUC_A01,7,045a,tauari,Couratari stellata,Lecythidaceae,15.7,O,FALSE,NA,20160828,840378.144,9673471.795
+DUC_A01,7,046a,quinarana,Geissospermum sericeum,Apocynaceae,20.8,O,FALSE,NA,20160828,840373.5608,9673472.121
+DUC_A01,7,047a,cucutitiriba,Pouteria sp.,Sapotaceae,25.8,O,FALSE,NA,20160828,840375.461,9673474.236
+DUC_A01,7,048a,bacaba,Oenocarpus bacaba,Arecaceae,13.8,P,FALSE,NA,20160828,840372.3937,9673474.846
+DUC_A01,7,049a,breu branco,Protium paniculatum,Burseraceae,12,O,FALSE,NA,20160828,840373.2382,9673479.573
+DUC_A01,7,050a,bacaba,Oenocarpus bacaba,Arecaceae,11.9,P,FALSE,NA,20160828,840376.618,9673483.347
+DUC_A01,7,051a,abirana,NA,NA,21.9,O,FALSE,NA,20160828,840374.7672,9673482.159
+DUC_A01,7,052a,uxirana,Sacoglottis guianensis,Humiriaceae,32.9,O,FALSE,NA,20160828,840374.0817,9673481.719
+DUC_A01,7,053a,abiurana,Pouteria gongrijpii,Sapotaceae,12.5,O,FALSE,NA,20160828,840371.9573,9673482.649
+DUC_A01,7,054a,envira surucucu,Duguetia surinamensis,Annonaceae,15.9,O,FALSE,NA,20160828,840373.049,9673486.394
+DUC_A01,7,055a,matamata branco,Eschweilera coriacea,Lecythidaceae,18,O,FALSE,NA,20160828,840355.0755,9673489.916
+DUC_A01,7,056a,louro preto,Ocotea cernua,Lauraceae,14.2,O,FALSE,NA,20160828,840372.8849,9673492.774
+DUC_A01,7,057a,urucurana,Sloanea guianensis,Elaeocarpaceae,15.6,O,FALSE,NA,20160828,840367.5871,9673493.141
+DUC_A01,7,058a,abiurana,Pouteria gongrijpii,Sapotaceae,49.5,O,FALSE,NA,20160828,840361.3481,9673499.975
+DUC_A01,7,059a,matamata preto,Eschweilera ovata,Lecythidaceae,11.4,O,FALSE,NA,20160828,840364.2573,9673503.412
+DUC_A01,7,060a,bacaba,Oenocarpus bacaba,Arecaceae,11,P,FALSE,NA,20160828,840365.1078,9673503.642
+DUC_A01,7,061a,murta,Strychnos subcordata,Loganiaceae,37.7,O,FALSE,NA,20160828,840358.6913,9673505.487
+DUC_A01,7,062a,casca seca,Licania canescens,Chrysobalanaceae,27.1,O,FALSE,NA,20160828,840357.6445,9673508.83
+DUC_A01,7,063a,matamata preto,Eschweilera ovata,Lecythidaceae,12.3,O,FALSE,NA,20160828,840358.854,9673509.433
+DUC_A01,7,064a,caripe,Licania octandra,Chrysobalanaceae,21,O,FALSE,NA,20160828,840359.1766,9673509.593
+DUC_A01,7,065a,inhare,Helicostylis tomentosa,Moraceae,36.2,O,FALSE,NA,20160828,840359.2572,9673509.633
+DUC_A01,8,001a,matamata preto,Eschweilera ovata,Lecythidaceae,11.5,O,FALSE,NA,20160831,839253.805,9673330.266
+DUC_A01,8,001b,morta,NA,NA,45,O,TRUE,1,20160831,839236.2023,9673313.136
+DUC_A01,8,002a,gaivota,NA,NA,31.1,O,FALSE,NA,20160831,839246.3543,9673330.414
+DUC_A01,8,002b,morta,NA,NA,43,O,TRUE,4,20160831,839235.0666,9673309.715
+DUC_A01,8,003a,caripe,Licania octandra,Chrysobalanaceae,18,O,FALSE,NA,20160831,839247.5752,9673326.442
+DUC_A01,8,003b,parajuba,Manilkara bidentata,Sapotaceae,40.7,O,FALSE,NA,20160831,839232.3574,9673304.174
+DUC_A01,8,004a,louro vermelho,Sextonia rubra,Lauraceae,50.2,O,FALSE,NA,20160831,839251.9162,9673324.034
+DUC_A01,8,004b,guajara bolacha,Pouteria oppositifolia,Sapotaceae,55.4,O,FALSE,NA,20160831,839229.6081,9673298.742
+DUC_A01,8,005a,merauba,Mouriri collocarpa,Melastomataceae,46.9,O,FALSE,NA,20160831,839252.2374,9673323.079
+DUC_A01,8,005b,matamata preto,Eschweilera ovata,Lecythidaceae,35.5,O,FALSE,NA,20160831,839240.1818,9673299.521
+DUC_A01,8,006a,ucuubarana,Iryanthera paraensis,Myristicaceae,13.6,O,FALSE,NA,20160831,839251.2265,9673322.697
+DUC_A01,8,006b,caripe,Licania octandra,Chrysobalanaceae,43.4,O,FALSE,NA,20160831,839238.3324,9673293.099
+DUC_A01,8,007a,macucu,Licania guianensis,Chrysobalanaceae,18,O,FALSE,NA,20160831,839253.0928,9673322.231
+DUC_A01,8,007b,casca seca,Licania canescens,Chrysobalanaceae,73.5,O,FALSE,NA,20160831,839228.2497,9673289.115
+DUC_A01,8,008a,ucuubarana,Iryanthera paraensis,Myristicaceae,10.8,O,FALSE,NA,20160831,839252.4892,9673321.315
+DUC_A01,8,008b,louro vermelho,Sextonia rubra,Lauraceae,98.8,O,FALSE,NA,20160831,839225.8981,9673275.578
+DUC_A01,8,009a,abiurana,Pouteria gongrijpii,Sapotaceae,23.1,O,FALSE,NA,20160831,839257.8117,9673323.45
+DUC_A01,8,009b,envira branca,Rollinia exsucca,Annonaceae,37.4,O,FALSE,NA,20160831,839228.9467,9673280.15
+DUC_A01,8,010a,abiurana,Pouteria gongrijpii,Sapotaceae,14.2,O,FALSE,NA,20160831,839257.8999,9673321.159
+DUC_A01,8,010b,morta,NA,NA,55,O,TRUE,1,20160831,839223.54,9673299.854
+DUC_A01,8,011a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,11.6,O,FALSE,NA,20160831,839259.9455,9673320.504
+DUC_A01,8,011b,fava orelha de macaco,Enterolobium schomburgkii,Fabaceae,58.3,O,FALSE,NA,20160831,839211.9265,9673310.835
+DUC_A01,8,012a,envira preta,Guatteria schomburgkiana,Annonaceae,18,O,FALSE,NA,20160831,839253.6514,9673316.165
+DUC_A01,8,013a,matamata preto,Eschweilera ovata,Lecythidaceae,18.1,O,FALSE,NA,20160831,839260.941,9673316.538
+DUC_A01,8,014a,bacaba,Oenocarpus bacaba,Arecaceae,12.1,P,FALSE,NA,20160831,839261.3932,9673312.828
+DUC_A01,8,015a,macucu,Licania guianensis,Chrysobalanaceae,19.3,O,FALSE,NA,20160831,839263.542,9673312.55
+DUC_A01,8,016a,muirapiranga,Brosimum rubescens,Moraceae,22.4,O,FALSE,NA,20160831,839262.3731,9673310.599
+DUC_A01,8,017a,ata preta,Annona sp.,Annonaceae,11.4,O,FALSE,NA,20160831,839262.0174,9673309.96
+DUC_A01,8,018a,louro preto,Nectandra cuspidata,Lauraceae,10.2,O,FALSE,NA,20160831,839262.3174,9673310.087
+DUC_A01,8,019a,angelim rajado,Zygia racemosa,Fabaceae,23.1,O,FALSE,NA,20160831,839259.4338,9673308.478
+DUC_A01,8,020a,breu barrote,Tetragastris panamensis,Burseraceae,18.2,O,FALSE,NA,20160831,839258.1342,9673307.929
+DUC_A01,8,021a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,27.3,O,FALSE,NA,20160831,839256.3159,9673300.771
+DUC_A01,8,022a,guajara branco,Pouteria sp.,Sapotaceae,13,O,FALSE,NA,20160831,839260.59,9673301.651
+DUC_A01,8,023a,macucu,Licania guianensis,Chrysobalanaceae,17.1,O,FALSE,NA,20160831,839265.7383,9673303.331
+DUC_A01,8,024a,coquirana,Chrysophyllum sanguinolentum,Sapotaceae,20.9,O,FALSE,NA,20160831,839265.2635,9673301.349
+DUC_A01,8,025a,urucurana,Sloanea guianensis,Elaeocarpaceae,46,O,FALSE,NA,20160831,839264.245,9673300.301
+DUC_A01,8,026a,breu barrote,Tetragastris panamensis,Burseraceae,35.8,O,FALSE,NA,20160831,839266.0144,9673299.122
+DUC_A01,8,027a,guajara branco,Pouteria sp.,Sapotaceae,14.8,O,FALSE,NA,20160831,839267.1216,9673299.23
+DUC_A01,8,028a,caripe,Licania octandra,Chrysobalanaceae,18.4,O,FALSE,NA,20160831,839261.7554,9673298.189
+DUC_A01,8,029a,breu barrote,Tetragastris panamensis,Burseraceae,25.7,O,FALSE,NA,20160831,839260.8212,9673297.568
+DUC_A01,8,030a,louro preto,Nectandra cuspidata,Lauraceae,11.3,O,FALSE,NA,20160831,839260.6227,9673297.478
+DUC_A01,8,031a,abirana branca,NA,NA,12,O,FALSE,NA,20160831,839259.5604,9673296.898
+DUC_A01,8,032a,jarana,Lecythis lurida,Lecythidaceae,22.7,O,FALSE,NA,20160831,839261.9739,9673287.339
+DUC_A01,8,033a,abiurana,Pouteria gongrijpii,Sapotaceae,11.1,O,FALSE,NA,20160831,839225.8884,9673272.166
+DUC_A01,8,034a,joao mole,Neea oppositifolia,Nyctaginaceae,24,O,FALSE,NA,20160831,839253.1989,9673289.63
+DUC_A01,8,035a,matamata branco,Eschweilera coriacea,Lecythidaceae,14.5,O,FALSE,NA,20160831,839249.2554,9673289.461
+DUC_A01,8,036a,tamaguare,NA,NA,41,O,FALSE,NA,20160831,839256.7926,9673295.951
+DUC_A01,8,037a,muirapiranga,Brosimum rubescens,Moraceae,24.2,O,FALSE,NA,20160831,839251.2484,9673298.855
+DUC_A01,8,038a,morta,NA,NA,24.6,O,TRUE,3,20160831,839248.1113,9673297.994
+DUC_A01,8,039a,breu branco,Protium paniculatum,Burseraceae,26.5,O,FALSE,NA,20160831,839247.8033,9673300.617
+DUC_A01,8,040a,breu branco,Protium paniculatum,Burseraceae,13.8,O,FALSE,NA,20160831,839244.8834,9673307.63
+DUC_A01,8,041a,mapatirana,Pourouma minor,Urticaceae,17.8,O,FALSE,NA,20160831,839253.5537,9673308.99
+DUC_A01,8,042a,goiabinha,Myrcia splendens,Myrtaceae,10.8,O,FALSE,NA,20160831,839252.482,9673310.142
+DUC_A01,8,043a,cacau do mato,Theobroma glaucum,Malvaceae,11.9,O,FALSE,NA,20160831,839250.7832,9673310.445
+DUC_A01,8,044a,joao mole,Neea oppositifolia,Nyctaginaceae,15.6,O,FALSE,NA,20160831,839244.3753,9673309.147
+DUC_A01,8,045a,morta,NA,NA,36.1,O,TRUE,3,20160831,839244.8723,9673311.066
+DUC_A01,8,046a,abiurana,Pouteria gongrijpii,Sapotaceae,13.3,O,FALSE,NA,20160831,839246.2886,9673313.643
+DUC_A01,8,047a,muiratinga,Maquira coriacea,Moraceae,10.2,O,TRUE,1,20160831,839241.9592,9673310.914
+DUC_A01,8,048a,morta,NA,NA,32.7,O,TRUE,NA,20160831,839244.3894,9673315.908
+DUC_A01,8,049a,carapanauba,Aspidosperma excelsum,Apocynaceae,11.4,O,FALSE,NA,20160831,839240.5671,9673317.455
+DUC_A01,8,050a,inhare,Helicostylis tomentosa,Moraceae,13.2,O,FALSE,NA,20160831,839245.5168,9673319.342
+DUC_A01,8,051a,breu branco,Protium paniculatum,Burseraceae,16.2,O,FALSE,NA,20160831,839242.5978,9673320.233
+DUC_A01,8,052a,breu branco,Protium paniculatum,Burseraceae,16.2,O,FALSE,NA,20160831,839242.4787,9673320.588
+DUC_A01,8,053a,abiurana,Pouteria gongrijpii,Sapotaceae,31.3,O,FALSE,NA,20160831,839239.683,9673323.155
+DUC_A01,8,054a,breu manga,Tetragastris altissima,Burseraceae,15.3,O,FALSE,NA,20160831,839246.7803,9673325.757
+DUC_A01,8,055a,envira branca,Rollinia exsucca,Annonaceae,14.2,O,FALSE,NA,20160831,839243.3034,9673329.331
+DUC_A01,9,001a,carape,NA,NA,18.9,O,FALSE,NA,20160828,840340.0218,9673302.631
+DUC_A01,9,001b,morta,NA,NA,40,O,TRUE,1,20160828,840326.491,9673289.733
+DUC_A01,9,002a,ucuuba vermelha,Virola elongata,Myristicaceae,37.4,O,FALSE,NA,20160828,840341.384,9673301.246
+DUC_A01,9,002b,morta,NA,NA,59.3,O,TRUE,1,20160828,840323.8375,9673279.521
+DUC_A01,9,003a,inhare,Helicostylis tomentosa,Moraceae,11.8,O,FALSE,NA,20160828,840341.4917,9673298.755
+DUC_A01,9,003b,abiu preto,Pouteria sp.,Sapotaceae,36.5,O,FALSE,NA,20160828,840334.2917,9673246.888
+DUC_A01,9,004a,envira surucucu,Duguetia surinamensis,Annonaceae,11.3,O,FALSE,NA,20160828,840337.7315,9673298.859
+DUC_A01,9,004b,matamata branco,Eschweilera coriacea,Lecythidaceae,38.4,O,FALSE,NA,20160828,840325.5268,9673245.413
+DUC_A01,9,005a,marupa,Simarouba amara,Simaroubaceae,23.3,O,FALSE,NA,20160828,840337.7377,9673296.879
+DUC_A01,9,005b,muiratinga,Maquira coriacea,Moraceae,42.4,O,FALSE,NA,20160828,840318.2452,9673247.43
+DUC_A01,9,006a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,15.9,O,FALSE,NA,20160828,840339.1979,9673294.989
+DUC_A01,9,006b,uxirana,Sacoglottis guianensis,Humiriaceae,75.7,O,FALSE,NA,20160828,840326.9844,9673270.445
+DUC_A01,9,007a,inhare,Helicostylis tomentosa,Moraceae,11.3,O,FALSE,NA,20160828,840339.0824,9673295.048
+DUC_A01,9,007b,escorrega macaco,Capirona decorticans,Rubiaceae,49.2,O,FALSE,NA,20160828,840324.0365,9673281.458
+DUC_A01,9,008a,breu branco,Protium paniculatum,Burseraceae,11.4,O,FALSE,NA,20160828,840340.9424,9673293.332
+DUC_A01,9,008b,mirindiba,NA,NA,38,O,FALSE,NA,20160828,840326.5693,9673285.834
+DUC_A01,9,009a,morta,NA,NA,17.5,O,TRUE,3,20160828,840335.3922,9673290.791
+DUC_A01,9,009b,muiratinga,Maquira coriacea,Moraceae,46.5,O,FALSE,NA,20160828,840327.0758,9673290.646
+DUC_A01,9,010a,matamata branco,Eschweilera coriacea,Lecythidaceae,29.6,O,FALSE,NA,20160828,840337.5235,9673290.076
+DUC_A01,9,010b,abiurana,Pouteria gongrijpii,Sapotaceae,46.2,O,FALSE,NA,20160828,840309.1418,9673286.438
+DUC_A01,9,011a,marupa,Simarouba amara,Simaroubaceae,27.4,O,FALSE,NA,20160828,840338.2729,9673288.097
+DUC_A01,9,011b,abiurana branca,Pouteria guianensis,Sapotaceae,39.1,O,FALSE,NA,20160828,840305.6717,9673284.796
+DUC_A01,9,012a,abiurana,Pouteria gongrijpii,Sapotaceae,31.2,O,FALSE,NA,20160828,840337.5455,9673287.561
+DUC_A01,9,012b,muiratinga,Maquira coriacea,Moraceae,39,O,FALSE,NA,20160828,840303.6001,9673285.61
+DUC_A01,9,013a,gombeira,Swartzia laevicarpa,Fabaceae,16.1,O,FALSE,NA,20160828,840339.3534,9673284.507
+DUC_A01,9,014a,louro preto,Nectandra cuspidata,Lauraceae,28,O,FALSE,NA,20160828,840339.3977,9673284.636
+DUC_A01,9,015a,caripe,Licania octandra,Chrysobalanaceae,28.6,O,FALSE,NA,20160828,840342.4695,9673286.847
+DUC_A01,9,016a,inga xixica,Inga heterophylla,Fabaceae,14,O,FALSE,NA,20160828,840343.233,9673287.288
+DUC_A01,9,017a,mamorana,Eriotheca globosa,Malvaceae,27.5,O,FALSE,NA,20160828,840347.5619,9673285.202
+DUC_A01,9,018a,taquari,Mabea angularis,Euphorbiaceae,16.7,O,FALSE,NA,20160828,840348.7181,9673282.398
+DUC_A01,9,019a,cacau do mato,Theobroma glaucum,Malvaceae,10.8,O,FALSE,NA,20160828,840348.8533,9673281.796
+DUC_A01,9,020a,abiurana branca,Pouteria guianensis,Sapotaceae,20.2,O,FALSE,NA,20160828,840348.1958,9673281.074
+DUC_A01,9,021a,inga branco,Inga thibaudiana,Fabaceae,11,O,FALSE,NA,20160828,840345.2374,9673282
+DUC_A01,9,022a,matamata branco,Eschweilera coriacea,Lecythidaceae,12.1,O,FALSE,NA,20160828,840343.5749,9673280.735
+DUC_A01,9,023a,muiratinga,Maquira coriacea,Moraceae,23.8,O,FALSE,NA,20160828,840343.2494,9673277.416
+DUC_A01,9,024a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,16.1,O,FALSE,NA,20160828,840343.0428,9673279.19
+DUC_A01,9,025a,breu vermelho,Protium hebetatum,Burseraceae,49,O,FALSE,NA,20160828,840347.9575,9673274.823
+DUC_A01,9,026a,matamata branco,Eschweilera coriacea,Lecythidaceae,15.5,O,FALSE,NA,20160828,840351.5829,9673272.633
+DUC_A01,9,027a,acariquara,Minquartia guianensis,Olacaceae,12.4,O,FALSE,NA,20160828,840351.8339,9673271.971
+DUC_A01,9,028a,cucutitiriba,Pouteria sp.,Sapotaceae,33.4,O,FALSE,NA,20160828,840353.5734,9673266.892
+DUC_A01,9,029a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,19.4,O,FALSE,NA,20160828,840349.2042,9673263.416
+DUC_A01,9,030a,matamata preto,Eschweilera ovata,Lecythidaceae,26.4,O,FALSE,NA,20160828,840354.5055,9673264.434
+DUC_A01,9,031a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,25.3,O,FALSE,NA,20160828,840355.186,9673263.623
+DUC_A01,9,032a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,15.2,O,FALSE,NA,20160828,840354.3635,9673262.841
+DUC_A01,9,033a,matamata branco,Eschweilera coriacea,Lecythidaceae,12.5,O,FALSE,NA,20160828,840353.1115,9673261.224
+DUC_A01,9,034a,caripe,Licania octandra,Chrysobalanaceae,16.7,O,FALSE,NA,20160828,840357.5616,9673257.604
+DUC_A01,9,035a,liana,NA,NA,10.8,L,FALSE,NA,20160828,840355.7073,9673256.836
+DUC_A01,9,036a,abiurana,Pouteria gongrijpii,Sapotaceae,43,O,FALSE,NA,20160828,840355.7699,9673256.425
+DUC_A01,9,037a,timborana,Pseudopiptadenia suaveolens,Fabaceae,60,O,FALSE,NA,20160828,840355.3034,9673254.703
+DUC_A01,9,038a,parapara,Jacaranda copaia,Bignoniaceae,35.6,O,FALSE,NA,20160828,840350.3334,9673255.265
+DUC_A01,9,039a,inga vermelho,Inga alba,Fabaceae,29.9,O,FALSE,NA,20160828,840348.6372,9673258.267
+DUC_A01,9,040a,acariquara,Minquartia guianensis,Olacaceae,19.4,O,FALSE,NA,20160828,840348.8441,9673259.444
+DUC_A01,9,041a,inhare,Helicostylis tomentosa,Moraceae,13.5,O,FALSE,NA,20160828,840344.065,9673253.101
+DUC_A01,9,042a,joao mole,Neea oppositifolia,Nyctaginaceae,27.6,O,FALSE,NA,20160828,840340.1117,9673258.626
+DUC_A01,9,043a,bacaba,Oenocarpus bacaba,Arecaceae,14.2,P,FALSE,NA,20160828,840340.1472,9673258.532
+DUC_A01,9,044a,breu branco,Protium paniculatum,Burseraceae,12.8,O,FALSE,NA,20160828,840342.1212,9673263.169
+DUC_A01,9,045a,pedra ume,NA,NA,17.3,O,FALSE,NA,20160828,840342.6376,9673262.297
+DUC_A01,9,046a,merauba,Mouriri collocarpa,Melastomataceae,33.5,O,FALSE,NA,20160828,840344.7141,9673268.628
+DUC_A01,9,047a,mamorana,Eriotheca globosa,Malvaceae,10.8,O,FALSE,NA,20160828,840343.394,9673269.162
+DUC_A01,9,048a,jarana,Lecythis lurida,Lecythidaceae,30.2,O,FALSE,NA,20160828,840337.4773,9673271.013
+DUC_A01,9,049a,inhare,Helicostylis tomentosa,Moraceae,35.6,O,FALSE,NA,20160828,840334.3898,9673272.529
+DUC_A01,9,050a,guariuba,Clarisia racemosa,Moraceae,73.2,O,FALSE,NA,20160828,840334.3898,9673272.529
+DUC_A01,9,051a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,32.6,O,FALSE,NA,20160828,840334.4278,9673274.398
+DUC_A01,9,052a,caripe,Licania octandra,Chrysobalanaceae,19.7,O,FALSE,NA,20160828,840334.4562,9673276.047
+DUC_A01,9,053a,abiu rosadinha,NA,NA,17.5,O,FALSE,NA,20160828,840335.6312,9673277.863
+DUC_A01,9,054a,cacau do mato,Theobroma glaucum,Malvaceae,13,O,FALSE,NA,20160828,840337.4102,9673278.082
+DUC_A01,9,055a,morta,NA,NA,12.1,O,TRUE,3,20160828,840338.1396,9673278.615
+DUC_A01,9,056a,muiratinga,Maquira coriacea,Moraceae,3.9,O,FALSE,NA,20160828,840334.9205,9673279.742
+DUC_A01,9,057a,murta,Strychnos subcordata,Loganiaceae,11.7,O,FALSE,NA,20160828,840334.5651,9673280.681
+DUC_A01,9,058a,ucuuba vermelha,Virola elongata,Myristicaceae,10.8,O,FALSE,NA,20160828,840332.6997,9673283.153
+DUC_A01,9,059a,parajuba,Manilkara bidentata,Sapotaceae,21.1,O,FALSE,NA,20160828,840332.7882,9673285.379
+DUC_A01,9,060a,bacaba,Oenocarpus bacaba,Arecaceae,12.9,P,FALSE,NA,20160828,840332.9039,9673284.335
+DUC_A01,9,061a,abiu rosadinha,NA,NA,10.1,O,FALSE,NA,20160828,840331.8091,9673290.426
+DUC_A01,9,062a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,21.3,O,FALSE,NA,20160828,840328.7059,9673291.254
+DUC_A01,9,063a,bacaba,Oenocarpus bacaba,Arecaceae,11,P,FALSE,NA,20160828,840327.1112,9673290.552
+DUC_A01,9,064a,muruci da mata,Byrsonima densa,Malpighiaceae,13.6,O,FALSE,NA,20160828,840330.7423,9673293.246
+DUC_A01,9,065a,cucutitiriba,Pouteria sp.,Sapotaceae,18.4,O,FALSE,NA,20160828,840331.6246,9673295.83
+DUC_A01,10,001a,quaruba,Vochysia guianensis,Vochysiaceae,10.6,O,FALSE,NA,20160827,841401.7444,9673656.235
+DUC_A01,10,001b,tachi branco,Tachigali paniculata,Fabaceae,45.9,O,FALSE,NA,20160827,841381.3737,9673644.97
+DUC_A01,10,002a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,13.7,O,FALSE,NA,20160827,841402.2608,9673655.432
+DUC_A01,10,002b,pau jacare,Laetia procera,Salicaceae,39.2,O,FALSE,NA,20160827,841403.933,9673651.559
+DUC_A01,10,003a,ucuuba terra firme,Virola sebifera,Myristicaceae,15.8,O,FALSE,NA,20160827,841400.6544,9673652.494
+DUC_A01,10,003b,tauari,Couratari stellata,Lecythidaceae,76.5,O,FALSE,NA,20160827,841389.9459,9673612.02
+DUC_A01,10,004a,fava folha fina,Pseudopiptadenia psilostachya,Fabaceae,32.2,O,FALSE,NA,20160827,841400.2608,9673651.832
+DUC_A01,10,004b,abiu rosadinha,NA,NA,47.4,O,FALSE,NA,20160827,841383.7138,9673597.444
+DUC_A01,10,005a,inhare,Helicostylis tomentosa,Moraceae,19.7,O,FALSE,NA,20160827,841401.0668,9673650.009
+DUC_A01,10,005b,carapanauba,Aspidosperma excelsum,Apocynaceae,44.5,O,FALSE,NA,20160827,841383.1347,9673601.549
+DUC_A01,10,006a,brteu branco,NA,NA,22.3,O,FALSE,NA,20160827,841397.8286,9673647.368
+DUC_A01,10,006b,parapara,Jacaranda copaia,Bignoniaceae,48,O,FALSE,NA,20160827,841370.1566,9673622.14
+DUC_A01,10,007a,matamata branco,Eschweilera coriacea,Lecythidaceae,13.8,O,FALSE,NA,20160827,841399.8975,9673646.86
+DUC_A01,10,007b,breu manga,Tetragastris altissima,Burseraceae,41.1,O,FALSE,NA,20160827,841365.8023,9673623.771
+DUC_A01,10,008a,mandioqueira,Qualea paraensis,Vochysiaceae,35.1,O,FALSE,NA,20160827,841399.6398,9673643.521
+DUC_A01,10,008b,timbora,NA,NA,55.1,O,FALSE,NA,20160827,841366.3943,9673631.075
+DUC_A01,10,009a,jataua,Trichilia micrantha,Meliaceae,16.3,O,FALSE,NA,20160827,841401.0676,9673641.605
+DUC_A01,10,009b,louro cheiroso,Diospyros artanthifolia,Ebenaceae,47.5,O,FALSE,NA,20160827,841368.3337,9673639.881
+DUC_A01,10,010a,joao mole,Neea oppositifolia,Nyctaginaceae,17.5,O,FALSE,NA,20160827,841401.0885,9673641.193
+DUC_A01,10,010b,tauari,Couratari stellata,Lecythidaceae,41,O,FALSE,NA,20160827,841372.7742,9673646.041
+DUC_A01,10,011a,pau jacare,Laetia procera,Salicaceae,32,O,FALSE,NA,20160827,841403.7757,9673642.557
+DUC_A01,10,012a,breu manga,Tetragastris altissima,Burseraceae,16.9,O,FALSE,NA,20160827,841408.3549,9673645.957
+DUC_A01,10,013a,inhare,Helicostylis tomentosa,Moraceae,13.3,O,FALSE,NA,20160827,841402.6077,9673642.16
+DUC_A01,10,014a,purui,Alibertia edulis,Rubiaceae,12.5,O,FALSE,NA,20160827,841411.5469,9673643.034
+DUC_A01,10,015a,mamominho,NA,NA,10.4,O,FALSE,NA,20160827,841411.1644,9673642.146
+DUC_A01,10,016a,morta,NA,NA,31.4,O,TRUE,2,20160827,841409.1608,9673638.551
+DUC_A01,10,017a,taquari,Mabea angularis,Euphorbiaceae,13.6,O,FALSE,NA,20160827,841411.6292,9673639.561
+DUC_A01,10,018a,quinarana,Geissospermum sericeum,Apocynaceae,19,O,FALSE,NA,20160827,841411.1758,9673636.324
+DUC_A01,10,019a,caripe,Licania octandra,Chrysobalanaceae,12.9,O,FALSE,NA,20160827,841409.235,9673635.216
+DUC_A01,10,020a,macucu,Licania guianensis,Chrysobalanaceae,10.8,O,FALSE,NA,20160827,841406.9006,9673635.308
+DUC_A01,10,021a,breu branco,Protium paniculatum,Burseraceae,10.4,O,FALSE,NA,20160827,841404.1607,9673637.783
+DUC_A01,10,022a,freijo branco,Cordia scabrifolia,Boraginaceae,24.2,O,FALSE,NA,20160827,841400.3489,9673636.082
+DUC_A01,10,023a,ucuuba terra firme,Virola sebifera,Myristicaceae,15.6,O,FALSE,NA,20160827,841398.7379,9673635.039
+DUC_A01,10,024a,envira cunauaru,Annona ambotay,Annonaceae,19.1,O,FALSE,NA,20160827,841406.4274,9673633.383
+DUC_A01,10,025a,louro preto,Nectandra cuspidata,Lauraceae,20.8,O,FALSE,NA,20160827,841407.4504,9673632.896
+DUC_A01,10,026a,parapara,Jacaranda copaia,Bignoniaceae,33.7,O,FALSE,NA,20160827,841407.7102,9673631.517
+DUC_A01,10,027a,morta,NA,NA,34.5,O,TRUE,2,20160827,841411.7569,9673632.368
+DUC_A01,10,028a,ucuuba terra firme,Virola sebifera,Myristicaceae,22,O,FALSE,NA,20160827,841412.5104,9673632.515
+DUC_A01,10,029a,morta,NA,NA,12.4,O,TRUE,1,20160827,841414.0705,9673630.82
+DUC_A01,10,030a,morta,NA,NA,17.6,O,TRUE,2,20160827,841411.4748,9673626.647
+DUC_A01,10,031a,mulungu,Micropholis venulosa,Sapotaceae,15.5,O,FALSE,NA,20160827,841417.3748,9673628.503
+DUC_A01,10,032a,breu branco,Protium paniculatum,Burseraceae,23.6,O,FALSE,NA,20160827,841417.282,9673628.457
+DUC_A01,10,033a,breu manga,Tetragastris altissima,Burseraceae,17.3,O,FALSE,NA,20160827,841419.0261,9673627.838
+DUC_A01,10,034a,joao mole,Neea oppositifolia,Nyctaginaceae,33.2,O,FALSE,NA,20160827,841418.0159,9673627.116
+DUC_A01,10,035a,muiracatiara,Astronium graveolens,Anacardiaceae,18.4,O,FALSE,NA,20160827,841414.8625,9673624.55
+DUC_A01,10,036a,morta,NA,NA,10.6,O,TRUE,1,20160827,841411.382,9673626.601
+DUC_A01,10,037a,ucuuba folha grande,NA,NA,13.6,O,FALSE,NA,20160827,841411.703,9673625.893
+DUC_A01,10,038a,morta,NA,NA,29.7,O,TRUE,1,20160827,841412.0097,9673621.675
+DUC_A01,10,039a,fava folha fina,Pseudopiptadenia psilostachya,Fabaceae,19.1,O,FALSE,NA,20160827,841423.9742,9673620.316
+DUC_A01,10,040a,piquia,Caryocar villosum,Caryocaraceae,18.4,O,FALSE,NA,20160827,841424.2204,9673621.097
+DUC_A01,10,041a,breu branco,Protium paniculatum,Burseraceae,13,O,FALSE,NA,20160827,841424.1794,9673620.967
+DUC_A01,10,042a,envira cana,Xylopia nitida,Annonaceae,43.8,O,FALSE,NA,20160827,841423.3451,9673620.52
+DUC_A01,10,043a,breu vermelho,Protium hebetatum,Burseraceae,29,O,FALSE,NA,20160827,841426.4792,9673619.723
+DUC_A01,10,044a,breu vermelho,Protium hebetatum,Burseraceae,16.4,O,FALSE,NA,20160827,841421.0939,9673617.014
+DUC_A01,10,045a,iperana,Eperua bijuga,Fabaceae,18.8,O,FALSE,NA,20160827,841416.5076,9673616.413
+DUC_A01,10,046a,marupa,Simarouba amara,Simaroubaceae,13,O,FALSE,NA,20160827,841416.2273,9673617.261
+DUC_A01,10,047a,muiratinga,Maquira coriacea,Moraceae,58.2,O,FALSE,NA,20160827,841414.7056,9673615.334
+DUC_A01,10,048a,breu branco,Protium paniculatum,Burseraceae,21.3,O,FALSE,NA,20160827,841423.7954,9673622.917
+DUC_A01,10,049a,parapara,Jacaranda copaia,Bignoniaceae,17,O,FALSE,NA,20160827,841412.8938,9673618.267
+DUC_A01,10,050a,iperana,Eperua bijuga,Fabaceae,11.9,O,FALSE,NA,20160827,841408.9831,9673614.637
+DUC_A01,10,051a,pintadinho,Poeppigia procera,Fabaceae,12.2,O,FALSE,NA,20160827,841407.2137,9673612.903
+DUC_A01,10,052a,acaizeiro,NA,NA,11.6,O,FALSE,NA,20160827,841404.9464,9673615.459
+DUC_A01,10,053a,tauari,Couratari stellata,Lecythidaceae,14.6,O,FALSE,NA,20160827,841407.543,9673616.81
+DUC_A01,10,054a,matamata,Eschweilera amazonica,Lecythidaceae,19.1,O,FALSE,NA,20160827,841408.1513,9673617.015
+DUC_A01,10,055a,envira cana,Xylopia nitida,Annonaceae,33.5,O,FALSE,NA,20160827,841406.8694,9673617.922
+DUC_A01,10,056a,matamata branco,Eschweilera coriacea,Lecythidaceae,11.4,O,FALSE,NA,20160827,841404.8893,9673621.388
+DUC_A01,10,057a,acariquara,Minquartia guianensis,Olacaceae,23.6,O,FALSE,NA,20160827,841404.9763,9673615.814
+DUC_A01,10,058a,copaiba,Copaifera reticulata,Fabaceae,16.1,O,FALSE,NA,20160827,841408.5631,9673617.342
+DUC_A01,10,059a,breu branco,Protium paniculatum,Burseraceae,12.6,O,FALSE,NA,20160827,841404.0518,9673626.728
+DUC_A01,10,060a,ucuuba,Virola michelii,Myristicaceae,20.5,O,FALSE,NA,20160827,841402.4461,9673629.357
+DUC_A01,10,061a,merauba,Mouriri collocarpa,Melastomataceae,21,O,FALSE,NA,20160827,841402.8176,9673629.532
+DUC_A01,10,062a,tento,Ormosia grossa,Fabaceae,11.1,O,FALSE,NA,20160827,841402.4946,9673631.231
+DUC_A01,10,063a,ucuuba,Virola michelii,Myristicaceae,10.9,O,FALSE,NA,20160827,841399.4144,9673631.983
+DUC_A01,10,064a,molongo,Ambelania acida,Apocynaceae,13.2,O,FALSE,NA,20160827,841393.8055,9673635.785
+DUC_A01,10,065a,abacabeira,NA,NA,17.8,O,FALSE,NA,20160827,841394.6808,9673638.222
+DUC_A01,10,066a,copaiba,Copaifera reticulata,Fabaceae,20.6,O,FALSE,NA,20160827,841394.9375,9673639.729
+DUC_A01,10,067a,matamata branco,Eschweilera coriacea,Lecythidaceae,17.8,O,FALSE,NA,20160827,841395.1426,9673641.313
+DUC_A01,10,068a,angelim rajado,Zygia racemosa,Fabaceae,13.8,O,FALSE,NA,20160827,841391.3855,9673643.273
+DUC_A01,10,069a,morta,NA,NA,19.3,O,TRUE,2,20160827,841390.566,9673645.389
+DUC_A01,10,070a,mamorana,Eriotheca globosa,Malvaceae,44.9,O,FALSE,NA,20160827,841390.0794,9673645.619
+DUC_A01,10,071a,sucupira preta,Bowdichia nitida,Fabaceae,11.6,O,FALSE,NA,20160827,841391.0293,9673649.367
+DUC_A01,10,072a,morta,NA,NA,17.5,O,TRUE,2,20160827,841412.9026,9673607.56
+DUC_A01,10,073a,matamata branco,Eschweilera coriacea,Lecythidaceae,19.4,O,FALSE,NA,20160827,841384.8886,9673650.596
+DUC_A01,10,074a,inhare,Helicostylis tomentosa,Moraceae,11.8,O,FALSE,NA,20160827,841388.2434,9673651.857
+DUC_A01,10,075a,matamata preto,Eschweilera ovata,Lecythidaceae,13.2,O,FALSE,NA,20160827,841390.5836,9673654.389
+DUC_A01,10,076a,tanenbuco,NA,NA,11.4,O,FALSE,NA,20160827,841393.1717,9673652.063
+DUC_A01,10,077a,mapatirana,Pourouma minor,Urticaceae,20.5,O,FALSE,NA,20160827,841392.9141,9673656.17
+DUC_A01,11,001a,inga xixica,Inga heterophylla,Fabaceae,14.2,O,FALSE,NA,20160831,839340.0417,9673153.885
+DUC_A01,11,001b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,43.2,O,FALSE,NA,20160831,839317.9077,9673140.971
+DUC_A01,11,002a,coquirana,Chrysophyllum sanguinolentum,Sapotaceae,10.5,O,FALSE,NA,20160831,839338.8765,9673155.73
+DUC_A01,11,002b,escorrega macaco,Capirona decorticans,Rubiaceae,43.3,O,FALSE,NA,20160831,839321.3775,9673122.566
+DUC_A01,11,003a,sucupira preta,Bowdichia nitida,Fabaceae,13.7,O,FALSE,NA,20160831,839336.0371,9673152.136
+DUC_A01,11,003b,cupiuba,Goupia glabra,Goupiaceae,51.5,O,FALSE,NA,20160831,839331.166,9673110.543
+DUC_A01,11,004a,abiu rosadinha,NA,NA,20.1,O,FALSE,NA,20160831,839337.9599,9673152.577
+DUC_A01,11,004b,escorrega macaco,Capirona decorticans,Rubiaceae,42,O,FALSE,NA,20160831,839340.8764,9673111.029
+DUC_A01,11,005a,urucurana,Sloanea guianensis,Elaeocarpaceae,15.5,O,FALSE,NA,20160831,839332.4604,9673149.825
+DUC_A01,11,005b,matamata preto,Eschweilera ovata,Lecythidaceae,40.3,O,FALSE,NA,20160831,839334.494,9673096.161
+DUC_A01,11,006a,matamata preto,Eschweilera ovata,Lecythidaceae,11.4,O,FALSE,NA,20160831,839335.9069,9673147.567
+DUC_A01,11,006b,louro preto,Ocotea cernua,Lauraceae,35.5,O,FALSE,NA,20160831,839322.5689,9673097.731
+DUC_A01,11,007a,mamorana,Eriotheca globosa,Malvaceae,29.3,O,FALSE,NA,20160831,839339.3622,9673151.072
+DUC_A01,11,007b,joao mole,Neea oppositifolia,Nyctaginaceae,60,O,FALSE,NA,20160831,839315.6904,9673110.744
+DUC_A01,11,008a,abiurana,Pouteria gongrijpii,Sapotaceae,14.2,O,FALSE,NA,20160831,839342.2681,9673149.806
+DUC_A01,11,008b,uxirana,Sacoglottis guianensis,Humiriaceae,65.8,O,FALSE,NA,20160831,839313.3778,9673113.059
+DUC_A01,11,009a,breu branco,Protium paniculatum,Burseraceae,14,O,FALSE,NA,20160831,839342.0686,9673148.244
+DUC_A01,11,009b,ucuuba vermelha,Virola elongata,Myristicaceae,54.5,O,FALSE,NA,20160831,839312.3135,9673125.301
+DUC_A01,11,010a,mamorana,Eriotheca globosa,Malvaceae,12,O,FALSE,NA,20160831,839335.2533,9673145.637
+DUC_A01,11,011a,casca seca,Licania canescens,Chrysobalanaceae,15.2,O,FALSE,NA,20160831,839334.6663,9673145.326
+DUC_A01,11,012a,abiurana branca,Pouteria guianensis,Sapotaceae,31.5,O,FALSE,NA,20160831,839341.2155,9673144.75
+DUC_A01,11,013a,cumaru,Dipteryx odorata,Fabaceae,10,O,FALSE,NA,20160831,839343.0979,9673144.523
+DUC_A01,11,014a,piquiarana,Caryocar glabrum,Caryocaraceae,63,O,FALSE,NA,20160831,839346.9552,9673143.349
+DUC_A01,11,015a,abiurana branca,Pouteria guianensis,Sapotaceae,10.1,O,FALSE,NA,20160831,839339.0004,9673140.152
+DUC_A01,11,016a,matamata preto,Eschweilera ovata,Lecythidaceae,15.4,O,FALSE,NA,20160831,839341.4118,9673137.824
+DUC_A01,11,017a,jarana,Lecythis lurida,Lecythidaceae,47.1,O,FALSE,NA,20160831,839341.4579,9673135.795
+DUC_A01,11,018a,mapatirana,Pourouma minor,Urticaceae,11.3,O,FALSE,NA,20160831,839341.4518,9673131.894
+DUC_A01,11,019a,mapatirana,Pourouma minor,Urticaceae,11.2,O,FALSE,NA,20160831,839343.9155,9673131.438
+DUC_A01,11,020a,matamata branco,Eschweilera coriacea,Lecythidaceae,13.5,O,FALSE,NA,20160831,839338.3922,9673129.49
+DUC_A01,11,021a,mamorana,Eriotheca globosa,Malvaceae,29.6,O,FALSE,NA,20160831,839339.7223,9673129.08
+DUC_A01,11,022a,sucupira amarela,Diplotropis brasiliensis,Fabaceae,12.1,O,FALSE,NA,20160831,839348.7123,9673125.888
+DUC_A01,11,023a,taquari,Mabea angularis,Euphorbiaceae,22.9,O,FALSE,NA,20160831,839354.5251,9673130.149
+DUC_A01,11,024a,inhare,Helicostylis tomentosa,Moraceae,35.1,O,FALSE,NA,20160831,839355.8031,9673127.921
+DUC_A01,11,025a,angelim rajado,Zygia racemosa,Fabaceae,10,O,FALSE,NA,20160831,839351.6937,9673125.539
+DUC_A01,11,026a,bacaba,Oenocarpus bacaba,Arecaceae,17.8,P,FALSE,NA,20160831,839354.2957,9673118.987
+DUC_A01,11,027a,envira preta,Guatteria schomburgkiana,Annonaceae,10.2,O,FALSE,NA,20160831,839357.2019,9673117.823
+DUC_A01,11,028a,taruma,Vitex triflora,Lamiaceae,12.7,O,FALSE,NA,20160831,839355.9668,9673116.04
+DUC_A01,11,029a,ucuuba branca,Virola crebrinervia,Myristicaceae,18.5,O,FALSE,NA,20160831,839352.0681,9673113.001
+DUC_A01,11,030a,faveira rosa,NA,NA,23.4,O,FALSE,NA,20160831,839361.1263,9673118.442
+DUC_A01,11,031a,liana,NA,NA,17.7,L,FALSE,NA,20160831,839360.643,9673115.146
+DUC_A01,11,032a,breu branco,Protium paniculatum,Burseraceae,24.7,O,FALSE,NA,20160831,839353.9326,9673107.678
+DUC_A01,11,033a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,29.1,O,FALSE,NA,20160831,839350.6759,9673105.45
+DUC_A01,11,034a,morta,NA,NA,23,O,TRUE,4,20160831,839351.8652,9673109.36
+DUC_A01,11,035a,fava orelha de macaco,Enterolobium schomburgkii,Fabaceae,10.5,O,FALSE,NA,20160831,839349.1753,9673107.138
+DUC_A01,11,036a,matamata preto,Eschweilera ovata,Lecythidaceae,12.5,O,FALSE,NA,20160831,839344.9257,9673115.779
+DUC_A01,11,037a,acai,Euterpe oleracea,Arecaceae,11.1,P,FALSE,NA,20160831,839349.8104,9673119.005
+DUC_A01,11,038a,casca seca,Licania canescens,Chrysobalanaceae,12.2,O,FALSE,NA,20160831,839341.8294,9673121.34
+DUC_A01,11,039a,andirobarana,Guarea guidonia,Meliaceae,27.6,O,FALSE,NA,20160831,839339.9555,9673120.726
+DUC_A01,11,040a,morta,NA,NA,11.4,O,TRUE,3,20160831,839338.7007,9673121.992
+DUC_A01,11,041a,piquiarana,Caryocar glabrum,Caryocaraceae,46.1,O,FALSE,NA,20160831,839335.8791,9673126.686
+DUC_A01,11,042a,louro preto,Ocotea cernua,Lauraceae,13.4,O,FALSE,NA,20160831,839335.6275,9673126.545
+DUC_A01,11,043a,louro preto,Nectandra cuspidata,Lauraceae,13.7,O,FALSE,NA,20160831,839338.0052,9673134.117
+DUC_A01,11,044a,abiurana,Pouteria gongrijpii,Sapotaceae,21.8,O,FALSE,NA,20160831,839335.4434,9673134.776
+DUC_A01,11,045a,abiurana,Pouteria gongrijpii,Sapotaceae,19,O,FALSE,NA,20160831,839331.401,9673134.178
+DUC_A01,11,046a,marupa,Simarouba amara,Simaroubaceae,14,O,FALSE,NA,20160831,839329.7039,9673136.259
+DUC_A01,11,047a,matamata branco,Eschweilera coriacea,Lecythidaceae,59.2,O,FALSE,NA,20160831,839333.972,9673139.37
+DUC_A01,11,048a,abiurana,Pouteria gongrijpii,Sapotaceae,15.8,O,FALSE,NA,20160831,839334.0211,9673139.282
+DUC_A01,11,049a,caripe,Licania octandra,Chrysobalanaceae,23.9,O,FALSE,NA,20160831,839330.6761,9673143.323
+DUC_A01,11,050a,mapatirana,Pourouma minor,Urticaceae,12.8,O,FALSE,NA,20160831,839329.5457,9673145.35
+DUC_A01,11,051a,pente de macaco,Apeiba petoumo,Malvaceae,20.6,O,FALSE,NA,20160831,839327.7703,9673144.645
+DUC_A01,11,052a,breu branco,Protium paniculatum,Burseraceae,14.8,O,FALSE,NA,20160831,839324.7172,9673146.249
+DUC_A01,11,053a,acai,Euterpe oleracea,Arecaceae,10.9,P,FALSE,NA,20160831,839330.3902,9673149.652
+DUC_A01,12,001a,muirapiranga,Brosimum rubescens,Moraceae,37.1,O,FALSE,NA,20160827,841435.7437,9673467.94
+DUC_A01,12,001b,caripe,Licania octandra,Chrysobalanaceae,38.3,O,FALSE,NA,20160827,841438.1718,9673464.714
+DUC_A01,12,002a,carapanauba,Aspidosperma excelsum,Apocynaceae,15,O,FALSE,NA,20160827,841437.6893,9673468.157
+DUC_A01,12,002b,louro cheiroso,Diospyros artanthifolia,Ebenaceae,38.4,O,FALSE,NA,20160827,841448.304,9673451.998
+DUC_A01,12,003a,inhare,Helicostylis tomentosa,Moraceae,12.4,O,FALSE,NA,20160827,841441.1746,9673464.187
+DUC_A01,12,003b,ucuuba vermelha,Virola mollissima,Myristicaceae,35.4,O,FALSE,NA,20160827,841451.4106,9673442.622
+DUC_A01,12,004a,muirapiranga,Brosimum rubescens,Moraceae,35.3,O,FALSE,NA,20160827,841436.9986,9673460.345
+DUC_A01,12,004b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,68.9,O,FALSE,NA,20160827,841455.4871,9673440.094
+DUC_A01,12,005a,tento,Ormosia grossa,Fabaceae,25.3,O,FALSE,NA,20160827,841438.6584,9673460.679
+DUC_A01,12,005b,nao identificada,NA,NA,43.5,O,FALSE,NA,20160827,841448.525,9673436.344
+DUC_A01,12,006a,angelim pedra,Hymenolobium petraeum,Fabaceae,90,O,FALSE,NA,20160827,841433.5675,9673458.698
+DUC_A01,12,006b,muirapiranga,Brosimum rubescens,Moraceae,45.2,O,FALSE,NA,20160827,841424.0685,9673410.025
+DUC_A01,12,007a,breu branco,Protium paniculatum,Burseraceae,15.7,O,FALSE,NA,20160827,841435.4441,9673457.268
+DUC_A01,12,007b,tauari,Couratari stellata,Lecythidaceae,43.8,O,FALSE,NA,20160827,841422.3665,9673412.645
+DUC_A01,12,008a,abiu rosadinho,Pouteria reticulata,Sapotaceae,23.7,O,FALSE,NA,20160827,841439.6234,9673457.553
+DUC_A01,12,008b,tauari,Couratari stellata,Lecythidaceae,37.1,O,FALSE,NA,20160827,841416.6725,9673420.585
+DUC_A01,12,009a,guajara vermelho,NA,NA,12.4,O,FALSE,NA,20160827,841443.3146,9673461.081
+DUC_A01,12,009b,sucupira preta,Bowdichia nitida,Fabaceae,61.2,O,FALSE,NA,20160827,841420.3638,9673424.195
+DUC_A01,12,010a,abacabeira,NA,NA,15.9,O,FALSE,NA,20160827,841442.7883,9673459.674
+DUC_A01,12,010b,matamata branco,Eschweilera coriacea,Lecythidaceae,42.1,O,FALSE,NA,20160827,841407.3989,9673447.116
+DUC_A01,12,011a,matamata branco,Eschweilera coriacea,Lecythidaceae,19,O,FALSE,NA,20160827,841446.3082,9673455.631
+DUC_A01,12,011b,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,61.5,O,FALSE,NA,20160827,841409.3333,9673447.553
+DUC_A01,12,012a,muiracacaco,NA,NA,33.9,O,FALSE,NA,20160827,841442.1459,9673452.391
+DUC_A01,12,012b,pau doce,Glycydendron amazonicum,Euphorbiaceae,35,O,FALSE,NA,20160827,841402.4451,9673446.227
+DUC_A01,12,013a,ripeira,Eschweilera micrantha,Lecythidaceae,11.2,O,FALSE,NA,20160827,841442.256,9673454.545
+DUC_A01,12,013b,morta,NA,NA,NA,O,TRUE,1,20160827,841401.8525,9673453.056
+DUC_A01,12,014a,breu branco,Protium paniculatum,Burseraceae,17.6,O,FALSE,NA,20160827,841436.2917,9673451.821
+DUC_A01,12,015a,breu branco,Protium paniculatum,Burseraceae,11.4,O,FALSE,NA,20160827,841444.2551,9673451.114
+DUC_A01,12,016a,morta,NA,NA,11.6,O,TRUE,2,20160827,841444.0015,9673450.986
+DUC_A01,12,017a,matamata branco,Eschweilera coriacea,Lecythidaceae,22.7,O,FALSE,NA,20160827,841442.5815,9673448.273
+DUC_A01,12,018a,jataua,Trichilia micrantha,Meliaceae,10.5,O,FALSE,NA,20160827,841443.7454,9673447.925
+DUC_A01,12,019a,inhare,Helicostylis tomentosa,Moraceae,10.4,O,FALSE,NA,20160827,841445.8504,9673448.415
+DUC_A01,12,020a,joao mole,Neea oppositifolia,Nyctaginaceae,23,O,FALSE,NA,20160827,841443.6778,9673448.243
+DUC_A01,12,021a,acariguara,NA,NA,10,O,FALSE,NA,20160827,841439.3369,9673448.277
+DUC_A01,12,022a,andorinha,Casearia grandiflora,Salicaceae,10.3,O,FALSE,NA,20160827,841440.7069,9673444.242
+DUC_A01,12,023a,abirana,NA,NA,20.8,O,FALSE,NA,20160827,841448.0501,9673444.032
+DUC_A01,12,024a,abiurana,Pouteria gongrijpii,Sapotaceae,16.9,O,FALSE,NA,20160827,841449.1244,9673447.757
+DUC_A01,12,025a,urucurana,Sloanea guianensis,Elaeocarpaceae,33,O,FALSE,NA,20160827,841453.3457,9673444.582
+DUC_A01,12,026a,carapanauba,Aspidosperma excelsum,Apocynaceae,68.3,O,FALSE,NA,20160827,841454.2954,9673444.615
+DUC_A01,12,027a,acaizeiro,NA,NA,14.3,O,FALSE,NA,20160827,841452.6568,9673437.623
+DUC_A01,12,028a,breu branco,Protium paniculatum,Burseraceae,15.5,O,FALSE,NA,20160827,841451.3805,9673433.12
+DUC_A01,12,029a,abiu rosadinho,Pouteria reticulata,Sapotaceae,10.5,O,FALSE,NA,20160827,841449.8583,9673432.765
+DUC_A01,12,030a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,11.9,O,FALSE,NA,20160827,841442.8158,9673436.157
+DUC_A01,12,031a,acariguarana,NA,NA,41.2,O,FALSE,NA,20160827,841447.8049,9673431.04
+DUC_A01,12,032a,jataua,Trichilia micrantha,Meliaceae,35.3,O,FALSE,NA,20160827,841453.1907,9673431.008
+DUC_A01,12,033a,envira surucucu,Duguetia surinamensis,Annonaceae,10.9,O,FALSE,NA,20160827,841448.2834,9673428.045
+DUC_A01,12,034a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,22.9,O,FALSE,NA,20160827,841448.3154,9673426.246
+DUC_A01,12,035a,pintadinho,Poeppigia procera,Fabaceae,11.8,O,FALSE,NA,20160827,841448.007,9673426.802
+DUC_A01,12,036a,mandioqueira,Qualea paraensis,Vochysiaceae,37.1,O,FALSE,NA,20160827,841458.8532,9673432.013
+DUC_A01,12,037a,inhare,Helicostylis tomentosa,Moraceae,17,O,FALSE,NA,20160827,841448.0111,9673424.861
+DUC_A01,12,038a,ripeira,Eschweilera micrantha,Lecythidaceae,24.6,O,FALSE,NA,20160827,841443.1357,9673426.288
+DUC_A01,12,039a,andirobarana,Guarea guidonia,Meliaceae,33.6,O,FALSE,NA,20160827,841442.3415,9673429.26
+DUC_A01,12,040a,abiu rosadinho,Pouteria reticulata,Sapotaceae,33.4,O,FALSE,NA,20160827,841438.9241,9673437.34
+DUC_A01,12,041a,macucu,Licania guianensis,Chrysobalanaceae,15.2,O,FALSE,NA,20160827,841438.1584,9673440.66
+DUC_A01,12,042a,puriu,NA,NA,11.9,O,FALSE,NA,20160827,841437.1258,9673440.963
+DUC_A01,12,043a,cumaru,Dipteryx odorata,Fabaceae,36.2,O,FALSE,NA,20160827,841436.7545,9673446.496
+DUC_A01,12,044a,carapanauba,Aspidosperma excelsum,Apocynaceae,34.9,O,FALSE,NA,20160827,841433.4545,9673443.869
+DUC_A01,12,045a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,12,O,FALSE,NA,20160827,841433.1234,9673444.657
+DUC_A01,12,046a,matamata preto,Eschweilera ovata,Lecythidaceae,25.2,O,FALSE,NA,20160827,841434.5665,9673449.073
+DUC_A01,12,047a,capueiro,Rinorea guianensis,Violaceae,18,O,FALSE,NA,20160827,841434.209,9673449.131
+DUC_A01,12,048a,caripe,Licania octandra,Chrysobalanaceae,19.1,O,FALSE,NA,20160827,841431.3775,9673453.058
+DUC_A01,12,049a,matamata branco,Eschweilera coriacea,Lecythidaceae,16.8,O,FALSE,NA,20160827,841443.4758,9673431.091
+DUC_A01,12,050a,tamaguare,NA,NA,30.9,O,FALSE,NA,20160827,841428.0742,9673458.415
+DUC_A01,12,051a,inhare,Helicostylis tomentosa,Moraceae,12.8,O,FALSE,NA,20160827,841428.4189,9673459.752
+DUC_A01,12,052a,breu branco,Protium paniculatum,Burseraceae,13,O,FALSE,NA,20160827,841426.6254,9673465.336
+DUC_A01,12,053a,abiu rosadinho,Pouteria reticulata,Sapotaceae,37.1,O,FALSE,NA,20160827,841426.1917,9673465.136
+DUC_A01,12,054a,breu branco,Protium paniculatum,Burseraceae,13.1,O,FALSE,NA,20160827,841424.106,9673467.322
+DUC_A01,12,055a, liana,NA,NA,12.3,L,FALSE,NA,20160827,841423.4967,9673467.044
+DUC_A01,13,001a,papo de mutum,Lacunaria jenmanii,Ochnaceae,21.8,O,FALSE,NA,20160826,840553.6831,9672484.587
+DUC_A01,13,001b,sucupira babona,Diplotropis sp.,Fabaceae,50.6,O,FALSE,NA,20160826,840539.3608,9672462.992
+DUC_A01,13,002a,breu branco,Protium paniculatum,Burseraceae,22.5,O,FALSE,NA,20160826,840547.916,9672481.361
+DUC_A01,13,002b,morta,NA,NA,51,O,TRUE,2,20160826,840526.4087,9672454.152
+DUC_A01,13,003a,morta,NA,NA,51.3,O,TRUE,2,20160826,840551.0135,9672479.886
+DUC_A01,13,003b,mandioqueira,Qualea paraensis,Vochysiaceae,48,O,FALSE,NA,20160826,840543.5517,9672447.698
+DUC_A01,13,004a,seringuarana,NA,NA,15.5,O,FALSE,NA,20160826,840551.0799,9672477.826
+DUC_A01,13,004b,abiu preto,Pouteria sp.,Sapotaceae,41.7,O,FALSE,NA,20160826,840528.4318,9672432.481
+DUC_A01,13,005a,iperana,Eperua bijuga,Fabaceae,15.2,O,FALSE,NA,20160826,840549.7608,9672473.29
+DUC_A01,13,005b,matamata branco,Eschweilera coriacea,Lecythidaceae,38.8,O,FALSE,NA,20160826,840538.3709,9672438.895
+DUC_A01,13,006a,itauba,Mezilaurus itauba,Lauraceae,11,O,FALSE,NA,20160826,840550.9263,9672472.243
+DUC_A01,13,006b,quarubarana,Erisma uncinatum,Vochysiaceae,60.2,O,FALSE,NA,20160826,840530.9771,9672444.024
+DUC_A01,13,007a,breu branco,Protium paniculatum,Burseraceae,19.7,O,FALSE,NA,20160826,840556.0098,9672472.995
+DUC_A01,13,007b,fava rosa,NA,NA,41.5,O,FALSE,NA,20160826,840525.0044,9672448.663
+DUC_A01,13,008a,cupiuba,Goupia glabra,Goupiaceae,57.8,O,FALSE,NA,20160826,840555.8893,9672469.302
+DUC_A01,13,008b,morta,NA,NA,57.8,O,TRUE,4,20160826,840521.3297,9672447.215
+DUC_A01,13,009a,abiurana,Pouteria gongrijpii,Sapotaceae,15,O,FALSE,NA,20160826,840561.6111,9672470.92
+DUC_A01,13,009b,jarana,Lecythis lurida,Lecythidaceae,39.8,O,FALSE,NA,20160826,840515.8316,9672458.457
+DUC_A01,13,010a,mapatirana,Pourouma minor,Urticaceae,36.5,O,FALSE,NA,20160826,840563.3951,9672467.65
+DUC_A01,13,010b,mandioqueira,Qualea paraensis,Vochysiaceae,36.6,O,FALSE,NA,20160826,840520.559,9672468.524
+DUC_A01,13,011a,matamata branco,Eschweilera coriacea,Lecythidaceae,25.8,O,FALSE,NA,20160826,840558.1797,9672465.531
+DUC_A01,13,012a,castanha sapucaia,Lecythis pisonis,Lecythidaceae,82,O,FALSE,NA,20160826,840558.4245,9672465.107
+DUC_A01,13,013a,breu branco,Protium paniculatum,Burseraceae,19,O,FALSE,NA,20160826,840553.5733,9672467.453
+DUC_A01,13,014a,breu branco,Protium paniculatum,Burseraceae,10.8,O,FALSE,NA,20160826,840548.8249,9672466.11
+DUC_A01,13,015a,ucuubarana,Iryanthera paraensis,Myristicaceae,12.3,O,FALSE,NA,20160826,840558.0522,9672463.599
+DUC_A01,13,016a,muirapiranga,Brosimum rubescens,Moraceae,44.2,O,FALSE,NA,20160826,840558.1606,9672463.216
+DUC_A01,13,017a,mapatirana,Pourouma minor,Urticaceae,11.8,O,FALSE,NA,20160826,840558.2689,9672462.832
+DUC_A01,13,018a,morta,NA,NA,11.3,O,TRUE,2,20160826,840552.9038,9672460.969
+DUC_A01,13,019a,abiu rosadinho,Pouteria reticulata,Sapotaceae,46.9,O,FALSE,NA,20160826,840562.1664,9672458.235
+DUC_A01,13,020a,breu branco,Protium paniculatum,Burseraceae,15.2,O,FALSE,NA,20160826,840563.5011,9672458.474
+DUC_A01,13,021a,matamata branco,Eschweilera coriacea,Lecythidaceae,16.3,O,FALSE,NA,20160826,840566.5651,9672458.272
+DUC_A01,13,022a,breu branco,Protium paniculatum,Burseraceae,14.2,O,FALSE,NA,20160826,840566.1357,9672455.093
+DUC_A01,13,023a,capueiro,Rinorea guianensis,Violaceae,11.2,O,FALSE,NA,20160826,840562.9146,9672454.779
+DUC_A01,13,024a,arataciu,Sagotia racemosa,Euphorbiaceae,17.9,O,FALSE,NA,20160826,840559.083,9672454.153
+DUC_A01,13,025a,ucuuba vermelha,Virola elongata,Myristicaceae,11.2,O,FALSE,NA,20160826,840556.8914,9672454.026
+DUC_A01,13,026a,muiracatiara,Astronium graveolens,Anacardiaceae,17.4,O,FALSE,NA,20160826,840558.2496,9672449.688
+DUC_A01,13,027a,papo de mutum,Lacunaria jenmanii,Ochnaceae,14.3,O,FALSE,NA,20160826,840564.8217,9672451.473
+DUC_A01,13,028a,nao indetificada,NA,NA,13.1,O,FALSE,NA,20160826,840567.4525,9672451.047
+DUC_A01,13,029a,breu branco,Protium paniculatum,Burseraceae,19.6,O,FALSE,NA,20160826,840566.7977,9672449.624
+DUC_A01,13,030a,seringueira,Hevea brasiliensis,Euphorbiaceae,11.1,O,FALSE,NA,20160826,840567.3849,9672449.591
+DUC_A01,13,031a,mandioqueira,Qualea paraensis,Vochysiaceae,16.5,O,FALSE,NA,20160826,840566.191,9672449.1
+DUC_A01,13,032a,louro amarelo,Aniba parviflora,Lauraceae,20.4,O,FALSE,NA,20160826,840558.3415,9672447.551
+DUC_A01,13,033a,urucurana,Sloanea guianensis,Elaeocarpaceae,20.9,O,FALSE,NA,20160826,840563.9012,9672443.8
+DUC_A01,13,034a,ucuuba vermelha,Virola mollissima,Myristicaceae,17.3,O,FALSE,NA,20160826,840566.3979,9672443.414
+DUC_A01,13,035a,tatapiririca,Tapirira guianensis,Anacardiaceae,12.3,O,FALSE,NA,20160826,840576.0198,9672445.49
+DUC_A01,13,036a,mapatirana,Pourouma minor,Urticaceae,35,O,FALSE,NA,20160826,840575.4007,9672445.181
+DUC_A01,13,037a,catauari,Couepia racemosa,Chrysobalanaceae,11.5,O,FALSE,NA,20160826,840563.9821,9672439.699
+DUC_A01,13,038a,morta,NA,NA,27.2,O,TRUE,2,20160826,840564.3757,9672440.004
+DUC_A01,13,039a,macucu,Licania guianensis,Chrysobalanaceae,27.7,O,FALSE,NA,20160826,840562.607,9672439.121
+DUC_A01,13,040a,arataciu,Sagotia racemosa,Euphorbiaceae,13.2,O,FALSE,NA,20160826,840561.68,9672439.746
+DUC_A01,13,041a,goiabinha,Myrcia splendens,Myrtaceae,27.5,O,FALSE,NA,20160826,840553.1308,9672448.738
+DUC_A01,13,042a,morta,NA,NA,15.9,O,TRUE,NA,20160826,840553.7668,9672449.605
+DUC_A01,13,043a,morta,NA,NA,15.5,O,TRUE,1,20160826,840551.1004,9672452.29
+DUC_A01,13,044a,caripe,Licania octandra,Chrysobalanaceae,20.3,O,FALSE,NA,20160826,840551.7384,9672455.125
+DUC_A01,13,045a,capueiro,Rinorea guianensis,Violaceae,18.9,O,FALSE,NA,20160826,840554.9462,9672457.413
+DUC_A01,13,046a,inhare,Helicostylis tomentosa,Moraceae,42,O,FALSE,NA,20160826,840553.6826,9672458.63
+DUC_A01,13,047a,morta,NA,NA,13.2,O,TRUE,1,20160826,840551.9448,9672458.509
+DUC_A01,13,048a,morta,NA,NA,12.5,O,TRUE,1,20160826,840551.7605,9672458.634
+DUC_A01,13,049a,abiu rosadinho,Pouteria reticulata,Sapotaceae,50.1,O,FALSE,NA,20160826,840551.799,9672459.748
+DUC_A01,13,050a,manguirana,NA,NA,17,O,FALSE,NA,20160826,840546.6536,9672462.039
+DUC_A01,13,051a,iperana,Eperua bijuga,Fabaceae,16.8,O,FALSE,NA,20160826,840543.019,9672464.657
+DUC_A01,13,052a,andirobarana,Guarea guidonia,Meliaceae,10,O,FALSE,NA,20160826,840542.9682,9672471.423
+DUC_A01,14,001a,louro preto,Nectandra cuspidata,Lauraceae,16.4,O,FALSE,NA,20160826,840584.9487,9672329.976
+DUC_A01,14,001b,abiu vermelho,Pouteria cladantha,Sapotaceae,46,O,FALSE,NA,20160826,840564.9852,9672303.102
+DUC_A01,14,002a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,25.9,O,FALSE,NA,20160826,840580.3239,9672325.132
+DUC_A01,14,002b,quarubarana,Erisma uncinatum,Vochysiaceae,42.2,O,FALSE,NA,20160826,840567.7064,9672299.941
+DUC_A01,14,003a,inhare,Helicostylis tomentosa,Moraceae,20,O,FALSE,NA,20160826,840577.0403,9672322.746
+DUC_A01,14,003b,morta,NA,NA,43.2,O,TRUE,3,20160826,840573.7859,9672296.714
+DUC_A01,14,004a,cumaru,Dipteryx odorata,Fabaceae,45,O,FALSE,NA,20160826,840577.462,9672320.701
+DUC_A01,14,004b,tauari,Couratari stellata,Lecythidaceae,42.2,O,FALSE,NA,20160826,840572.8821,9672296.28
+DUC_A01,14,005a,mamorana,Eriotheca globosa,Malvaceae,26.6,O,FALSE,NA,20160826,840581.7161,9672324.57
+DUC_A01,14,005b,abiu vermelho,Pouteria cladantha,Sapotaceae,35.2,O,FALSE,NA,20160826,840573.9696,9672289.537
+DUC_A01,14,006a,uxirana,Sacoglottis guianensis,Humiriaceae,11.4,O,FALSE,NA,20160826,840581.3097,9672322.234
+DUC_A01,14,006b,quarubarana,Erisma uncinatum,Vochysiaceae,65.5,O,FALSE,NA,20160826,840556.1284,9672277.341
+DUC_A01,14,007a,envira preta,Guatteria schomburgkiana,Annonaceae,17,O,FALSE,NA,20160826,840578.7261,9672318.054
+DUC_A01,14,007b,tauari,Couratari stellata,Lecythidaceae,48.7,O,FALSE,NA,20160826,840556.7429,9672277.634
+DUC_A01,14,008a,mamorana,Eriotheca globosa,Malvaceae,15.6,O,FALSE,NA,20160826,840583.9039,9672318.766
+DUC_A01,14,008b,anani,Symphonia globulifera,Clusiaceae,55,O,FALSE,NA,20160826,840550.5782,9672288.126
+DUC_A01,14,009a,ucuubarana,Iryanthera paraensis,Myristicaceae,12.1,O,FALSE,NA,20160826,840581.4655,9672315.672
+DUC_A01,14,009b,mamorana,Eriotheca globosa,Malvaceae,42.4,O,FALSE,NA,20160826,840552.7619,9672289.177
+DUC_A01,14,010a,breu branco,Protium paniculatum,Burseraceae,21.7,O,FALSE,NA,20160826,840586.9307,9672316.63
+DUC_A01,14,010b,amapa doce,Brosimum parinarioides,Moraceae,54.4,O,FALSE,NA,20160826,840539.9045,9672303.226
+DUC_A01,14,011a,angelim pedra,Hymenolobium petraeum,Fabaceae,59,O,FALSE,NA,20160826,840584.6783,9672314.753
+DUC_A01,14,011b,fava vermelha,Stryphnodendron pulcherrimum,Fabaceae,44.6,O,FALSE,NA,20160826,840539.8551,9672305.431
+DUC_A01,14,012a,virola(ucuuba),NA,NA,34.8,O,FALSE,NA,20160826,840587.9196,9672315.307
+DUC_A01,14,013a,macucu,Licania guianensis,Chrysobalanaceae,12.5,O,FALSE,NA,20160826,840585.6167,9672311.72
+DUC_A01,14,014a,abiurana,Pouteria gongrijpii,Sapotaceae,37.1,O,FALSE,NA,20160826,840585.6953,9672311.533
+DUC_A01,14,015a,amapa doce,Brosimum parinarioides,Moraceae,12.7,O,FALSE,NA,20160826,840584.5596,9672309.748
+DUC_A01,14,016a,morta,NA,NA,34.5,O,TRUE,2,20160826,840578.5227,9672306.949
+DUC_A01,14,017a,inhare,Helicostylis tomentosa,Moraceae,11.8,O,FALSE,NA,20160826,840579.6187,9672305.009
+DUC_A01,14,018a,pataua,Oenocarpus bataua,Arecaceae,11.9,P,FALSE,NA,20160826,840589.8242,9672311.725
+DUC_A01,14,019a,morta,NA,NA,27.1,O,TRUE,2,20160826,840585.4149,9672306.453
+DUC_A01,14,020a,breu branco,Protium paniculatum,Burseraceae,14,O,FALSE,NA,20160826,840588.3266,9672306.056
+DUC_A01,14,021a,inhare,Helicostylis tomentosa,Moraceae,33.2,O,FALSE,NA,20160826,840592.6082,9672308.903
+DUC_A01,14,022a,urucurana,Sloanea guianensis,Elaeocarpaceae,28.1,O,FALSE,NA,20160826,840587.2709,9672302.629
+DUC_A01,14,023a,pataua,Oenocarpus bataua,Arecaceae,11.9,P,FALSE,NA,20160826,840587.4701,9672302.163
+DUC_A01,14,024a,mamorana,Eriotheca globosa,Malvaceae,20.4,O,FALSE,NA,20160826,840589.8339,9672301.95
+DUC_A01,14,025a,guajara branco,Pouteria sp.,Sapotaceae,16,O,FALSE,NA,20160826,840589.7079,9672300.205
+DUC_A01,14,026a,taguari,NA,NA,15.1,O,FALSE,NA,20160826,840589.7563,9672299.33
+DUC_A01,14,027a,faveira rosa,NA,NA,51.2,O,FALSE,NA,20160826,840591.4179,9672301.249
+DUC_A01,14,028a,tauari,Couratari stellata,Lecythidaceae,46.5,O,FALSE,NA,20160826,840591.7003,9672298.015
+DUC_A01,14,029a,louro preto,Ocotea cernua,Lauraceae,12,O,FALSE,NA,20160826,840591.8667,9672296.86
+DUC_A01,14,030a,acaizeiro,NA,NA,15.5,O,FALSE,NA,20160826,840588.9187,9672295.788
+DUC_A01,14,031a,abiurana,Pouteria gongrijpii,Sapotaceae,27.7,O,FALSE,NA,20160826,840594.3205,9672294.776
+DUC_A01,14,032a,taguari,NA,NA,12.1,O,FALSE,NA,20160826,840594.1147,9672290.527
+DUC_A01,14,033a,morta,NA,NA,41.5,O,TRUE,2,20160826,840597.0286,9672287.761
+DUC_A01,14,034a,caripe,Licania octandra,Chrysobalanaceae,30.8,O,FALSE,NA,20160826,840595.1755,9672284.865
+DUC_A01,14,035a,morta,NA,NA,21.8,O,TRUE,1,20160826,840590.0551,9672287.14
+DUC_A01,14,036a,mamorana,Eriotheca globosa,Malvaceae,12,O,FALSE,NA,20160826,840560.9711,9672276.651
+DUC_A01,14,037a,pintadinho,Poeppigia procera,Fabaceae,15.6,O,FALSE,NA,20160826,840560.8464,9672276.481
+DUC_A01,14,038a,marupa,Simarouba amara,Simaroubaceae,18.1,O,FALSE,NA,20160826,840557.5647,9672271.258
+DUC_A01,14,039a,acapurana,Batesia floribunda,Fabaceae,14,O,FALSE,NA,20160826,840587.9025,9672293.957
+DUC_A01,14,040a,marupa,Simarouba amara,Simaroubaceae,16.7,O,FALSE,NA,20160826,840588.0788,9672294.041
+DUC_A01,14,041a,louro preto,Nectandra cuspidata,Lauraceae,12.3,O,FALSE,NA,20160826,840587.7543,9672294.783
+DUC_A01,14,042a,guajara branco,Pouteria sp.,Sapotaceae,23.9,O,FALSE,NA,20160826,840581.1312,9672296.32
+DUC_A01,14,043a,acaizeiro,NA,NA,12,O,FALSE,NA,20160826,840582.9539,9672298.314
+DUC_A01,14,044a,pataua,Oenocarpus bataua,Arecaceae,20.6,P,FALSE,NA,20160826,840581.1757,9672302.281
+DUC_A01,14,045a,tinteiro,Miconia poeppigii,Melastomataceae,33.4,O,FALSE,NA,20160826,840579.1434,9672304.331
+DUC_A01,14,046a,breu branco,Protium paniculatum,Burseraceae,21.4,O,FALSE,NA,20160826,840577.2643,9672306.005
+DUC_A01,14,047a,mandioqueira,Qualea paraensis,Vochysiaceae,35.3,O,FALSE,NA,20160826,840575.9388,9672311.423
+DUC_A01,14,048a,sorvao,NA,NA,24.3,O,FALSE,NA,20160826,840573.8622,9672312.214
+DUC_A01,14,049a,acaizeiro,NA,NA,10.3,O,FALSE,NA,20160826,840570.0837,9672313.636
+DUC_A01,14,050a,breu branco,Protium paniculatum,Burseraceae,11.1,O,FALSE,NA,20160826,840572.2118,9672314.556
+DUC_A01,14,051a,ucuuba,Virola michelii,Myristicaceae,60,O,FALSE,NA,20160826,840574.1075,9672315.476
+DUC_A01,14,052a,breu branco,Protium paniculatum,Burseraceae,11,O,FALSE,NA,20160826,840577.1553,9672316.393
+DUC_A01,14,053a,guajara branco,Pouteria sp.,Sapotaceae,10.3,O,FALSE,NA,20160826,840572.4058,9672316.671
+DUC_A01,15,001a,pataua,Oenocarpus bataua,Arecaceae,17.7,P,FALSE,NA,20160826,840555.1507,9672126.35
+DUC_A01,15,001b,tauari,Couratari stellata,Lecythidaceae,68.7,O,FALSE,NA,20160826,840550.4134,9672119.705
+DUC_A01,15,002a,iperana,Eperua bijuga,Fabaceae,41.5,O,FALSE,NA,20160826,840558.0949,9672122.987
+DUC_A01,15,002b,louro vermelho,Sextonia rubra,Lauraceae,43,O,FALSE,NA,20160826,840550.759,9672118.657
+DUC_A01,15,003a,breu branco,Protium paniculatum,Burseraceae,10,O,FALSE,NA,20160826,840558.5817,9672122.106
+DUC_A01,15,003b,jatoba,Hymenaea courbaril,Fabaceae,75.4,O,FALSE,NA,20160826,840543.1119,9672118.027
+DUC_A01,15,004a,envira preta,Guatteria schomburgkiana,Annonaceae,10.4,O,FALSE,NA,20160826,840559.7117,9672120.758
+DUC_A01,15,004b,amapa amargoso,Brosimum guianense,Moraceae,66.7,O,FALSE,NA,20160826,840552.569,9672088.811
+DUC_A01,15,005a,breu branco,Protium paniculatum,Burseraceae,16.1,O,FALSE,NA,20160826,840560.8997,9672119.662
+DUC_A01,15,005b,mamorana,Eriotheca globosa,Malvaceae,63.6,O,FALSE,NA,20160826,840557.0519,9672088.811
+DUC_A01,15,006a,breu branco,Protium paniculatum,Burseraceae,16.1,O,FALSE,NA,20160826,840561.4961,9672119.171
+DUC_A01,15,006b,guajara bolacha,Pouteria oppositifolia,Sapotaceae,55,O,FALSE,NA,20160826,840550.5354,9672087.454
+DUC_A01,15,007a,breu branco,Protium paniculatum,Burseraceae,13.9,O,FALSE,NA,20160826,840562.6935,9672118.413
+DUC_A01,15,007b,louro preto,Nectandra cuspidata,Lauraceae,43,O,FALSE,NA,20160826,840561.6592,9672079.602
+DUC_A01,15,008a,axixa,Sterculia pruriens,Malvaceae,36.4,O,FALSE,NA,20160826,840563.4228,9672117.538
+DUC_A01,15,008b,inhare,Helicostylis tomentosa,Moraceae,38.4,O,FALSE,NA,20160826,840543.1176,9672090.458
+DUC_A01,15,009a,pataua,Oenocarpus bataua,Arecaceae,19.5,P,FALSE,NA,20160826,840562.5764,9672122.964
+DUC_A01,15,010a,morta,NA,NA,15.8,O,TRUE,1,20160826,840567.3144,9672117.633
+DUC_A01,15,011a,morta,NA,NA,23.1,O,TRUE,1,20160826,840569.2995,9672114.11
+DUC_A01,15,012a,abiurana,Pouteria gongrijpii,Sapotaceae,20.8,O,FALSE,NA,20160826,840569.4866,9672113.195
+DUC_A01,15,013a,abiurana,Pouteria gongrijpii,Sapotaceae,32,O,TRUE,1,20160826,840571.3936,9672111.759
+DUC_A01,15,014a,jatoba,Hymenaea courbaril,Fabaceae,10.7,O,FALSE,NA,20160826,840569.794,9672112.227
+DUC_A01,15,015a,louro preto,Ocotea cernua,Lauraceae,14.7,O,FALSE,NA,20160826,840569.6009,9672112.135
+DUC_A01,15,016a,breu branco,Protium paniculatum,Burseraceae,11.9,O,FALSE,NA,20160826,840568.2353,9672111.042
+DUC_A01,15,017a,morta,NA,NA,49.7,O,TRUE,1,20160826,840575.8488,9672106.288
+DUC_A01,15,018a,envira preta,Guatteria schomburgkiana,Annonaceae,12.4,O,FALSE,NA,20160826,840571.4516,9672102.374
+DUC_A01,15,019a,urucurana branca,NA,NA,11.5,O,FALSE,NA,20160826,840573.8208,9672103.248
+DUC_A01,15,020a,mamorana,Eriotheca globosa,Malvaceae,33.2,O,FALSE,NA,20160826,840574.6401,9672101.751
+DUC_A01,15,021a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,29.1,O,FALSE,NA,20160826,840576.0442,9672100.633
+DUC_A01,15,022a,louro preto,Nectandra cuspidata,Lauraceae,19.2,O,FALSE,NA,20160826,840575.1448,9672097.584
+DUC_A01,15,023a,mulungu,Micropholis venulosa,Sapotaceae,11.5,O,FALSE,NA,20160826,840578.0479,9672098.466
+DUC_A01,15,024a,uxirana,Sacoglottis guianensis,Humiriaceae,25.5,O,FALSE,NA,20160826,840582.3941,9672098.566
+DUC_A01,15,025a,caripe,Licania octandra,Chrysobalanaceae,17,O,FALSE,NA,20160826,840579.9424,9672096.467
+DUC_A01,15,026a,pintadinho,Poeppigia procera,Fabaceae,15.6,O,FALSE,NA,20160826,840578.4694,9672097.228
+DUC_A01,15,027a,pitaica,Swartzia polyphylla,Fabaceae,36.1,O,FALSE,NA,20160826,840581.8956,9672094.274
+DUC_A01,15,028a,fava folha fina,Pseudopiptadenia psilostachya,Fabaceae,35.4,O,FALSE,NA,20160826,840582.5868,9672091.954
+DUC_A01,15,029a,pataua,Oenocarpus bataua,Arecaceae,15.9,P,FALSE,NA,20160826,840584.2298,9672093.675
+DUC_A01,15,030a,morta,NA,NA,13.7,O,TRUE,1,20160826,840578.2411,9672091.213
+DUC_A01,15,031a,inga branco,Inga thibaudiana,Fabaceae,16.8,O,FALSE,NA,20160826,840580.0842,9672087.674
+DUC_A01,15,032a,capueiro,Rinorea guianensis,Violaceae,10,O,FALSE,NA,20160826,840580.7667,9672086.997
+DUC_A01,15,033a,louro preto,Ocotea cernua,Lauraceae,13.9,O,FALSE,NA,20160826,840574.0383,9672082.826
+DUC_A01,15,034a,matamata,Eschweilera amazonica,Lecythidaceae,15.9,O,FALSE,NA,20160826,840570.0537,9672089.282
+DUC_A01,15,035a,inga amarelo,Inga sp.,Fabaceae,15,O,FALSE,NA,20160826,840570.0301,9672090.9
+DUC_A01,15,036a,jataua,Trichilia micrantha,Meliaceae,12.8,O,FALSE,NA,20160826,840573.8581,9672091.101
+DUC_A01,15,037a,louro preto,Ocotea cernua,Lauraceae,26.5,O,FALSE,NA,20160826,840570.1064,9672090.935
+DUC_A01,15,038a,inga branco,Inga thibaudiana,Fabaceae,17.2,O,FALSE,NA,20160826,840571.3448,9672093.127
+DUC_A01,15,039a,uxirana,Sacoglottis guianensis,Humiriaceae,16.4,O,FALSE,NA,20160826,840570.8621,9672095.635
+DUC_A01,15,040a,guajara branco,Pouteria sp.,Sapotaceae,14.1,O,FALSE,NA,20160826,840569.9947,9672096.66
+DUC_A01,15,041a,louro preto,Nectandra cuspidata,Lauraceae,28,O,FALSE,NA,20160826,840567.9288,9672098.666
+DUC_A01,15,042a,axixa,Sterculia pruriens,Malvaceae,19.5,O,FALSE,NA,20160826,840567.5618,9672102.003
+DUC_A01,15,043a,breu branco,Protium paniculatum,Burseraceae,27.3,O,FALSE,NA,20160826,840564.0505,9672104.211
+DUC_A01,15,044a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,11.3,O,FALSE,NA,20160826,840564.5018,9672097.09
+DUC_A01,15,045a,guajara branco,Pouteria sp.,Sapotaceae,20.1,O,FALSE,NA,20160826,840562.8547,9672102.226
+DUC_A01,15,046a,louro preto,Ocotea cernua,Lauraceae,21.9,O,FALSE,NA,20160826,840561.1682,9672112.773
+DUC_A01,15,047a,matamata branco,Eschweilera coriacea,Lecythidaceae,10.2,O,FALSE,NA,20160826,840559.4327,9672112.934
+DUC_A01,15,048a,tento cachua,NA,NA,17.7,O,FALSE,NA,20160826,840558.6275,9672114.872
+DUC_A01,15,049a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,29.6,O,FALSE,NA,20160826,840560.2961,9672115.238
+DUC_A01,15,050a,pintadinho,Poeppigia procera,Fabaceae,17,O,FALSE,NA,20160826,840560.1787,9672115.292
+DUC_A01,15,051a,envira preta,Guatteria schomburgkiana,Annonaceae,15.5,O,FALSE,NA,20160826,840560.6623,9672112.308
+DUC_A01,15,052a,mulungu,Micropholis venulosa,Sapotaceae,12.4,O,FALSE,NA,20160826,840560.4941,9672112.559
+DUC_A01,15,053a,tento,Ormosia grossa,Fabaceae,25.3,O,FALSE,NA,20160826,840556.936,9672116.712
+DUC_A01,15,054a,envira preta,Guatteria schomburgkiana,Annonaceae,14.3,O,FALSE,NA,20160826,840555.1606,9672119.4
+DUC_A01,15,055a,breu branco,Protium paniculatum,Burseraceae,17.7,O,FALSE,NA,20160826,840550.9423,9672122.533
+DUC_A01,16,001a,tento,Ormosia grossa,Fabaceae,10.3,O,FALSE,NA,20160829,841547.9906,9672561.683
+DUC_A01,16,001b,inga vermelho,Inga alba,Fabaceae,35.7,O,FALSE,NA,20160829,841533.3087,9672554.887
+DUC_A01,16,002a,inga xixica,Inga heterophylla,Fabaceae,45.1,O,FALSE,NA,20160829,841544.3841,9672560.26
+DUC_A01,16,002b,cumaru,Dipteryx odorata,Fabaceae,70,O,FALSE,NA,20160829,841534.156,9672521.13
+DUC_A01,16,003a,pataua,Oenocarpus bataua,Arecaceae,22.3,P,FALSE,NA,20160829,841547.0713,9672559.013
+DUC_A01,16,003b,inhare,Helicostylis tomentosa,Moraceae,39,O,FALSE,NA,20160829,841522.6622,9672539.453
+DUC_A01,16,004a,breu branco,Protium paniculatum,Burseraceae,23.2,O,FALSE,NA,20160829,841547.623,9672556.883
+DUC_A01,16,004b,mandioqueira,Qualea paraensis,Vochysiaceae,50.5,O,FALSE,NA,20160829,841530.177,9672546.525
+DUC_A01,16,005a,mamorana,Eriotheca globosa,Malvaceae,13.3,O,FALSE,NA,20160829,841546.0639,9672556.489
+DUC_A01,16,005b,fava saboeiro,Abarema jupunba,Fabaceae,35.7,O,FALSE,NA,20160829,841512.3484,9672548.587
+DUC_A01,16,006a,breu branco,Protium paniculatum,Burseraceae,23.1,O,FALSE,NA,20160829,841543.1546,9672555.292
+DUC_A01,16,007a,mapatirana,Pourouma minor,Urticaceae,19,O,FALSE,NA,20160829,841543.217,9672554.331
+DUC_A01,16,008a,breu branco,Protium paniculatum,Burseraceae,17.1,O,FALSE,NA,20160829,841545.1466,9672552.508
+DUC_A01,16,009a,ucuuba,Virola michelii,Myristicaceae,14.8,O,FALSE,NA,20160829,841545.2029,9672552.333
+DUC_A01,16,010a,pataua,Oenocarpus bataua,Arecaceae,22.4,P,FALSE,NA,20160829,841545.1236,9672550.033
+DUC_A01,16,011a,ucuubarana,Iryanthera paraensis,Myristicaceae,11.5,O,FALSE,NA,20160829,841548.7588,9672552.535
+DUC_A01,16,012a,cumaru,Dipteryx odorata,Fabaceae,20,O,FALSE,NA,20160829,841548.5867,9672544.499
+DUC_A01,16,013a,ucuubarana,Iryanthera paraensis,Myristicaceae,20.4,O,FALSE,NA,20160829,841546.1488,9672543.501
+DUC_A01,16,014a,pataua,Oenocarpus bataua,Arecaceae,19.5,P,FALSE,NA,20160829,841547.3859,9672542.616
+DUC_A01,16,015a,pataua,Oenocarpus bataua,Arecaceae,20.9,P,FALSE,NA,20160829,841552.4174,9672542.633
+DUC_A01,16,016a,pataua,Oenocarpus bataua,Arecaceae,18.6,P,FALSE,NA,20160829,841550.1848,9672538.72
+DUC_A01,16,017a,breu branco,Protium paniculatum,Burseraceae,11,O,FALSE,NA,20160829,841546.2131,9672538.228
+DUC_A01,16,018a,mamorana,Eriotheca globosa,Malvaceae,19.9,O,FALSE,NA,20160829,841546.5983,9672536.885
+DUC_A01,16,019a,catauari,Couepia racemosa,Chrysobalanaceae,14.1,O,FALSE,NA,20160829,841552.7206,9672538.321
+DUC_A01,16,020a,ucuuba,Virola michelii,Myristicaceae,31,O,FALSE,NA,20160829,841554.2414,9672536.707
+DUC_A01,16,021a,morta,NA,NA,30.5,O,TRUE,2,20160829,841556.0276,9672534.829
+DUC_A01,16,022a,coquirana,Chrysophyllum sanguinolentum,Sapotaceae,25.9,O,FALSE,NA,20160829,841550.7658,9672535.482
+DUC_A01,16,023a,pataua,Oenocarpus bataua,Arecaceae,17.7,P,FALSE,NA,20160829,841553.8019,9672528.438
+DUC_A01,16,024a,cupiuba,Goupia glabra,Goupiaceae,20.9,O,FALSE,NA,20160829,841552.9789,9672527.25
+DUC_A01,16,025a,acaizeiro,NA,NA,12.7,O,FALSE,NA,20160829,841556.7209,9672526.203
+DUC_A01,16,026a,cupui,Theobroma subincanum,Malvaceae,13.1,O,FALSE,NA,20160829,841557.461,9672525.557
+DUC_A01,16,027a,pataua,Oenocarpus bataua,Arecaceae,18.4,P,FALSE,NA,20160829,841557.9907,9672522.407
+DUC_A01,16,028a,cupui,Theobroma subincanum,Malvaceae,11.2,O,FALSE,NA,20160829,841559.8321,9672520.413
+DUC_A01,16,029a,coquirana,Chrysophyllum sanguinolentum,Sapotaceae,40.4,O,FALSE,NA,20160829,841559.9839,9672519.888
+DUC_A01,16,030a,ucuubarana,Iryanthera paraensis,Myristicaceae,13.3,O,FALSE,NA,20160829,841558.9599,9672522.284
+DUC_A01,16,031a,cumaru,Dipteryx odorata,Fabaceae,14.3,O,FALSE,NA,20160829,841549.7974,9672517.54
+DUC_A01,16,032a,capueiro,Rinorea guianensis,Violaceae,10.1,O,FALSE,NA,20160829,841549.9648,9672517.83
+DUC_A01,16,033a,ucuubarana,Iryanthera paraensis,Myristicaceae,24.5,O,FALSE,NA,20160829,841551.7754,9672515.836
+DUC_A01,16,034a,matamata branco,Eschweilera coriacea,Lecythidaceae,15.4,O,FALSE,NA,20160829,841549.9937,9672518.88
+DUC_A01,16,035a,breu branco,Protium paniculatum,Burseraceae,11.1,O,FALSE,NA,20160829,841549.9246,9672519.259
+DUC_A01,16,036a,matamata preto,Eschweilera ovata,Lecythidaceae,24.2,O,FALSE,NA,20160829,841550.5893,9672522.256
+DUC_A01,16,037a,cupui,Theobroma subincanum,Malvaceae,10.4,O,FALSE,NA,20160829,841547.1516,9672521.64
+DUC_A01,16,038a,ucuuba vermelha,Virola mollissima,Myristicaceae,38.3,O,FALSE,NA,20160829,841549.6962,9672526.43
+DUC_A01,16,039a,ucuubarana,Iryanthera paraensis,Myristicaceae,12.1,O,FALSE,NA,20160829,841549.2726,9672528.065
+DUC_A01,16,040a,piquiarana,Caryocar glabrum,Caryocaraceae,11.8,O,FALSE,NA,20160829,841548.0662,9672529.851
+DUC_A01,16,041a,capueiro,Rinorea guianensis,Violaceae,11.2,O,FALSE,NA,20160829,841548.0508,9672531.163
+DUC_A01,16,042a,faveira rosa,NA,NA,11.4,O,FALSE,NA,20160829,841545.7783,9672530.248
+DUC_A01,16,043a,mandioqueira,Qualea paraensis,Vochysiaceae,24.9,O,FALSE,NA,20160829,841543.3177,9672534.056
+DUC_A01,16,044a,pau doce,Glycydendron amazonicum,Euphorbiaceae,25,O,FALSE,NA,20160829,841543.2342,9672535.951
+DUC_A01,16,045a,mututi,Pterocarpus sp.,Fabaceae,14.3,O,FALSE,NA,20160829,841542.2211,9672537.853
+DUC_A01,16,046a,ipê amarelo,NA,NA,33,O,FALSE,NA,20160829,841540.508,9672539.266
+DUC_A01,16,047a,muiratinga,Maquira coriacea,Moraceae,16.8,O,FALSE,NA,20160829,841541.0006,9672540.078
+DUC_A01,16,048a,envira preta,Guatteria schomburgkiana,Annonaceae,20.6,O,FALSE,NA,20160829,841541.3052,9672541.415
+DUC_A01,16,049a,jatereu,Lecythis idatimon,Lecythidaceae,16.4,O,FALSE,NA,20160829,841542.2684,9672542.514
+DUC_A01,16,050a,breu branco,Protium paniculatum,Burseraceae,13.5,O,FALSE,NA,20160829,841542.4468,9672542.687
+DUC_A01,16,051a,uxirana,Sacoglottis guianensis,Humiriaceae,20.5,O,FALSE,NA,20160829,841541.0341,9672543.923
+DUC_A01,16,052a,breu branco,Protium paniculatum,Burseraceae,16.5,O,FALSE,NA,20160829,841539.8915,9672543.059
+DUC_A01,16,053a,matamata,Eschweilera amazonica,Lecythidaceae,17.4,O,FALSE,NA,20160829,841539.1738,9672544.988
+DUC_A01,16,054a,inhare,Helicostylis tomentosa,Moraceae,25,O,FALSE,NA,20160829,841538.4257,9672544.791
+DUC_A01,16,055a,pitaica,Swartzia polyphylla,Fabaceae,11.9,O,FALSE,NA,20160829,841538.5028,9672545.023
+DUC_A01,16,056a,pataua,Oenocarpus bataua,Arecaceae,20.9,P,FALSE,NA,20160829,841538.9804,9672546.621
+DUC_A01,16,057a,sorvao,NA,NA,42.9,O,FALSE,NA,20160829,841537.0044,9672548.561
+DUC_A01,16,058a,matamata branco,Eschweilera coriacea,Lecythidaceae,19.6,O,FALSE,NA,20160829,841537.6249,9672549.605
+DUC_A01,16,059a,pataua,Oenocarpus bataua,Arecaceae,23.6,P,FALSE,NA,20160829,841538.247,9672549.745
+DUC_A01,16,060a,axixa,Sterculia pruriens,Malvaceae,24.7,O,FALSE,NA,20160829,841537.2491,9672552.463
+DUC_A01,16,061a,breu,Protium heptaphyllum,Burseraceae,11.9,O,FALSE,NA,20160829,841535.0479,9672551.929
+DUC_A01,16,062a,pataua,Oenocarpus bataua,Arecaceae,20.4,P,FALSE,NA,20160829,841534.7045,9672557.001
+DUC_A01,16,063a,breu branco,Protium paniculatum,Burseraceae,13.7,O,FALSE,NA,20160829,841536.0717,9672559.289
+DUC_A01,17,001a,inga vermelho,Inga alba,Fabaceae,24.7,O,FALSE,NA,20160831,839584.8101,9672288.486
+DUC_A01,17,001b,abiu vermelho,Pouteria cladantha,Sapotaceae,56.8,O,FALSE,NA,20160831,839566.1886,9672270.486
+DUC_A01,17,002a,quaruba,Vochysia guianensis,Vochysiaceae,24.5,O,FALSE,NA,20160831,839586.9041,9672288.549
+DUC_A01,17,002b,guajara vermelho,NA,NA,65,O,FALSE,NA,20160831,839560.9943,9672265.374
+DUC_A01,17,003a,tento,Ormosia coccinea,Fabaceae,20.1,O,FALSE,NA,20160831,839583.6458,9672286.79
+DUC_A01,17,003b,castanha sapucaia,Lecythis pisonis,Lecythidaceae,48.2,O,FALSE,NA,20160831,839566.3873,9672267.95
+DUC_A01,17,004a,bacaba,Oenocarpus bacaba,Arecaceae,15,P,FALSE,NA,20160831,839581.2998,9672284.778
+DUC_A01,17,004b,jutai,Hymenaea parvifolia,Fabaceae,40.5,O,FALSE,NA,20160831,839568.991,9672258.681
+DUC_A01,17,005a,macucu,Licania guianensis,Chrysobalanaceae,12.2,O,FALSE,NA,20160831,839579.4058,9672280.776
+DUC_A01,17,005b,cupiuba,Goupia glabra,Goupiaceae,71.4,O,FALSE,NA,20160831,839569.7808,9672244.478
+DUC_A01,17,006a,uxirana,Sacoglottis guianensis,Humiriaceae,19.4,O,FALSE,NA,20160831,839584.8889,9672282.982
+DUC_A01,17,006b,uxi coroa,NA,NA,40,O,FALSE,NA,20160831,839547.5294,9672262.036
+DUC_A01,17,007a,tauari,Couratari stellata,Lecythidaceae,14.1,O,FALSE,NA,20160831,839586.2953,9672283.739
+DUC_A01,17,008a,inaja,Attalea maripa,Arecaceae,25,P,FALSE,NA,20160831,839589.3944,9672284.233
+DUC_A01,17,009a,breu manga,Tetragastris altissima,Burseraceae,20.7,O,FALSE,NA,20160831,839589.9824,9672283.055
+DUC_A01,17,010a,quariuba,NA,NA,27.2,O,FALSE,NA,20160831,839590.0604,9672280.004
+DUC_A01,17,011a,gombeira,Swartzia laevicarpa,Fabaceae,21.1,O,FALSE,NA,20160831,839580.8328,9672276.865
+DUC_A01,17,012a,bacaba,Oenocarpus bacaba,Arecaceae,15,P,FALSE,NA,20160831,839582.3038,9672276.166
+DUC_A01,17,013a,cabreuva,Myrocarpus frondosus,Fabaceae,22.2,O,FALSE,NA,20160831,839581.4267,9672275.696
+DUC_A01,17,014a,matamata branco,Eschweilera coriacea,Lecythidaceae,14.5,O,FALSE,NA,20160831,839585.6536,9672276.153
+DUC_A01,17,015a,tento,Ormosia grossa,Fabaceae,12.1,O,FALSE,NA,20160831,839590.9386,9672272.275
+DUC_A01,17,016a,taquari,Mabea angularis,Euphorbiaceae,11.4,O,FALSE,NA,20160831,839591.2651,9672273.832
+DUC_A01,17,017a,mamorana,Eriotheca globosa,Malvaceae,17.3,O,FALSE,NA,20160831,839585.5417,9672267.595
+DUC_A01,17,018a,morta,NA,NA,23,O,TRUE,3,20160831,839591.1312,9672270.57
+DUC_A01,17,019a,matamata preto,Eschweilera ovata,Lecythidaceae,30.6,O,FALSE,NA,20160831,839592.5286,9672271.313
+DUC_A01,17,020a,morta,NA,NA,23.7,O,TRUE,3,20160831,839594.8866,9672272.568
+DUC_A01,17,021a,mamorana,Eriotheca globosa,Malvaceae,11.8,O,FALSE,NA,20160831,839593.6657,9672269.047
+DUC_A01,17,022a,mamorana,Eriotheca globosa,Malvaceae,27.8,O,FALSE,NA,20160831,839594.8,9672266.566
+DUC_A01,17,023a,envira preta,Guatteria schomburgkiana,Annonaceae,18,O,FALSE,NA,20160831,839594.7129,9672266.519
+DUC_A01,17,024a,canela de velho,Casearia javitensis,Salicaceae,10.2,O,FALSE,NA,20160831,839595.8053,9672264.123
+DUC_A01,17,025a,itauba,Mezilaurus itauba,Lauraceae,10,O,FALSE,NA,20160831,839599.2474,9672263.179
+DUC_A01,17,026a,breu branco,Protium paniculatum,Burseraceae,30.7,O,FALSE,NA,20160831,839596.5199,9672250.295
+DUC_A01,17,027a,tachi preto,Tachigali myrmecophila,Fabaceae,10.5,O,FALSE,NA,20160831,839593.7125,9672249.354
+DUC_A01,17,028a,breu branco,Protium paniculatum,Burseraceae,21.4,O,FALSE,NA,20160831,839592.2948,9672249.985
+DUC_A01,17,029a,urucurana,Sloanea guianensis,Elaeocarpaceae,15.4,O,FALSE,NA,20160831,839590.1377,9672249.911
+DUC_A01,17,030a,matamata preto,Eschweilera ovata,Lecythidaceae,14.9,O,FALSE,NA,20160831,839587.7709,9672256.699
+DUC_A01,17,031a,inga branco,Inga thibaudiana,Fabaceae,11.6,O,FALSE,NA,20160831,839587.6007,9672257.033
+DUC_A01,17,032a,envira preta,Guatteria schomburgkiana,Annonaceae,21.4,O,FALSE,NA,20160831,839586.1355,9672257.74
+DUC_A01,17,033a,mirapiranga,NA,NA,24.1,O,FALSE,NA,20160831,839581.8615,9672259.603
+DUC_A01,17,034a,marauba,Apuleia leiocarpa,Fabaceae,47.7,O,FALSE,NA,20160831,839580.7089,9672261.848
+DUC_A01,17,035a,cupiuba,Goupia glabra,Goupiaceae,38.4,O,FALSE,NA,20160831,839580.7183,9672262.911
+DUC_A01,17,036a,angelim rajado,Zygia racemosa,Fabaceae,25.8,O,FALSE,NA,20160831,839584.4387,9672269.766
+DUC_A01,17,037a,ripeira,Eschweilera micrantha,Lecythidaceae,16,O,FALSE,NA,20160831,839580.3226,9672266.936
+DUC_A01,17,038a,matamata branco,Eschweilera coriacea,Lecythidaceae,13.2,O,FALSE,NA,20160831,839581.6455,9672268.701
+DUC_A01,17,039a,amapa doce,Brosimum parinarioides,Moraceae,23.3,O,FALSE,NA,20160831,839578.4973,9672267.021
+DUC_A01,17,040a,seringueira,Hevea brasiliensis,Euphorbiaceae,44,O,FALSE,NA,20160831,839578.2839,9672267.437
+DUC_A01,17,041a,guajara branco,Pouteria sp.,Sapotaceae,52.4,O,FALSE,NA,20160831,839576.6334,9672271.959
+DUC_A01,17,042a,marauba,Apuleia leiocarpa,Fabaceae,28.8,O,FALSE,NA,20160831,839573.1806,9672275.196
+DUC_A01,17,043a,matamata vermelho,Eschweilera coriacea,Lecythidaceae,12.1,O,FALSE,NA,20160831,839576.0422,9672280.559
+DUC_A01,17,044a,matamata preto,Eschweilera ovata,Lecythidaceae,23.5,O,FALSE,NA,20160831,839574.7665,9672283.06
+DUC_A01,17,045a,ucuuba t.f,NA,NA,11,O,FALSE,NA,20160831,839575.7515,9672284.656
+DUC_A01,17,046a,bacaba,Oenocarpus bacaba,Arecaceae,12.5,P,FALSE,NA,20160831,839576.4208,9672285.55
+DUC_A01,17,047a,carapanauba,Aspidosperma excelsum,Apocynaceae,35,O,FALSE,NA,20160831,839571.3446,9672282.273
+DUC_A01,17,048a,envira cunacaru,NA,NA,14.7,O,FALSE,NA,20160831,839567.2832,9672286.448
+DUC_A01,18,001a,ucuuba vermelha,Virola elongata,Myristicaceae,14.7,O,FALSE,NA,20160831,839644.4286,9672020.671
+DUC_A01,18,001b,abiurana,Pouteria gongrijpii,Sapotaceae,37.7,O,FALSE,NA,20160831,839623.6732,9672010.862
+DUC_A01,18,002a,breu branco,Protium paniculatum,Burseraceae,38.5,O,FALSE,NA,20160831,839644.266,9672020.496
+DUC_A01,18,002b,cumaru,Dipteryx odorata,Fabaceae,46.1,O,FALSE,NA,20160831,839628.8548,9671987.5
+DUC_A01,18,003a,ucuuba vermelha,Virola mollissima,Myristicaceae,18.2,O,FALSE,NA,20160831,839643.6997,9672020.154
+DUC_A01,18,003b,mamorana,Eriotheca globosa,Malvaceae,36.5,O,FALSE,NA,20160831,839633.6693,9671973.363
+DUC_A01,18,004a,marupa,Simarouba amara,Simaroubaceae,16.4,O,FALSE,NA,20160831,839644.0923,9672019.241
+DUC_A01,18,004b,seringarana preta,NA,NA,51.9,O,FALSE,NA,20160831,839634.9311,9671964.765
+DUC_A01,18,005a,urucurana,Sloanea guianensis,Elaeocarpaceae,10.9,O,FALSE,NA,20160831,839644.294,9672019.325
+DUC_A01,18,005b,morta,NA,NA,37.8,O,TRUE,1,20160831,839660.7739,9671979.892
+DUC_A01,18,006a,caripe,Licania octandra,Chrysobalanaceae,22.4,O,FALSE,NA,20160831,839644.8828,9672017.956
+DUC_A01,18,006b,cumaru,Dipteryx odorata,Fabaceae,39.9,O,FALSE,NA,20160831,839660.3812,9671980.805
+DUC_A01,18,007a,matamata preto,Eschweilera ovata,Lecythidaceae,21.6,O,FALSE,NA,20160831,839645.1799,9672017.542
+DUC_A01,18,007b,copaiba,Copaifera reticulata,Fabaceae,74.2,O,FALSE,NA,20160831,839615.8806,9671981.583
+DUC_A01,18,008a,muiratinga,Maquira coriacea,Moraceae,17.5,O,FALSE,NA,20160831,839651.1119,9672020.345
+DUC_A01,18,009a,ucuuba terra firme,Virola sebifera,Myristicaceae,25.3,O,FALSE,NA,20160831,839642.6353,9672013.773
+DUC_A01,18,010a,seringarana,Micrandra minor,Euphorbiaceae,19.5,O,FALSE,NA,20160831,839641.4704,9672013.715
+DUC_A01,18,011a,breu branco,Protium paniculatum,Burseraceae,11,O,FALSE,NA,20160831,839642.237,9672014.147
+DUC_A01,18,012a,taquari,Mabea angularis,Euphorbiaceae,13,O,FALSE,NA,20160831,839652.2505,9672021.568
+DUC_A01,18,013a,parapara,Jacaranda copaia,Bignoniaceae,11.2,O,FALSE,NA,20160831,839653.921,9672017.146
+DUC_A01,18,014a,breu branco,Protium paniculatum,Burseraceae,16.2,O,FALSE,NA,20160831,839654.9967,9672014.93
+DUC_A01,18,015a,matamata vermelho,Eschweilera coriacea,Lecythidaceae,43.8,O,FALSE,NA,20160831,839645.4912,9672009.895
+DUC_A01,18,016a,breu branco,Protium paniculatum,Burseraceae,10.6,O,FALSE,NA,20160831,839644.7568,9672010.773
+DUC_A01,18,017a,breu branco,Protium paniculatum,Burseraceae,10.8,O,FALSE,NA,20160831,839643.8995,9672011.383
+DUC_A01,18,018a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,16.7,O,FALSE,NA,20160831,839653.7044,9672010.19
+DUC_A01,18,019a,morta,NA,NA,16.5,O,TRUE,3,20160831,839655.0216,9672009.9
+DUC_A01,18,020a,matamata branco,Eschweilera coriacea,Lecythidaceae,66.2,O,FALSE,NA,20160831,839653.7952,9672007.212
+DUC_A01,18,021a,jataua,Trichilia micrantha,Meliaceae,19.8,O,FALSE,NA,20160831,839653.5945,9672007.124
+DUC_A01,18,022a,marupa,Simarouba amara,Simaroubaceae,13.1,O,FALSE,NA,20160831,839657.4701,9672006.988
+DUC_A01,18,023a,uxi coroa,NA,NA,67.2,O,FALSE,NA,20160831,839658.6794,9672006.122
+DUC_A01,18,024a,taquari,Mabea angularis,Euphorbiaceae,13.8,O,FALSE,NA,20160831,839656.9747,9672005.371
+DUC_A01,18,025a,sucupira preta,Bowdichia nitida,Fabaceae,14.7,O,FALSE,NA,20160831,839657.6439,9672004.373
+DUC_A01,18,026a,uxirana,Sacoglottis guianensis,Humiriaceae,1.7,O,FALSE,NA,20160831,839656.0743,9672003.03
+DUC_A01,18,027a,morta,NA,NA,12,O,TRUE,NA,20160831,839658.5371,9672001.748
+DUC_A01,18,028a,breu branco,Protium paniculatum,Burseraceae,10.5,O,FALSE,NA,20160831,839644.2717,9672021.036
+DUC_A01,18,029a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,16.8,O,FALSE,NA,20160831,839659.3687,9671996.494
+DUC_A01,18,030a,uxirana,Sacoglottis guianensis,Humiriaceae,23.5,O,FALSE,NA,20160831,839659.195,9671994.679
+DUC_A01,18,031a,louro preto,Nectandra cuspidata,Lauraceae,41.4,O,FALSE,NA,20160831,839661.4071,9671997.31
+DUC_A01,18,032a,mapatirana,Pourouma minor,Urticaceae,14,O,FALSE,NA,20160831,839656.9362,9671993.541
+DUC_A01,18,033a,breu branco,Protium paniculatum,Burseraceae,18.3,O,FALSE,NA,20160831,839654.7382,9671992.54
+DUC_A01,18,034a,caqui,Diospyros guianensis,Ebenaceae,28.3,O,FALSE,NA,20160831,839653.8295,9671990.483
+DUC_A01,18,035a,macucu,Licania guianensis,Chrysobalanaceae,14.5,O,FALSE,NA,20160831,839657.2853,9671992.174
+DUC_A01,18,036a,parajuba,Manilkara bidentata,Sapotaceae,13.4,O,FALSE,NA,20160831,839662.5563,9671994.369
+DUC_A01,18,037a,iperana,Eperua bijuga,Fabaceae,18.5,O,FALSE,NA,20160831,839663.0556,9671994.598
+DUC_A01,18,038a,morta,NA,NA,41.3,O,TRUE,3,20160831,839663.1118,9671994.19
+DUC_A01,18,039a,breu branco,Protium paniculatum,Burseraceae,12,O,FALSE,NA,20160831,839665.1195,9671991.756
+DUC_A01,18,040a,parapara,Jacaranda copaia,Bignoniaceae,11,O,FALSE,NA,20160831,839654.0485,9671986.633
+DUC_A01,18,041a,breu branco,Protium paniculatum,Burseraceae,10.5,O,FALSE,NA,20160831,839650.3375,9671984.695
+DUC_A01,18,042a,faveira rosa,NA,NA,18.9,O,FALSE,NA,20160831,839654.669,9671982.959
+DUC_A01,18,043a,quaruba,Vochysia guianensis,Vochysiaceae,41,O,FALSE,NA,20160831,839662.1776,9671982.752
+DUC_A01,18,044a,mamorana,Eriotheca globosa,Malvaceae,16.6,O,FALSE,NA,20160831,839663.0732,9671983.176
+DUC_A01,18,045a,tauari,Couratari stellata,Lecythidaceae,60.3,O,FALSE,NA,20160831,839664.013,9671980.993
+DUC_A01,18,046a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,16.6,O,FALSE,NA,20160831,839664.0913,9671980.811
+DUC_A01,18,047a,breu branco,Protium paniculatum,Burseraceae,16.4,O,FALSE,NA,20160831,839667.1451,9671984.01
+DUC_A01,18,048a,purui,Alibertia edulis,Rubiaceae,11.4,O,FALSE,NA,20160831,839656.4725,9671975.966
+DUC_A01,18,049a,tinteiro,Miconia poeppigii,Melastomataceae,11.3,O,FALSE,NA,20160831,839650.5099,9671973.118
+DUC_A01,18,050a,breu branco,Protium paniculatum,Burseraceae,11.2,O,FALSE,NA,20160831,839647.9503,9671977.145
+DUC_A01,18,051a,matamata preto,Eschweilera ovata,Lecythidaceae,10.2,O,FALSE,NA,20160831,839651.8385,9671981.193
+DUC_A01,18,052a,abiu rosadinha,NA,NA,28.3,O,FALSE,NA,20160831,839647.1591,9671980.114
+DUC_A01,18,053a,envira preta,Guatteria schomburgkiana,Annonaceae,17.9,O,FALSE,NA,20160831,839648.9364,9671982.386
+DUC_A01,18,054a,seringuarana,NA,NA,43.1,O,FALSE,NA,20160831,839650.6244,9671986.814
+DUC_A01,18,055a,uxirana,Sacoglottis guianensis,Humiriaceae,21.5,O,FALSE,NA,20160831,839644.8903,9671989.048
+DUC_A01,18,056a,matamata branco,Eschweilera coriacea,Lecythidaceae,19.9,O,FALSE,NA,20160831,839642.0981,9671989.996
+DUC_A01,18,057a,breu branco,Protium paniculatum,Burseraceae,26.8,O,FALSE,NA,20160831,839646.901,9671992.715
+DUC_A01,18,058a,matamata branco,Eschweilera coriacea,Lecythidaceae,23.8,O,FALSE,NA,20160831,839647.7039,9671993.626
+DUC_A01,18,059a,breu branco,Protium paniculatum,Burseraceae,18.4,O,FALSE,NA,20160831,839643.924,9671996.879
+DUC_A01,18,060a,breu branco,Protium paniculatum,Burseraceae,13.9,O,FALSE,NA,20160831,839644.6254,9671997.191
+DUC_A01,18,061a,matamata branco,Eschweilera coriacea,Lecythidaceae,19.3,O,FALSE,NA,20160831,839648.4614,9672000.204
+DUC_A01,18,062a,breu branco,Protium paniculatum,Burseraceae,15.6,O,FALSE,NA,20160831,839648.0425,9672000.346
+DUC_A01,18,063a,breu branco,Protium paniculatum,Burseraceae,16,O,FALSE,NA,20160831,839646.8613,9672003.097
+DUC_A01,18,064a,matamata branco,Eschweilera coriacea,Lecythidaceae,28.6,O,FALSE,NA,20160831,839641.687,9672004.883
+DUC_A01,18,065a,caripe,Licania octandra,Chrysobalanaceae,15.8,O,FALSE,NA,20160831,839641.109,9672005.398
+DUC_A01,18,066a,coco pau,Couepia robusta,Chrysobalanaceae,43.3,O,FALSE,NA,20160831,839641.188,9672005.214
+DUC_A01,18,067a,morta,NA,NA,30.5,O,TRUE,4,20160831,839642.6317,9672008.234
+DUC_A01,18,068a,jataua,Trichilia micrantha,Meliaceae,25.7,O,FALSE,NA,20160831,839638.8103,9672006.595
+DUC_A01,18,069a,breu branco,Protium paniculatum,Burseraceae,11.5,O,FALSE,NA,20160831,839636.5739,9672008.484
+DUC_A01,18,070a,breu branco,Protium paniculatum,Burseraceae,15.9,O,FALSE,NA,20160831,839636.4947,9672008.669
+DUC_A01,18,071a,morta,NA,NA,24.2,O,TRUE,3,20160831,839637.3861,9672009.922
+DUC_A01,18,072a,mamorana,Eriotheca globosa,Malvaceae,36.5,O,FALSE,NA,20160831,839637.4009,9672012.109
+DUC_A01,18,073a,ripeira,Eschweilera micrantha,Lecythidaceae,25.8,O,FALSE,NA,20160831,839636.5017,9672012.821
+DUC_A01,18,074a,faveira rosa,NA,NA,14.7,O,FALSE,NA,20160831,839633.683,9672015.24
+DUC_A01,18,075a,matamata branco,Eschweilera coriacea,Lecythidaceae,19.5,O,FALSE,NA,20160831,839630.439,9672017.826
+DUC_A01,19,001a,inhare,Helicostylis tomentosa,Moraceae,17.2,O,FALSE,NA,20160829,841600.7485,9672348.416
+DUC_A01,19,001b,ucuuba vermelha,Virola elongata,Myristicaceae,43.4,O,FALSE,NA,20160829,841585.7213,9672332.488
+DUC_A01,19,002a,cupiuba,Goupia glabra,Goupiaceae,14.5,O,FALSE,NA,20160829,841602.9888,9672344.276
+DUC_A01,19,002b,casca seca,Licania canescens,Chrysobalanaceae,48,O,FALSE,NA,20160829,841575.8716,9672322.426
+DUC_A01,19,003a,mamorana,Eriotheca globosa,Malvaceae,13.9,O,FALSE,NA,20160829,841601.104,9672339.101
+DUC_A01,19,003b,matamata vermelho,Eschweilera coriacea,Lecythidaceae,36.2,O,FALSE,NA,20160829,841575.2208,9672319.834
+DUC_A01,19,004a,urucurana,Sloanea guianensis,Elaeocarpaceae,16.3,O,FALSE,NA,20160829,841601.3193,9672338.984
+DUC_A01,19,004b,abiu seco,Pouteria caimito,Sapotaceae,36.6,O,FALSE,NA,20160829,841587.4023,9672323.624
+DUC_A01,19,005a,louro preto,Ocotea cernua,Lauraceae,16.2,O,FALSE,NA,20160829,841597.4551,9672335.504
+DUC_A01,19,005b,morta,NA,NA,39.4,O,TRUE,2,20160829,841587.2084,9672319.95
+DUC_A01,19,006a,uxirana,Sacoglottis guianensis,Humiriaceae,14.2,O,FALSE,NA,20160829,841598.4797,9672335.863
+DUC_A01,19,006b,caripe,Licania octandra,Chrysobalanaceae,42.6,O,FALSE,NA,20160829,841582.6841,9672297.486
+DUC_A01,19,007a,envira preta,Guatteria schomburgkiana,Annonaceae,23.4,O,FALSE,NA,20160829,841600.6737,9672336.004
+DUC_A01,19,007b,angelim rajado,Zygia racemosa,Fabaceae,65.4,O,FALSE,NA,20160829,841587.4302,9672293.247
+DUC_A01,19,008a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,14.1,O,FALSE,NA,20160829,841596.7576,9672333.154
+DUC_A01,19,008b,acariquara,Minquartia guianensis,Olacaceae,48,O,FALSE,NA,20160829,841577.7476,9672289.731
+DUC_A01,19,009a,abacabeira,NA,NA,15.3,O,FALSE,NA,20160829,841593.9716,9672331.358
+DUC_A01,19,009b,jarana,Lecythis lurida,Lecythidaceae,36,O,FALSE,NA,20160829,841575.1836,9672290.715
+DUC_A01,19,010a,jatereu,Lecythis idatimon,Lecythidaceae,13.9,O,FALSE,NA,20160829,841603.7146,9672333.836
+DUC_A01,19,010b,abiurana,Pouteria gongrijpii,Sapotaceae,48.5,O,FALSE,NA,20160829,841575.1403,9672292.341
+DUC_A01,19,011a,macucu,Licania guianensis,Chrysobalanaceae,26.6,O,FALSE,NA,20160829,841605.8012,9672334.346
+DUC_A01,19,011b,abiu vermelho,Pouteria cladantha,Sapotaceae,53.7,O,FALSE,NA,20160829,841570.0952,9672304.901
+DUC_A01,19,012a,casca seca,Licania canescens,Chrysobalanaceae,15,O,FALSE,NA,20160829,841605.9079,9672334.287
+DUC_A01,19,012b,ripeira,Eschweilera micrantha,Lecythidaceae,38,O,FALSE,NA,20160829,841575.9932,9672303.124
+DUC_A01,19,013a,pintadinho,Poeppigia procera,Fabaceae,16.1,O,FALSE,NA,20160829,841602.1436,9672327.982
+DUC_A01,19,014a,piquiarana,Caryocar glabrum,Caryocaraceae,18,O,FALSE,NA,20160829,841602.2505,9672327.922
+DUC_A01,19,015a,muirapiranga,Brosimum rubescens,Moraceae,25,O,FALSE,NA,20160829,841605.0465,9672328.847
+DUC_A01,19,016a,sucupira preta,Bowdichia nitida,Fabaceae,29,O,FALSE,NA,20160829,841605.4179,9672325.149
+DUC_A01,19,017a,matamata preto,Eschweilera ovata,Lecythidaceae,39.7,O,FALSE,NA,20160829,841607.7278,9672323.913
+DUC_A01,19,018a,breu branco,Protium paniculatum,Burseraceae,20,O,FALSE,NA,20160829,841603.7459,9672320.56
+DUC_A01,19,019a,matamata vermelho,Eschweilera coriacea,Lecythidaceae,18,O,FALSE,NA,20160829,841600.1922,9672318.792
+DUC_A01,19,020a,inhare,Helicostylis tomentosa,Moraceae,13.6,O,FALSE,NA,20160829,841606.9919,9672321.017
+DUC_A01,19,021a,pocoro,NA,NA,13.3,O,FALSE,NA,20160829,841608.0866,9672318.065
+DUC_A01,19,022a,andorinha,Casearia grandiflora,Salicaceae,11.7,O,FALSE,NA,20160829,841602.605,9672312.603
+DUC_A01,19,023a,morta,NA,NA,13,O,TRUE,2,20160829,841610.0844,9672317.643
+DUC_A01,19,024a,breu branco,Protium paniculatum,Burseraceae,13.9,O,FALSE,NA,20160829,841611.0029,9672313.534
+DUC_A01,19,025a,morta,NA,NA,12.7,O,TRUE,3,20160829,841611.2935,9672311.623
+DUC_A01,19,026a,morta,NA,NA,34,O,TRUE,3,20160829,841610.8559,9672311.223
+DUC_A01,19,027a,ucuuba vermelha,Virola elongata,Myristicaceae,10.7,O,TRUE,3,20160829,841610.9368,9672311.257
+DUC_A01,19,028a,breu branco,Protium paniculatum,Burseraceae,26.4,O,FALSE,NA,20160829,841607.2166,9672310.743
+DUC_A01,19,029a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,13.3,O,FALSE,NA,20160829,841607.1842,9672310.516
+DUC_A01,19,030a,matamata branco,Eschweilera coriacea,Lecythidaceae,22.5,O,FALSE,NA,20160829,841601.8169,9672308.336
+DUC_A01,19,031a,mamorana,Eriotheca globosa,Malvaceae,46.6,O,FALSE,NA,20160829,841601.1137,9672306.553
+DUC_A01,19,032a,abacabeira,NA,NA,14,O,FALSE,NA,20160829,841610.3615,9672306.739
+DUC_A01,19,033a,muirapiranga,Brosimum rubescens,Moraceae,31,O,FALSE,NA,20160829,841604.2225,9672301.826
+DUC_A01,19,034a,matamata branco,Eschweilera coriacea,Lecythidaceae,23.8,O,FALSE,NA,20160829,841603.4498,9672301.714
+DUC_A01,19,035a,matamata branco,Eschweilera coriacea,Lecythidaceae,13.3,O,FALSE,NA,20160829,841603.425,9672301.81
+DUC_A01,19,036a,faveira rosa,NA,NA,15.2,O,FALSE,NA,20160829,841598.9457,9672299.515
+DUC_A01,19,037a,abiurana vermelha,Pouteria gongrijpii,Sapotaceae,20.7,O,FALSE,NA,20160829,841598.7597,9672299.542
+DUC_A01,19,038a,breu branco,Protium paniculatum,Burseraceae,11.3,O,FALSE,NA,20160829,841598.3123,9672301.883
+DUC_A01,19,039a,envira preta,Guatteria schomburgkiana,Annonaceae,10.3,O,FALSE,NA,20160829,841597.0405,9672302.612
+DUC_A01,19,040a,iperana,Eperua bijuga,Fabaceae,10,O,FALSE,NA,20160829,841596.3739,9672302.751
+DUC_A01,19,041a,freijo branco,Cordia scabrifolia,Boraginaceae,10.8,O,FALSE,NA,20160829,841601.5804,9672305.798
+DUC_A01,19,042a,breu barrote,Tetragastris panamensis,Burseraceae,25,O,FALSE,NA,20160829,841599.2599,9672306.084
+DUC_A01,19,043a,tento,Ormosia coccinea,Fabaceae,24.5,O,FALSE,NA,20160829,841598.2765,9672308.097
+DUC_A01,19,044a,louro vermelho,Sextonia rubra,Lauraceae,63.7,O,FALSE,NA,20160829,841594.4725,9672308.789
+DUC_A01,19,045a,gombeira,Swartzia laevicarpa,Fabaceae,19.7,O,FALSE,NA,20160829,841598.7305,9672314.966
+DUC_A01,19,046a,cumaru,Dipteryx odorata,Fabaceae,57.8,O,FALSE,NA,20160829,841594.7031,9672314.697
+DUC_A01,19,047a,nao identificada,NA,NA,21.6,O,FALSE,NA,20160829,841593.4463,9672313.938
+DUC_A01,19,048a,louro amarelo,Aniba parviflora,Lauraceae,40.9,O,FALSE,NA,20160829,841593.6313,9672315.287
+DUC_A01,19,049a,pintadinho,Poeppigia procera,Fabaceae,11.4,O,FALSE,NA,20160829,841594.4495,9672315.644
+DUC_A01,19,050a,jarana,Lecythis lurida,Lecythidaceae,40.6,O,FALSE,NA,20160829,841599.1205,9672318.004
+DUC_A01,19,051a,envira preta,Guatteria schomburgkiana,Annonaceae,10.8,O,FALSE,NA,20160829,841595.1667,9672316.381
+DUC_A01,19,052a,liana,NA,NA,12.2,L,FALSE,NA,20160829,841595.009,9672316.63
+DUC_A01,19,053a,caripe,Licania octandra,Chrysobalanaceae,12.1,O,FALSE,NA,20160829,841594.7877,9672317.804
+DUC_A01,19,054a,louro preto,Ocotea cernua,Lauraceae,14.8,O,FALSE,NA,20160829,841593.8605,9672317.503
+DUC_A01,19,055a,abacabeira,NA,NA,15.5,O,FALSE,NA,20160829,841599.9295,9672319.102
+DUC_A01,19,056a,faveira rosa,NA,NA,19.2,O,FALSE,NA,20160829,841599.5104,9672319.664
+DUC_A01,19,057a,abiu rosadinho,Pouteria reticulata,Sapotaceae,18.1,O,FALSE,NA,20160829,841598.8124,9672319.89
+DUC_A01,19,058a,ucuuba terra firme,Virola sebifera,Myristicaceae,12.3,O,FALSE,NA,20160829,841597.9512,9672323.554
+DUC_A01,19,059a,pintadinho,Poeppigia procera,Fabaceae,13.8,O,FALSE,NA,20160829,841590.8083,9672323.032
+DUC_A01,19,060a,louro amarelo,Aniba parviflora,Lauraceae,30.7,O,FALSE,NA,20160829,841596.3478,9672325.823
+DUC_A01,19,061a,ucuuba terra firme,Virola sebifera,Myristicaceae,15.8,O,FALSE,NA,20160829,841592.1961,9672329.278
+DUC_A01,19,062a,mamorana,Eriotheca globosa,Malvaceae,14,O,FALSE,NA,20160829,841592.5105,9672329.845
+DUC_A01,19,063a,cacaui,NA,NA,16.3,O,FALSE,NA,20160829,841589.3995,9672329.287
+DUC_A01,19,064a,ucuuba,Virola michelii,Myristicaceae,13.4,O,FALSE,NA,20160829,841591.1213,9672332.619
+DUC_A01,19,065a,pocoro,NA,NA,13.8,O,FALSE,NA,20160829,841591.061,9672333.549
+DUC_A01,19,066a,inga branco,Inga thibaudiana,Fabaceae,15.7,O,FALSE,NA,20160829,841591.3019,9672334.404
+DUC_A01,19,067a,uxirana,Sacoglottis guianensis,Humiriaceae,17.5,O,FALSE,NA,20160829,841591.3758,9672338.381
+DUC_A01,19,068a,matamata preto,Eschweilera ovata,Lecythidaceae,11.7,O,FALSE,NA,20160829,841589.4059,9672338.006
+DUC_A01,19,069a,muiratinga,Maquira coriacea,Moraceae,27.8,O,FALSE,NA,20160829,841587.8128,9672337.27
+DUC_A01,19,070a,liana,NA,NA,20.7,L,FALSE,NA,20160829,841587.1165,9672337.055
+DUC_A01,19,071a,timborana,Pseudopiptadenia suaveolens,Fabaceae,32,O,FALSE,NA,20160829,841591.9795,9672345.074
+DUC_A01,20,001a,quarubarana,Erisma uncinatum,Vochysiaceae,15.6,O,FALSE,NA,20160830,840077.9752,9674395.926
+DUC_A01,20,001b,urucurana,Sloanea guianensis,Elaeocarpaceae,61.5,O,FALSE,NA,20160830,840066.1072,9674383.089
+DUC_A01,20,002a,fava saboeiro,Abarema jupunba,Fabaceae,12.1,O,FALSE,NA,20160830,840076.8264,9674394.576
+DUC_A01,20,002b,uxirana,Sacoglottis guianensis,Humiriaceae,36.3,O,FALSE,NA,20160830,840072.6473,9674380.008
+DUC_A01,20,003a,urucurana,Sloanea guianensis,Elaeocarpaceae,14.1,O,FALSE,NA,20160830,840081.702,9674392.863
+DUC_A01,20,003b,ripeira,Eschweilera micrantha,Lecythidaceae,35.3,O,FALSE,NA,20160830,840079.5843,9674366.043
+DUC_A01,20,004a,gombeira,Swartzia laevicarpa,Fabaceae,45.4,O,FALSE,NA,20160830,840086.2139,9674392.369
+DUC_A01,20,004b,matamata branco,Eschweilera coriacea,Lecythidaceae,50.2,O,FALSE,NA,20160830,840078.8621,9674363.499
+DUC_A01,20,005a,matamata branco,Eschweilera coriacea,Lecythidaceae,21,O,FALSE,NA,20160830,840086.8511,9674392.945
+DUC_A01,20,005b,morta,NA,NA,43.3,O,TRUE,1,20160830,840074.2112,9674355.371
+DUC_A01,20,006a,macucu,Licania guianensis,Chrysobalanaceae,11.4,O,FALSE,NA,20160830,840086.7992,9674391.562
+DUC_A01,20,006b,pitaica,Swartzia polyphylla,Fabaceae,65,O,FALSE,NA,20160830,840064.7272,9674350.358
+DUC_A01,20,007a,mapatirana,Pourouma minor,Urticaceae,24.1,O,FALSE,NA,20160830,840085.3186,9674391.231
+DUC_A01,20,007b,mamorana,Eriotheca globosa,Malvaceae,41.7,O,FALSE,NA,20160830,840060.6176,9674360.107
+DUC_A01,20,008a,urucurana,Sloanea guianensis,Elaeocarpaceae,26,O,FALSE,NA,20160830,840080.9909,9674388.858
+DUC_A01,20,008b,pitaica,Swartzia polyphylla,Fabaceae,40,O,FALSE,NA,20160830,840094.1274,9674382.131
+DUC_A01,20,009a,ucuuba t.f,NA,NA,12,O,FALSE,NA,20160830,840083.3604,9674389.366
+DUC_A01,20,009b,marupa,Simarouba amara,Simaroubaceae,39.5,O,FALSE,NA,20160830,840051.8912,9674373.353
+DUC_A01,20,010a,louro pimenta,Ocotea canaliculata,Lauraceae,16.1,O,FALSE,NA,20160830,840083.4451,9674389.39
+DUC_A01,20,011a,murta,Strychnos subcordata,Loganiaceae,13.2,O,FALSE,NA,20160830,840083.2757,9674389.342
+DUC_A01,20,012a,mapatirana,Pourouma minor,Urticaceae,11,O,FALSE,NA,20160830,840084.1091,9674388.088
+DUC_A01,20,013a,fava folha fina,Pseudopiptadenia psilostachya,Fabaceae,29.4,O,FALSE,NA,20160830,840084.5312,9674388.045
+DUC_A01,20,014a,breu branco,Protium paniculatum,Burseraceae,14,O,FALSE,NA,20160830,840082.745,9674386.849
+DUC_A01,20,015a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,12.2,O,FALSE,NA,20160830,840087.4416,9674387.339
+DUC_A01,20,016a,urucurana branco,NA,NA,17.2,O,FALSE,NA,20160830,840092.1221,9674385.423
+DUC_A01,20,017a,ucuuba vermelha,Virola elongata,Myristicaceae,11.9,O,FALSE,NA,20160830,840093.1276,9674384.107
+DUC_A01,20,018a,canela de velho,Casearia javitensis,Salicaceae,14.5,O,FALSE,NA,20160830,840093.9647,9674382.903
+DUC_A01,20,019a,matamata preto,Eschweilera ovata,Lecythidaceae,38.7,O,FALSE,NA,20160830,840093.1145,9674382.617
+DUC_A01,20,020a,breu branco,Protium paniculatum,Burseraceae,18.6,O,FALSE,NA,20160830,840088.5144,9674380.22
+DUC_A01,20,021a,louro preto,Nectandra cuspidata,Lauraceae,12.2,O,FALSE,NA,20160830,840095.2023,9674379.174
+DUC_A01,20,022a,mapatirana,Pourouma minor,Urticaceae,20.5,O,FALSE,NA,20160830,840096.4567,9674377.278
+DUC_A01,20,023a,breu branco,Protium paniculatum,Burseraceae,12,O,FALSE,NA,20160830,840096.2879,9674377.384
+DUC_A01,20,024a,pintadinho,Poeppigia procera,Fabaceae,21.2,O,FALSE,NA,20160830,840088.0382,9674375.74
+DUC_A01,20,025a,morta,NA,NA,55,O,TRUE,2,20160830,840091.2731,9674369.929
+DUC_A01,20,026a,abacabeira,NA,NA,11.1,O,FALSE,NA,20160830,840090.7384,9674371.224
+DUC_A01,20,027a,ucuuba branca,Virola crebrinervia,Myristicaceae,19.4,O,FALSE,NA,20160830,840094.1497,9674368.961
+DUC_A01,20,028a,castanha sapucaia,Lecythis pisonis,Lecythidaceae,18.5,O,FALSE,NA,20160830,840097.797,9674368.176
+DUC_A01,20,029a,morta,NA,NA,17.2,O,TRUE,2,20160830,840097.9681,9674368.248
+DUC_A01,20,030a,morta,NA,NA,64.1,O,TRUE,2,20160830,840100.781,9674368.557
+DUC_A01,20,031a,morta,NA,NA,18.5,O,TRUE,2,20160830,840101.7342,9674366.44
+DUC_A01,20,032a,ucuuba vermelha,Virola elongata,Myristicaceae,10.4,O,FALSE,NA,20160830,840093.203,9674365.088
+DUC_A01,20,033a,tauari vermelho,Couratari multiflora,Lecythidaceae,22.1,O,FALSE,NA,20160830,840088.6253,9674363.241
+DUC_A01,20,034a,morta,NA,NA,10.3,O,TRUE,1,20160830,840088.761,9674363.758
+DUC_A01,20,035a,inga branco,Inga thibaudiana,Fabaceae,14,O,FALSE,NA,20160830,840087.8515,9674365.395
+DUC_A01,20,036a,breu branco,Protium paniculatum,Burseraceae,19,O,FALSE,NA,20160830,840083.9776,9674364.822
+DUC_A01,20,037a,breu branco,Protium paniculatum,Burseraceae,14.4,O,FALSE,NA,20160830,840082.782,9674367.024
+DUC_A01,20,038a,abacabeira,NA,NA,16,O,FALSE,NA,20160830,840084.3415,9674369.098
+DUC_A01,20,039a,jacareuba,Calophyllum brasiliense,Calophyllaceae,46.5,O,FALSE,NA,20160830,840083.1462,9674374.415
+DUC_A01,20,040a,matamata branco,Eschweilera coriacea,Lecythidaceae,27,O,FALSE,NA,20160830,840078.2125,9674378.942
+DUC_A01,20,041a,breu branco,Protium paniculatum,Burseraceae,26.5,O,FALSE,NA,20160830,840077.7403,9674381.617
+DUC_A01,20,042a,morta,NA,NA,54,O,TRUE,2,20160830,840076.7902,9674383.337
+DUC_A01,20,043a,ucuuba vermelha,Virola elongata,Myristicaceae,11.7,O,FALSE,NA,20160830,840076.5358,9674383.26
+DUC_A01,20,044a,morta,NA,NA,17,O,TRUE,2,20160830,840069.0174,9674396.727
+DUC_A01,20,045a,faveira rosa,NA,NA,23,O,FALSE,NA,20160830,840075.7151,9674388.818
+DUC_A01,20,046a,liana,NA,NA,15.7,L,FALSE,NA,20160830,840082.2913,9674392.692
+DUC_A01,20,047a,taguari,NA,NA,12.3,O,FALSE,NA,20160830,840072.2268,9674389.845
+DUC_A01,20,048a,quarubarana,Erisma uncinatum,Vochysiaceae,24,O,FALSE,NA,20160830,840072.5767,9674390.969
+DUC_A01,20,049a,fava saboeiro,Abarema jupunba,Fabaceae,14,O,FALSE,NA,20160830,840071.0245,9674395.507
+DUC_A01,20,050a,mamorana,Eriotheca globosa,Malvaceae,22,O,FALSE,NA,20160830,840069.0191,9674396.896
+DUC_A01,20,051a,louro cheiroso,Diospyros artanthifolia,Ebenaceae,11.9,O,FALSE,NA,20160830,840069.115,9674398.094
+DUC_A01,20,052a,louro pimenta,Ocotea canaliculata,Lauraceae,11.2,O,FALSE,NA,20160830,840070.2963,9674398.52
