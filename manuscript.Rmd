@@ -3,7 +3,7 @@ title: "My Example Computed Manuscript"
 subtitle: Created in Rmarkdown
 titlerunning: Example computed manuscript
 date: "`r format(Sys.time(), '%d %b %Y %H:%M:%S %Z')`"
-author: "Jeffrey M. Perkel, Technology Editor, Nature"
+author: "Eric Bastos Gorgens, UFVJM"
 output:
   bookdown::html_document2: default
   pdf_document: default
@@ -50,11 +50,14 @@ library(bookdown)
 
 # Resultados
 
-```{r get-intro, child="03results.Rmd"}
+```{r get-resultados, child="03results.Rmd"}
 
 ```
 
 # Discussão
 
+```{r get-discussao, child="04discussao.Rmd"}
+
+```
 
 # References
