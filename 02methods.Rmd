@@ -1,0 +1,41 @@
+---
+title: "02methods.Rmd"
+output: html_document
+---
+
+```{r packages2}
+require(dplyr)
+require(magrittr)
+require(plotly)
+require(tidyr)
+require(reshape2)
+require(ggplot2)
+require(V.PhyloMaker)
+require(phytools)
+```
+
+
+#```{r mergeInventarios, child="02merge.Rmd"}
+#```
+
+```{r cleanInv}
+inv.paisagens = read.csv("10_invPaisagensMerged.csv")
+inv.paisagens.filtered = inv.paisagens %>%
+  filter(type == "O" | is.na(type)) %>%                                         # remover não árvores
+  filter(scientific.name != 'NI') %>%                                           # remover indivíduos não indentificados
+  drop_na(DBH)                                                                  # remover valores NA no DBH
+```
+
+```{r}
+parcelasArea = inv.paisagens.filtered %>%                                       # conta número de parcelas em cada área
+  group_by(area, plot, subplot, year) %>%
+  summarise(obs = n()) %>%
+  group_by(area, year) %>%
+  summarise(nplots = n()) %>%
+  group_by(area) %>%
+  summarise(nplots = mean(nplots))
+```
+
+## Pareamento
+
+

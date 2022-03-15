@@ -1,0 +1,1005 @@
+---
+title: "02methods.Rmd"
+output: html_document
+---
+
+```{r packages}
+require(dplyr)
+require(tidyr)
+require(splus2R)
+require(plotly)
+require(magrittr)
+require(stringr)
+require(lubridate)
+```
+
+```{r folders}
+PATH = 'psb/'
+COMPL = 'auxiliar/'
+```
+
+```{r processInv}
+and2013 = read.csv(paste0(PATH, 'AND_A01_2013_Inventory.csv'), encoding='latin-1')
+and2013$date %<>% as.character() %>% as.Date(format =  "%Y%m%d")
+and2013 %<>% rename(subplot = plot, plot = trans.ID)
+and2013$common.name %<>% enc2utf8() %>% lowerCase()
+and2013$plot %<>% as.character()
+and2013$subplot %<>% as.character()
+and2013$tree %<>% as.character()
+
+ana2015 = read.csv(paste0(PATH, 'ANA_A01_2015_Inventory.csv'), encoding='latin-1')
+ana2015$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+ana2015 %<>% rename(dead = Dead)
+ana2015$RN %<>% as.numeric()
+ana2015$RS %<>% as.numeric()
+ana2015$RE %<>% as.numeric()
+ana2015$RW %<>% as.numeric()
+ana2015$plot %<>% as.character()
+ana2015$subplot = 'None'
+ana2015$tree %<>% as.character()
+
+bon2014 = read.csv(paste0(PATH, 'BON_A01_2014_Inventory.csv'), encoding='latin-1')
+bon2014 %<>% rename(area = Area, plot = plot_ID, common.name = common_name,
+                    scientific.name = scientific_name, family.name = family_name,
+                    burnt.area = burnt_area, D.class = d_class, 
+                    UTM.Easting = UTM_Easting, UTM.Northing = UTM_Northing)
+bon2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+bon2014$common.name %<>% enc2utf8() %>% lowerCase()
+bon2014 %<>% mutate(dead = case_when(
+                   dead == 'D' ~ TRUE,
+                   dead == 'A' ~ FALSE))
+bon2014$plot %<>% as.character()
+bon2014$subplot = 'None'
+bon2014$tree %<>% as.character()
+
+cau2012 = read.csv(paste0(PATH, 'CAU_A01_2012_Inventory.csv'), encoding='latin-1')
+cau2012 %<>% rename(area = area.code, plot = transect, date = Date, dead = Dead)
+cau2012$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+cau2012$plot %<>% as.character()
+cau2012$subplot = 'None'
+cau2012$tree %<>% as.character()
+
+cau2014 = read.csv(paste0(PATH, 'CAU_A01_2012_2014_Inventory.csv'), encoding='latin-1')
+cau2014 %<>% select(area.code, transect, tree, common.name, scientific.name,
+                   family.name, type, DBH.2014, Dead.2014, D.class.2014, RN.2014,
+                   RS.2014, RL.2014, RO.2014, Date.2014, UTM.Easting, UTM.Northing)
+cau2014 %<>% rename(area = area.code, plot = transect, DBH = DBH.2014, 
+                    dead = Dead.2014, D.class = D.class.2014, RN = RN.2014,
+                    RS = RS.2014, RE = RL.2014, RW = RO.2014, date = Date.2014)
+cau2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+cau2014$plot %<>% as.character()
+cau2014$subplot = 'None'
+cau2014$tree %<>% as.character()
+
+cau2014b = read.csv(paste0(PATH, 'CAU_A01_2014_2018_Inventory_plot50x50_delivery.csv'), encoding='latin-1')
+cau2014b %<>% select(area, group_code, plot_ID, tree, common_name, scienfic_name,
+                   family_name, type, DBH.2014, Dead.2014, D_class.2014, RN.2014,
+                   RS.2014, RL.2014, RO.2014, Date.2014, UTM_Easting, UTM_Northing)
+cau2014b %<>% rename(plot = group_code, 
+                     subplot = plot_ID,
+                     common.name = common_name,
+                     scientific.name = scienfic_name, 
+                     family.name = family_name,
+                     DBH = DBH.2014, 
+                     D.class = D_class.2014, 
+                     dead = Dead.2014, 
+                     date = Date.2014,
+                     RN = RN.2014,
+                     RS = RS.2014, 
+                     RE = RL.2014, 
+                     RW = RO.2014,
+                     UTM.Easting = UTM_Easting,
+                     UTM.Northing = UTM_Northing)
+cau2014b$area = 'CAU_A01_50'
+cau2014b$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+cau2014b$plot %<>% as.character()
+cau2014b$subplot %<>% as.character()
+cau2014b$tree %<>% as.character()
+
+cau2018 = read.csv(paste0(PATH, 'CAU_A01_2014_2018_Inventory_plot50x50_delivery.csv'), encoding='latin-1')
+cau2018 %<>% select(area, group_code, plot_ID, tree, common_name, scienfic_name,
+                   family_name, type, DBH.2018, Dead.2018, D_class.2014, RN.2014,
+                   RS.2014, RL.2014, RO.2014, date.2018, UTM_Easting, UTM_Northing)
+cau2018 %<>% rename(plot = group_code, 
+                    subplot = plot_ID,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    DBH = DBH.2018, 
+                    D.class = D_class.2014, 
+                    dead = Dead.2018, 
+                    date = date.2018,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+cau2018$area = 'CAU_A01_50'
+cau2018$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+cau2018$plot %<>% as.character()
+cau2018$subplot %<>% as.character()
+cau2018$tree %<>% as.character()
+
+duc2009 = read.csv(paste0(PATH, 'DUC_A01_2009_2011_Inventory.csv'), encoding='latin-1')
+duc2009 %<>% select(Area, trans, tree, common.name, scientific.name,
+                    family.name, DBH.09, type.09, canopy.09, light.09,
+                    Dead.09, D.class.09, Hcom.09, Htot.09, RN.09, RS.09,
+                    RE.09, RW.09, UTM.Easting, UTM.Northing)
+duc2009 %<>% rename(area = Area, plot = trans, DBH = DBH.09,
+                    type = type.09, canopy = canopy.09, light = light.09,
+                    dead = Dead.09, D.class = D.class.09, Hcom = Hcom.09,
+                    Htot = Htot.09, RN = RN.09, RS = RS.09, RE = RE.09, RW = RW.09)
+duc2009$date = as.Date('20090101', format = '%Y%m%d')
+duc2009$plot %<>% as.character()
+duc2009$subplot = 'None'
+duc2009$tree %<>% as.character()
+
+duc2011 = read.csv(paste0(PATH, 'DUC_A01_2009_2011_Inventory.csv'), encoding='latin-1')
+duc2011 %<>% select(Area, trans, tree, common.name, scientific.name,
+                    family.name, DBH.11, type.11, canopy.11, light.11,
+                    Dead.11, D.class.11, Hcom.11, Htot.11, RN.11, RS.11,
+                    RE.11, RW.11, UTM.Easting, UTM.Northing)
+duc2011 %<>% rename(area = Area, plot = trans, DBH = DBH.11,
+                    type = type.11, canopy = canopy.11, light = light.11,
+                    dead = Dead.11, D.class = D.class.11, Hcom = Hcom.11,
+                    Htot = Htot.11, RN = RN.11, RS = RS.11, RE = RE.11, RW = RW.11)
+duc2011$date = as.Date('20110101', format = '%Y%m%d')
+duc2011$plot %<>% as.character()
+duc2011$subplot = 'None'
+duc2011$tree %<>% as.character()
+
+duc2016 = read.csv(paste0(PATH, 'DUC_A01_2016_inventory.csv'), encoding='latin-1')
+duc2016 %<>% rename(dead = Dead)
+duc2016$date %<>% as.character() %>% substr(1,8) %>% as.Date(format = '%Y%m%d')
+duc2016$area = 'DUC_A01b'
+duc2016$plot %<>% as.character()
+duc2016$subplot = 'None'
+duc2016$tree %<>% as.character()
+
+fn2015 = read.csv(paste0(PATH, 'FN_A01_2015_Inventory.csv'), encoding ='latin-1', sep = ';', dec = '.')
+fn2015 %<>% select(-UTM.Easting, -UTM.Northing)
+fn2015 %<>% rename(dead = Dead, subplot = plot, plot = group)
+fn2015$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+fn2015$plot %<>% as.character()
+fn2015$subplot %<>% as.character()
+fn2015$tree %<>% as.character()
+
+fna2013 = read.csv(paste0(PATH, 'FNA_A01_2013_Inventory.csv'), encoding ='latin-1')
+fna2013 %<>% select(area, transect, tree, common_name, scienfic_name,
+                    family_name, DBH, type, canopy, Light, plot_code,
+                    Dead, D_class, Hcom, Htot, RN, RS,
+                    RE, RW, Date, UTM_Easting, UTM_Northing)
+fna2013 %<>% rename(subplot = plot_code, plot = transect, common.name = common_name, 
+                    scientific.name = scienfic_name, family.name = family_name,
+                    dead = Dead, light = Light, date = Date,
+                    D.class = D_class, UTM.Easting = UTM_Easting, UTM.Northing = UTM_Northing)
+fna2013$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+fna2013$common.name %<>% enc2utf8() %>% lowerCase()
+fna2013 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+fna2013$plot %<>% as.character()
+fna2013$subplot %<>% as.character()
+fna2013$tree %<>% as.character()
+
+fst2013 = read.csv(paste0(PATH, 'FST_A01_2013_Inventory.csv'), encoding ='latin-1')
+fst2013 %<>% select(area, transect, tree, common_name, scienfic_name,
+                    family_name, DBH, type, canopy, Light,
+                    Dead, D_class, Hcom, Htot, RN, RS,
+                    RE, RW, Date, UTM_Easting, UTM_Northing)
+fst2013 %<>% rename(plot = transect, common.name = common_name, 
+                    scientific.name = scienfic_name, family.name = family_name,
+                    dead = Dead, light = Light, date = Date,
+                    D.class = D_class, UTM.Easting = UTM_Easting, UTM.Northing = UTM_Northing)
+fst2013$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+fst2013$common.name %<>% enc2utf8() %>% lowerCase()
+fst2013 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+fst2013$plot %<>% as.character()
+fst2013$subplot = 'None'
+fst2013$tree %<>% as.character()
+
+hum2014 = read.csv(paste0(PATH, 'HUM_A01_2014_Inventory.csv'), encoding ='latin-1')
+hum2014 %<>% select(area, plot_ID, tree, common_name, scientific_name,
+                    family_name, DBH, type, burnt_area,
+                    dead, d_class, Hcom, Htot, date, UTM_Easting, UTM_Northing)
+hum2014 %<>% rename(plot = plot_ID, common.name = common_name, 
+                    scientific.name = scientific_name, family.name = family_name,
+                    D.class = d_class, burnt.area = burnt_area,
+                    UTM.Easting = UTM_Easting, UTM.Northing = UTM_Northing)
+hum2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+hum2014$common.name %<>% enc2utf8() %>% lowerCase()
+hum2014$plot %<>% as.character()
+hum2014$subplot = 'None'
+hum2014$tree %<>% as.character()
+
+jam2011 = read.csv(paste0(PATH, 'JAM_A01_2011_Inventory.csv'), encoding ='latin-1', dec = '.', sep = ';')
+jam2011 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH, type, canopy, light,
+                    dead, d_class, Hcom, Htot, RN, RS,
+                    RE, RW, date, UTM_Easting, UTM_Northing)
+jam2011 %<>% rename(plot = transect, common.name = common_name, 
+                    scientific.name = scientific_name, family.name = family_name,
+                    D.class = d_class, UTM.Easting = UTM_Easting, UTM.Northing = UTM_Northing)
+jam2011$date = as.Date('20111208', format = '%Y%m%d')
+jam2011$common.name %<>% enc2utf8() %>% lowerCase()
+jam2011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+jam2011$plot %<>% as.character()
+jam2011$subplot = 'None'
+jam2011$tree %<>% as.character()
+
+jam22011 = read.csv(paste0(PATH, 'JAM_A02_2011_Inventory.csv'), encoding ='latin-1', 
+                    dec = '.', sep = ';')
+jam22011 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH, type, canopy, light,
+                    dead, d_class, Hcom, Htot, RN, RS,
+                    RE, RW, date, UTM_Easting, UTM_Northing)
+jam22011 %<>% rename(plot = transect, 
+                     common.name = common_name,
+                     scientific.name = scientific_name, 
+                     family.name = family_name,
+                     D.class = d_class, 
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+jam22011$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+jam22011$common.name %<>% enc2utf8() %>% lowerCase()
+jam22011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+jam22011$plot %<>% as.character()
+jam22011$subplot = 'None'
+jam22011$tree %<>% as.character()
+
+jam32013 = read.csv(paste0(PATH, 'JAM_A03_2013_Inventory.csv'), encoding ='latin-1', 
+                    dec = '.', sep = ',')
+jam32013 %<>% select(area, group_code, plot, common_name, scienfic_name,
+                     family_name, tree, DBH, type, canopy, Light,
+                     Dead, D_class, date, UTM_Easting, UTM_Northing)
+jam32013 %<>% rename(subplot = plot,
+                     plot = group_code, 
+                     common.name = common_name,
+                     scientific.name = scienfic_name, 
+                     family.name = family_name,
+                     D.class = D_class,
+                     light = Light,
+                     dead = Dead,
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+jam32013$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+jam32013$common.name %<>% enc2utf8() %>% lowerCase()
+jam32013 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+jam32013$plot %<>% as.character()
+jam32013$subplot %<>% as.character()
+jam32013$tree %<>% as.character()
+
+jam22013 = read.csv(paste0(PATH, 'JAM_A02_2013_Inventory.csv'), encoding ='latin-1', 
+                    dec = '.', sep = ',')
+jam22013 %<>% select(area, group_code, plot, common_name, scienfic_name,
+                     family_name, tree, DBH, type, canopy, Light,
+                     Dead, D_class, date, UTM_Easting, UTM_Northing)
+jam22013 %<>% rename(subplot = plot,
+                     plot = group_code, 
+                     common.name = common_name,
+                     scientific.name = scienfic_name, 
+                     family.name = family_name,
+                     D.class = D_class,
+                     light = Light,
+                     dead = Dead,
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+jam22013$area = 'JAM_A02b'
+jam22013$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+jam22013$common.name %<>% enc2utf8() %>% lowerCase()
+jam22013$dead %<>% replace_na('A')
+jam22013 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+jam22013$plot %<>% as.character()
+jam22013$subplot %<>% as.character()
+jam22013$tree %<>% as.character()
+
+par2013 = read.csv(paste0(PATH, 'PAR_A01_2013_2018_Inventory.csv'), encoding='latin-1')
+par2013 %<>% select(area, transect, tree, common_name, scienfic_name,
+                    family_name, DBH.2013, type, canopy.2013, Light.2013,
+                    Dead.2013, D_class.2013, Hcom.2013, Htot.2013, RN.2013, RS.2013,
+                    RL.2013, RO.2013, Date.2013, UTM_Easting, UTM_Northing)
+par2013 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    DBH = DBH.2013,
+                    canopy = canopy.2013,
+                    light = Light.2013,
+                    dead = Dead.2013, 
+                    D.class = D_class.2013, 
+                    Hcom = Hcom.2013,
+                    Htot = Htot.2013, 
+                    RN = RN.2013, 
+                    RS = RS.2013, 
+                    RE = RL.2013, 
+                    RW = RO.2013,
+                    date = Date.2013,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+par2013$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+par2013$common.name %<>% enc2utf8() %>% lowerCase()
+par2013$RN %<>% as.numeric()
+par2013$RS %<>% as.numeric()
+par2013$RE %<>% as.numeric()
+par2013$RW %<>% as.numeric()
+par2013$plot %<>% as.character()
+par2013$subplot = 'None'
+par2013$tree %<>% as.character()
+
+par2018 = read.csv(paste0(PATH, 'PAR_A01_2013_2018_Inventory.csv'), encoding='latin-1',
+                   sep = ',', dec = '.')
+par2018 %<>% select(area, transect, tree, common_name, scienfic_name,
+                    family_name, DBH.2018, type, Dead.2018, 
+                    Date.2018, UTM_Easting, UTM_Northing)
+par2018 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    DBH = DBH.2018,
+                    dead = Dead.2018, 
+                    date = Date.2018,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+par2018$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+par2018$DBH = gsub(',', '.', par2018$DBH)
+par2018$DBH %<>% as.numeric()
+par2018$common.name %<>% enc2utf8() %>% lowerCase()
+par2013$plot %<>% as.character()
+par2018$subplot = 'None'
+par2018$tree %<>% as.character()
+
+san2014 = read.csv(paste0(PATH, 'SAN_A01_2014_2016_Inventory.csv'), encoding='latin-1')
+san2014 %<>% select(area, plot, tree, common.name, scientific.name,
+                    family.name, DBH.2014, type,
+                    dead.2014, d.class.2014, Hcom.2014, Htot.2014, RN.2014, RS.2014,
+                    RE.2014, RW.2014, dates.2014, UTM.Easting, UTM.Northing)
+san2014 %<>% rename(DBH = DBH.2014,
+                    dead = dead.2014, 
+                    D.class = d.class.2014, 
+                    Hcom = Hcom.2014,
+                    Htot = Htot.2014, 
+                    RN = RN.2014, 
+                    RS = RS.2014, 
+                    RE = RE.2014, 
+                    RW = RW.2014,
+                    date = dates.2014)
+san2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+san2014$common.name %<>% enc2utf8() %>% lowerCase()
+san2014$plot %<>% as.character()
+san2014$subplot = 'None'
+san2014$tree %<>% as.character()
+
+san2016 = read.csv(paste0(PATH, 'SAN_A01_2014_2016_Inventory.csv'), encoding='latin-1')
+san2016 %<>% select(area, plot, tree, common.name, scientific.name,
+                    family.name, DBH.2016, type,
+                    dead.2016, dates.2016, UTM.Easting, UTM.Northing)
+san2016 %<>% rename(DBH = DBH.2016,
+                    dead = dead.2016, 
+                    date = dates.2016)
+san2016$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+san2016$common.name %<>% enc2utf8() %>% lowerCase()
+san2016$plot %<>% as.character()
+san2016$subplot = 'None'
+san2016$tree %<>% as.character()
+
+san22014 = read.csv(paste0(PATH, 'SAN_A02_2014_Inventory.csv'), encoding='latin-1')
+san22014 %<>% select(area, group, plot, tree, common.name, scientific.name,
+                    family.name, DBH, type, dead, d.class, Hcom, Htot,
+                    RN, RS, RE, RW, dates, UTM.Easting, UTM.Northing)
+san22014 %<>% rename(subplot = plot,
+                     plot = group,
+                     D.class = d.class, 
+                     date = dates)
+san22014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+san22014$common.name %<>% enc2utf8() %>% lowerCase()
+san22014$plot %<>% as.character()
+san22014$subplot %<>% as.character()
+san22014$tree %<>% as.character()
+
+sfx2011 = read.csv(paste0(PATH, 'SFX_A01_2011_Inventory.csv'), encoding='latin-1')
+sfx2011 %<>% select(Area, plot, tree, common_name, scienfic_name,
+                    family_name, DBH, type, 
+                    Dead, D_class, Hcom, Htot, RN, RS,
+                    RL, RO, Date, UTM.Easting, UTM.Northing)
+sfx2011 %<>% rename(area = Area,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    dead = Dead, 
+                    D.class = D_class, 
+                    RE = RL, 
+                    RW = RO,
+                    date = Date)
+sfx2011$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+sfx2011$common.name %<>% enc2utf8() %>% lowerCase()
+sfx2011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+sfx2011$plot %<>% as.character()
+sfx2011$subplot = 'None'
+sfx2011$tree %<>% as.character()
+
+sfx22012 = read.csv(paste0(PATH, 'SFX_A02_2012_Inventory.csv'), encoding='latin-1')
+sfx22012 %<>% select(Area, plot, tree, common_name, scienfic_name,
+                    family_name, DBH, type, 
+                    Dead, D_class, Hcom, Htot, RN, RS,
+                    RL, RO, Date, UTM.Easting, UTM.Northing)
+sfx22012 %<>% rename(area = Area,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    dead = Dead, 
+                    D.class = D_class, 
+                    RE = RL, 
+                    RW = RO,
+                    date = Date)
+sfx22012$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+sfx22012$common.name %<>% enc2utf8() %>% lowerCase()
+sfx22012 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+sfx22012$plot %<>% as.character()
+sfx22012$subplot = 'None'
+sfx22012$tree %<>% as.character()
+
+sfx32012 = read.csv(paste0(PATH, 'SFX_A03_2012_Inventory.csv'), encoding='latin-1')
+sfx32012 %<>% select(Area, plot, tree, common_name, scienfic_name,
+                     family_name, DBH, type, 
+                     Dead, D_class, Hcom, Htot, RN, RS,
+                     RE, RW, Date, UTM.Easting, UTM.Northing)
+sfx32012 %<>% rename(area = Area,
+                     common.name = common_name,
+                     scientific.name = scienfic_name, 
+                     family.name = family_name,
+                     dead = Dead, 
+                     D.class = D_class, 
+                     date = Date)
+sfx32012$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+sfx32012$common.name %<>% enc2utf8() %>% lowerCase()
+sfx32012 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+sfx32012$plot %<>% as.character()
+sfx32012$subplot = 'None'
+sfx32012$tree %<>% as.character()
+
+tac2014 = read.csv(paste0(PATH, 'TAC_A01_2014_Inventory.csv'), encoding='latin-1')
+tac2014 %<>% select(Area, plot, tree, common.name, scientific.name,
+                     family.name, DBH, type, 
+                     Dead, D.class, Hcom, Htot, RN, RS,
+                     RE, RW, date, UTM.Easting, UTM.Northing)
+tac2014 %<>% rename(area = Area,
+                     dead = Dead)
+tac2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tac2014$common.name %<>% enc2utf8() %>% lowerCase()
+tac2014$plot %<>% as.character()
+tac2014$subsplot = 'None'
+tac2014$tree %<>% as.character()
+
+tac2015 = read.csv(paste0(PATH, 'TAC_A01_2015_Inventory.csv'), encoding='latin-1')
+tac2015 %<>% select(area.code, plot, plot.p,  tree, common.name, scientific.name,
+                    family.name, DBH, type, 
+                    Dead, D.class, RN, RS,
+                    RE, RW, dates, UTM.Easting, UTM.Northing)
+tac2015 %<>% rename(area = area.code,
+                    subplot = plot.p,
+                    dead = Dead,
+                    date = dates)
+tac2015$area = 'TAC_A01b'
+tac2015$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tac2015$common.name %<>% enc2utf8() %>% lowerCase()
+tac2015$plot %<>% as.character()
+tac2015$subplot %<>% as.character()
+tac2015$tree %<>% as.character()
+
+tal2014 = read.csv(paste0(PATH, 'TAL_A01_2014_Inventory.csv'), encoding='latin-1')
+tal2014 %<>% select(area, plot_ID, tree, common_name, scientific_name,
+                    family_name, DBH, type, 
+                    dead, d_class, Hcom, Htot, burnt_area, 
+                    date, UTM_Easting, UTM_Northing)
+tal2014 %<>% rename(plot = plot_ID,
+                    common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    D.class = d_class,
+                    burnt.area = burnt_area,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tal2014$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tal2014$common.name %<>% enc2utf8() %>% lowerCase()
+tal2014$plot %<>% as.character()
+tal2014$subplot = 'None'
+tal2014$tree %<>% as.character()
+
+tan2012 = read.csv(paste0(PATH, 'TAN_A01_2012_Inventory.csv'), encoding='latin-1')
+tan2012 %<>% select(area, transect, tree, common_name, scienfic_name,
+                    family_name, DBH, type, canopy, Light,
+                    Dead, D_class, Hcom, Htot, RS, RN, RE, RW,
+                    Date, UTM_Easting, UTM_Northing)
+tan2012 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scienfic_name, 
+                    family.name = family_name,
+                    light = Light,
+                    dead = Dead,
+                    D.class = D_class,
+                    date = Date,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tan2012$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tan2012$common.name %<>% enc2utf8() %>% lowerCase()
+tan2012 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tan2012$Hcom %<>% as.numeric()
+tan2012$UTM.Easting %<>% as.numeric()
+tan2012$UTM.Northing %<>% as.numeric()
+tan2012$plot %<>% as.character()
+tan2012$subplot = 'None'
+tan2012$tree %<>% as.character()
+
+tap2009 = read.csv(paste0(PATH, 'TAP_A01_2009_2010_2011.csv'), encoding='latin-1')
+tap2009 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH_09, type, canopy_09, light_09,
+                    dead_09, dclass_09, Hcom_09, Htot_09, RN_09, RS_09,
+                    RE_09, RW_09, date_09, UTM_Easting, UTM_Northing)
+tap2009 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH_09,
+                    canopy = canopy_09,
+                    light = light_09,
+                    dead = dead_09, 
+                    D.class = dclass_09, 
+                    Hcom = Hcom_09,
+                    Htot = Htot_09, 
+                    RN = RN_09, 
+                    RS = RS_09, 
+                    RE = RE_09, 
+                    RW = RW_09,
+                    date = date_09,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2009$area = 'TAP_A01'
+tap2009$date %<>% substr(1,8)
+tap2009$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2009$dead %<>% replace_na('A')
+tap2009 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap2009$plot %<>% as.character()
+tap2009$subplot = 'None'
+tap2009$tree %<>% as.character()
+
+tap2010 = read.csv(paste0(PATH, 'TAP_A01_2009_2010_2011.csv'), encoding='latin-1')
+tap2010 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH_10, type, canopy_10, light_10,
+                    dead_10, dclass_10, Hcom_10, Htot_10, RN_10, RS_10,
+                    RE_10, RW_10, date_10, UTM_Easting, UTM_Northing)
+tap2010 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH_10,
+                    canopy = canopy_10,
+                    light = light_10,
+                    dead = dead_10, 
+                    D.class = dclass_10, 
+                    Hcom = Hcom_10,
+                    Htot = Htot_10, 
+                    RN = RN_10, 
+                    RS = RS_10, 
+                    RE = RE_10, 
+                    RW = RW_10,
+                    date = date_10,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2010 %<>% filter(area != '')
+tap2010$area = 'TAP_A01'
+tap2010$date %<>% substr(1,8)
+tap2010$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2010$dead %<>% replace_na('A')
+tap2010 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap2010$plot %<>% as.character()
+tap2010$subplot = 'None'
+tap2010$tree %<>% as.character()
+
+tap2011 = read.csv(paste0(PATH, 'TAP_A01_2009_2010_2011.csv'), encoding='latin-1')
+tap2011 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH_11, type, canopy_11, light_11,
+                    dead_11, dclass_11, Hcom_11, Htot_11, RN_11, RS_11,
+                    RE_11, RW_11, date_11, UTM_Easting, UTM_Northing)
+tap2011 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH_11,
+                    canopy = canopy_11,
+                    light = light_11,
+                    dead = dead_11, 
+                    D.class = dclass_11, 
+                    Hcom = Hcom_11,
+                    Htot = Htot_11, 
+                    RN = RN_11, 
+                    RS = RS_11, 
+                    RE = RE_11, 
+                    RW = RW_11,
+                    date = date_11,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2011 %<>% filter(area != '')
+tap2011$area = 'TAP_A01'
+tap2011$date %<>% substr(1,8)
+tap2011$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2011$dead %<>% replace_na('A')
+tap2011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap2011$plot %<>% as.character()
+tap2011$subplot = 'None'
+tap2011$tree %<>% as.character()
+
+tap2015 = read.csv(paste0(PATH, 'TAP_A01_2015_2016_2018_inventory_delivery.csv'), encoding='latin-1')
+tap2015 %<>% select(area, plot, tree, common_name, scientific_name,
+                    family_name, DBH.2015, type, Dead.2015, D_class.2015, Hcom.2015, 
+                    Htot.2015, RN.2015, RS.2015,
+                    RE.2015, RW.2015, date.2015, UTM_Easting, UTM_Northing)
+tap2015 %<>% rename(common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH.2015,
+                    dead = Dead.2015, 
+                    D.class = D_class.2015, 
+                    Hcom = Hcom.2015,
+                    Htot = Htot.2015, 
+                    RN = RN.2015, 
+                    RS = RS.2015, 
+                    RE = RE.2015, 
+                    RW = RW.2015,
+                    date = date.2015,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2015 %<>% filter(area != '')
+tap2015$area = 'TAP_A01b'
+tap2015$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2015$common.name %<>% enc2utf8() %>% lowerCase()
+tap2015$dead %<>% replace_na(FALSE)
+tap2015$plot %<>% as.character()
+tap2015$subplot = 'None'
+tap2015$tree %<>% as.character()
+tap2011 %<>% filter(area != '')
+
+
+tap2016 = read.csv(paste0(PATH, 'TAP_A01_2015_2016_2018_inventory_delivery.csv'), encoding='latin-1')
+tap2016 %<>% select(area, plot, tree, common_name, scientific_name,
+                    family_name, DBH.2016, type, dead.2016, D.class.2016, 
+                    date.2016, UTM_Easting, UTM_Northing)
+tap2016 %<>% rename(common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH.2016,
+                    dead = dead.2016, 
+                    D.class = D.class.2016, 
+                    date = date.2016,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2016$area = 'TAP_A01b'
+tap2016$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2016$common.name %<>% enc2utf8() %>% lowerCase()
+tap2016$dead %<>% replace_na(FALSE)
+tap2016$plot %<>% as.character()
+tap2016$subsplot = 'None'
+tap2016$tree %<>% as.character()
+
+tap2018 = read.csv(paste0(PATH, 'TAP_A01_2015_2016_2018_inventory_delivery.csv'), encoding='latin-1')
+tap2018 %<>% select(area, plot, tree, common_name, scientific_name,
+                    family_name, DBH.2018, type, Dead.2018,
+                    date.2018, UTM_Easting, UTM_Northing)
+tap2018 %<>% rename(common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH.2018,
+                    dead = Dead.2018, 
+                    date = date.2018,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap2018$area = 'TAP_A01b'
+tap2018$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap2018$common.name %<>% enc2utf8() %>% lowerCase()
+tap2018$plot %<>% as.character()
+tap2018$subsplot = 'None'
+tap2018$tree %<>% as.character()
+
+tap32015 = read.csv(paste0(PATH, 'TAP_A03_2015_Inventory.csv'), encoding='latin-1')
+tap32015 %<>% select(area, plot, tree, common.name, scientific.name,
+                    family.name, DBH, type, Dead, D.class,
+                    Hcom, Htot, RN, RS, RE, RW,
+                    date, UTM.Easting, UTM.Northing)
+tap32015 %<>% rename(dead = Dead)
+tap32015$date = as.Date('20151209', format = '%Y%m%d')
+tap32015$common.name %<>% enc2utf8() %>% lowerCase()
+tap32015$plot %<>% as.character()
+tap32015$subplot = 'None'
+tap32015$tree %<>% as.character()
+
+tap42010 = read.csv(paste0(PATH, 'TAP_A04_2010_2011.csv'), encoding='latin-1')
+tap42010 %<>% select(area, transect, tree, common_name, scientific_name,
+                    family_name, DBH_10, type, canopy_10, light_10,
+                    dead_10, dclass_10, Hcom_09, Htot_10, RN_10, RS_10,
+                    RE_10, RW_10, date_10, UTM_Easting, UTM_Northing)
+tap42010 %<>% rename(plot = transect,
+                    common.name = common_name,
+                    scientific.name = scientific_name, 
+                    family.name = family_name,
+                    DBH = DBH_10,
+                    canopy = canopy_10,
+                    light = light_10,
+                    dead = dead_10, 
+                    D.class = dclass_10, 
+                    Hcom = Hcom_09,
+                    Htot = Htot_10, 
+                    RN = RN_10, 
+                    RS = RS_10, 
+                    RE = RE_10, 
+                    RW = RW_10,
+                    date = date_10,
+                    UTM.Easting = UTM_Easting, 
+                    UTM.Northing = UTM_Northing)
+tap42010$area = 'TAP_A04'
+tap42010$date %<>% substr(1,8)
+tap42010$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap42010 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap42010$plot %<>% as.character()
+tap42010$subplot = 'None'
+tap42010$tree %<>% as.character()
+
+tap42011 = read.csv(paste0(PATH, 'TAP_A04_2010_2011.csv'), encoding='latin-1')
+tap42011 %<>% select(area, transect, tree, common_name, scientific_name,
+                     family_name, DBH_11, type, canopy_11, light_11,
+                     dead_11, dclass_11, Hcom_11, Htot_11, RN_11, RS_11,
+                     RE_11, RW_11, date_11, UTM_Easting, UTM_Northing)
+tap42011 %<>% rename(plot = transect,
+                     common.name = common_name,
+                     scientific.name = scientific_name, 
+                     family.name = family_name,
+                     DBH = DBH_11,
+                     canopy = canopy_11,
+                     light = light_11,
+                     dead = dead_11, 
+                     D.class = dclass_11, 
+                     Hcom = Hcom_11,
+                     Htot = Htot_11, 
+                     RN = RN_11, 
+                     RS = RS_11, 
+                     RE = RE_11, 
+                     RW = RW_11,
+                     date = date_11,
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+tap42011$area = 'TAP_A04'
+tap42011$date %<>% substr(1,8)
+tap42011$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap42011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap42011$plot %<>% as.character()
+tap42011$subplot = 'None'
+tap42011$tree %<>% as.character()
+
+tap52010 = read.csv(paste0(PATH, 'TAP_A05_2010_2011.csv'), encoding='latin-1')
+tap52010 %<>% select(area, transect, tree, common_name, scientific_name,
+                     family_name, DBH_10, type, canopy_10, light_10,
+                     dead_10, dclass_10, Hcom_09, Htot_10, RN_10, RS_10,
+                     RE_10, RW_10, date_10, UTM_Easting, UTM_Northing)
+tap52010 %<>% rename(plot = transect,
+                     common.name = common_name,
+                     scientific.name = scientific_name, 
+                     family.name = family_name,
+                     DBH = DBH_10,
+                     canopy = canopy_10,
+                     light = light_10,
+                     dead = dead_10, 
+                     D.class = dclass_10, 
+                     Hcom = Hcom_09,
+                     Htot = Htot_10, 
+                     RN = RN_10, 
+                     RS = RS_10, 
+                     RE = RE_10, 
+                     RW = RW_10,
+                     date = date_10,
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+tap52010$area = 'TAP_A05'
+tap52010$date %<>% substr(1,8)
+tap52010$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap52010 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap52010$plot %<>% as.character()
+tap52010$subplot = 'None'
+tap52010$tree %<>% as.character()
+
+tap52011 = read.csv(paste0(PATH, 'TAP_A05_2010_2011.csv'), encoding='latin-1')
+tap52011 %<>% select(area, transect, tree, common_name, scientific_name,
+                     family_name, DBH_11, type, canopy_11, light_11,
+                     dead_11, dclass_11, Hcom_11, Htot_11, RN_11, RS_11,
+                     RE_11, RW_11, date_11, UTM_Easting, UTM_Northing)
+tap52011 %<>% rename(plot = transect,
+                     common.name = common_name,
+                     scientific.name = scientific_name, 
+                     family.name = family_name,
+                     DBH = DBH_11,
+                     canopy = canopy_11,
+                     light = light_11,
+                     dead = dead_11, 
+                     D.class = dclass_11, 
+                     Hcom = Hcom_11,
+                     Htot = Htot_11, 
+                     RN = RN_11, 
+                     RS = RS_11, 
+                     RE = RE_11, 
+                     RW = RW_11,
+                     date = date_11,
+                     UTM.Easting = UTM_Easting, 
+                     UTM.Northing = UTM_Northing)
+tap52011$area = 'TAP_A05'
+tap52011$date %<>% substr(1,8)
+tap52011$date %<>% as.character() %>% as.Date(format = '%Y%m%d')
+tap52011 %<>% mutate(dead = case_when(
+  dead == 'D' ~ TRUE,
+  dead == 'A' ~ FALSE))
+tap52011$plot %<>% as.character()
+tap52011$subplot = 'None'
+tap52011$tree %<>% as.character()
+```
+
+```{r mergeInv}
+inv.paisagens = merge(ana2015, and2013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, bon2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, cau2012, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, cau2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, cau2014b, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, duc2009, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, duc2011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, duc2016, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, fn2015, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, fna2013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, fst2013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, hum2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, jam2011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, jam22011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, jam22013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, jam32013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, par2013, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, par2018, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, san2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, san2016, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, sfx2011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, sfx22012, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, sfx32012, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tac2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tac2015, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tal2014, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tan2012, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2009, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2010, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2015, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2016, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap2018, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap32015, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap42010, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap42011, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap52010, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, tap52011, all.x = TRUE, all.y = TRUE)
+```
+
+```{r mutate}
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'D', 'E', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'C ', 'C', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'c ', 'C', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'c', 'C', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 's ', 'S', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == 's', 'S', canopy))
+inv.paisagens %<>% mutate(canopy = ifelse(canopy == '*', NA, canopy))
+
+inv.paisagens %<>% mutate(type = ifelse(type == 'l', 'L', type))
+inv.paisagens %<>% mutate(type = ifelse(type == 'o', 'O', type))
+inv.paisagens %<>% mutate(type = ifelse(type == '', NA, type))
+
+inv.paisagens %<>% mutate(light = ifelse(light == '*', NA, light))
+
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Astrocaryum aculeatum ', 'Astrocaryum aculeatum', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Astrocaryum gynacant', 'Astrocaryum gynacanthum', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Brosimum rubescens ', 'Brosimum rubescens', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Diplotropis sp,', 'Diplotropis sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Eschweilera sp,', 'Eschweilera sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Hymenaea parviflora', 'Hymenaea parvifolia', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Inga sp,', 'Inga sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Parahancornia\xa0sp.', 'Parahancornia sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Parkia sp,', 'Parkia sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Peltogyne leicointei', 'Peltogyne lecointei', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Pouteria sp,', 'Pouteria sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Pouteria macrophilla', 'Pouteria macrophylla', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Protium hepytaphillum ', 'Protium heptaphyllum', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Schefflera morototonii', 'Schefflera morototoni', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Trattinnickia burseraefolia', 'Trattinnickia burserifolia', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Xylopia sp,', 'Xylopia sp.', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Zizyphus itacaiunensis', 'Ziziphus itacaiunensis', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'ni', 'NI', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == '', NA, scientific.name))
+
+inv.paisagens %<>% mutate(family.name = ifelse(family.name == 'Miconia surinamensis', 'Melastomataceae', family.name))
+inv.paisagens %<>% mutate(family.name = ifelse(family.name == 'Ramnaceae', 'Rhamnaceae', family.name))
+
+inv.paisagens$scientific = inv.paisagens$scientific.name
+inv.paisagens %<>% separate(scientific, c('genera.name', 'epiteto.name'), " ")
+
+inv.paisagens %<>% mutate(cc = floor(DBH/10.0)*10+(10/2))
+
+inv.paisagens %<>% mutate(year = year(date))
+
+inv.paisagens %<>% mutate(plot = ifelse(is.na(plot), 'None', plot))
+```
+
+```{r grupoEcologico}
+grupoEcologico = read.csv(paste0(COMPL, 'grupoEcologico.csv'))
+inv.paisagens %<>% left_join(grupoEcologico, by = c('scientific.name' = 'Especie'))
+```
+
+```{r comercial}
+comercial = read.csv(paste0(COMPL, 'comercial.csv'))
+inv.paisagens %<>% left_join(comercial, by = c('scientific.name' = 'especie'))
+```
+
+```{r areaRelativa}
+dimensao = read.csv(paste0(COMPL, 'dimensaoParcelas.csv'))
+calcularArea = function(dap, nome.area, dim.df){
+  temp = subset(dimensao, area == nome.area)
+  if(dim(temp)[1] == 0){
+    NA
+  } else {
+    if(is.na(dap)){
+      NA
+    } else {
+      if(temp$forma[1] == 'PLOT'){
+        if(!is.na(temp$crit_p2_maior[1])){
+          if(dap < (temp$crit_p1_maior[1])){
+            temp$dim1_p2[1] * temp$dim2_p2[1] / 10000
+          } else {
+            temp$dim1_p1[1] * temp$dim2_p1[1] / 10000
+          }
+        } else {
+          temp$dim1_p1[1] * temp$dim2_p1[1] / 10000
+        }
+      } else {
+        if(!is.na(temp$dim1_p1[1])){
+          dap * (temp$fator[1]) * (temp$dim1_p1[1]) / 10000
+        } else {
+          NA
+        }
+      }
+    }
+  }
+}
+inv.paisagens$areaPlot = mapply(calcularArea, inv.paisagens$DBH, inv.paisagens$area, dimensao)
+
+inv.paisagens %<>% mutate(eqTree = 1/areaPlot)
+```
+
+```{r export}
+write.csv(inv.paisagens, 'dados/10_invPaisagensMerged.csv')
+```
+
