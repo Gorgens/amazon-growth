@@ -1,33 +1,38 @@
 ---
-title: "02methods.Rmd"
+title: "Material e Métodos"
 output: html_document
 ---
 
 ```{r packages2}
-require(dplyr)
+require(tidyverse)
 require(magrittr)
 require(plotly)
-require(tidyr)
 require(reshape2)
 require(ggplot2)
 require(V.PhyloMaker)
 require(phytools)
 ```
-
+Sobre os inventários... processamento e padronização...
 
 #```{r mergeInventarios, child="02merge.Rmd"}
 #```
 
+Remove não árvores, remove indivíduos não indentificados e remove indivíduos sem diâmetro...
+
 ```{r cleanInv}
-inv.paisagens = read.csv("10_invPaisagensMerged.csv")
-inv.paisagens.filtered = inv.paisagens %>%
-  filter(type == "O" | is.na(type)) %>%                                         # remover não árvores
-  filter(scientific.name != 'NI') %>%                                           # remover indivíduos não indentificados
-  drop_na(DBH)                                                                  # remover valores NA no DBH
+inv.paisagens = read.csv("dados/10_invPaisagensMerged.csv")
+inv.paisagens = inv.paisagens %>%
+  filter(type == "O" | is.na(type)) %>%
+  filter(scientific.name != 'NI') %>%
+  drop_na(DBH)
+
+head(inv.paisagens)
 ```
 
+Determinar o número de parcelas em cada sítio...
+
 ```{r}
-parcelasArea = inv.paisagens.filtered %>%                                       # conta número de parcelas em cada área
+parcelasArea = inv.paisagens %>%
   group_by(area, plot, subplot, year) %>%
   summarise(obs = n()) %>%
   group_by(area, year) %>%
@@ -36,6 +41,13 @@ parcelasArea = inv.paisagens.filtered %>%                                       
   summarise(nplots = mean(nplots))
 ```
 
-## Pareamento
+Incremento diamétrico? Crescimento relativo?
 
 
+Grupo ecológico?
+
+
+Espécies comerciais e não comerciais?
+
+
+Modelo bayesiana...

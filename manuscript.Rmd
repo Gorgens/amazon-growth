@@ -1,5 +1,5 @@
 ---
-title: "My Example Computed Manuscript"
+title: "Padrões de crescimento de árvores em floresta Amazônica"
 subtitle: Created in Rmarkdown
 titlerunning: Example computed manuscript
 date: "`r format(Sys.time(), '%d %b %Y %H:%M:%S %Z')`"
@@ -11,15 +11,19 @@ output:
   bookdown::pdf_book:
     base_format: rticles::springer_article
     extra_dependencies: booktabs
-abstract: "A mock computed manuscript created in RStudio using {Rmarkdown}. The {Bookdown}
-  and {Rticles} packages were used to output the text in Springer Nature's desired
-  manuscript format. \n"
+abstract: "Entrar com o resumo aqui \n"
 bibliography: bibliography.bib
 biblio-style: spbasic
 authors:
 - name: Eric Bastos Gorgens
   address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Minas Gerais, Brazil. CEP 39.100-000
   email: eric.gorgens@ufvjm.edu.br
+- name: Anthoinny...
+  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Minas Gerais, Brazil. CEP 39.100-000
+  email: fulano@ufvjm.edu.br
+- name: Vitor...
+  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Minas Gerais, Brazil. CEP 39.100-000
+  email: fulano@ufvjm.edu.br
 csl: nature.csl
 ---
 
