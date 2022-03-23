@@ -11,22 +11,20 @@ require(reshape2)
 require(ggplot2)
 require(V.PhyloMaker)
 require(phytools)
+require(knitr)
 ```
 Sobre os inventários... processamento e padronização...
 
 #```{r mergeInventarios, child="02merge.Rmd"}
 #```
 
-Remove não árvores, remove indivíduos não indentificados e remove indivíduos sem diâmetro...
+Remove não árvores e remove indivíduos sem diâmetro...
 
 ```{r cleanInv}
 inv.paisagens = read.csv("dados/10_invPaisagensMerged.csv")
 inv.paisagens = inv.paisagens %>%
   filter(type == "O" | is.na(type)) %>%
-  filter(scientific.name != 'NI') %>%
   drop_na(DBH)
-
-head(inv.paisagens)
 ```
 
 Determinar o número de parcelas em cada sítio...
@@ -40,14 +38,62 @@ parcelasArea = inv.paisagens %>%
   group_by(area) %>%
   summarise(nplots = mean(nplots))
 ```
+Explain growth...
 
-Incremento diamétrico? Crescimento relativo?
+$$growth = \frac{d2 - d1}{t2 - t1}$$
+
+Explain relative growth...
+
+$$RGrowth = \frac{growth}{d1}$$
+
+Plot relative growth by diameter
+
+```{r}
+
+```
 
 
-Grupo ecológico?
+Ecological groups....
+
+```{r}
+grupoEco = read.csv('auxiliar/grupoEcologico.csv')
+eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
+kable(eco, col.names = c('Ecological groups', 'Number of species'), caption = 'Number of species associated to each ecological group.')
+```
+
+Plot relative growth by diameter per ecological group...
+
+```{r}
+
+```
+
+Compute residence time to reach 50 cm...
+
+```{r}
+
+```
 
 
-Espécies comerciais e não comerciais?
+Commercial interest...
+
+```{r}
+commercialSpecies = read.csv('auxiliar/comercial.csv')
+commercial = commercialSpecies %>% group_by(comercial) %>% summarise(Species = n())
+kable(commercial, col.names = c('Commecial interest', 'Number of species'), caption = 'Number of species associated to commercial intesrest.')
+```
+
+Plot relative growth by diameter per commercial interest group...
+
+```{r}
+
+```
 
 
-Modelo bayesiana...
+Compute residence time to reach 50 cm...
+
+```{r}
+
+```
+
+
+
