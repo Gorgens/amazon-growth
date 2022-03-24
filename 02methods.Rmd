@@ -12,12 +12,12 @@ require(V.PhyloMaker)
 require(phytools)
 require(knitr)
 ```
-Sobre os inventários... processamento e padronização...
+Apresentar as áreas... os inventários... locais de estudo...
 
 #```{r mergeInventarios, child="02merge.Rmd"}
 #```
 
-Remove não árvores e remove indivíduos sem diâmetro... falar da necessidade dos dados pareados....
+Remove não árvores e remove indivíduos sem diâmetro... falar do pareamento dos dados....
 
 
 ```{r cleanInv}
@@ -25,11 +25,7 @@ invMerged = read.csv("dados/10_invPaisagensMerged.csv")
 invMerged = invMerged %>%
   filter(type == "O" | is.na(type)) %>%
   drop_na(DBH)
-```
 
-Determinar o número de parcelas em cada sítio...
-
-```{r}
 parcelasArea = invMerged %>%
   group_by(area, plot, subplot, year) %>%
   summarise(obs = n()) %>%
@@ -39,14 +35,12 @@ parcelasArea = invMerged %>%
   summarise(nplots = mean(nplots))
 ```
 
-Explain growth...
+Apresentar calculo do incremento diamétrico anual e o crescimento diamétrico relativo...
 
 $$growth = \frac{d2 - d1}{t2 - t1}$$
 
-Explain relative growth...
-
 $$RGrowth = \frac{growth}{d1}$$
-Ecological groups....
+Apresentar os grupos ecológicos... 
 
 ```{r}
 grupoEco = read.csv('auxiliar/grupoEcologico.csv')
@@ -54,7 +48,16 @@ eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
 kable(eco, col.names = c('Ecological groups', 'Number of species'), caption = 'Number of species associated to each ecological group.')
 ```
 
-Incremento por grupo ecológico...
+A apresentar o grupo de interesse comercial...
+
+```{r}
+commercialSpecies = read.csv('auxiliar/comercial.csv')
+commercial = commercialSpecies %>% group_by(comercial) %>% summarise(Species = n())
+kable(commercial, col.names = c('Commecial interest', 'Number of species'), caption = 'Number of species associated to commercial intesrest.')
+```
+
+
+Calculo do incremento por grupo ecológico e por grupo de interesse comercial...
 
 ```{r}
 incEco = invMerged %>%
@@ -66,18 +69,10 @@ incEco = invMerged %>%
             maxDBH = max(DBH), 
             inc = max(DBH) - min(DBH), 
             intervMed = max(year) - min(year), 
-            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
+            incAnual = ifelse(inc == 0, 0, inc / intervMed),
+            rInc = incAnual / minDBH) %>%
   filter(med > 1)
   
-```
-
-
-Commercial interest...
-
-```{r}
-commercialSpecies = read.csv('auxiliar/comercial.csv')
-commercial = commercialSpecies %>% group_by(comercial) %>% summarise(Species = n())
-kable(commercial, col.names = c('Commecial interest', 'Number of species'), caption = 'Number of species associated to commercial intesrest.')
 ```
 
 ```{r}
@@ -90,11 +85,14 @@ incComercial = invMerged %>%
             maxDBH = max(DBH), 
             inc = max(DBH) - min(DBH), 
             intervMed = max(year) - min(year), 
-            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
+            incAnual = ifelse(inc == 0, 0, inc / intervMed),
+            rInc = incAnual / minDBH) %>%
   filter(med > 1)
 ```
 
-Compute residence time to reach 50 cm...
+Calcularo tempo de residência... para sair do 10 cm e chegar no 50 cm...
+
+$$d_f = d_p (1+r)^t$$
 
 ```{r}
 

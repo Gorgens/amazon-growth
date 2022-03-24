@@ -11,6 +11,7 @@ require(ggplot2)
 require(V.PhyloMaker)
 require(phytools)
 ```
+## Comunidade
 
 Resumo de todo o conjunto de dados....
 
@@ -23,27 +24,34 @@ ggplot(invMerged, aes(DBH, Htot)) +
                      axis.line = element_line(colour = "black"))
 ```
 
-Plot relative growth by diameter
+Gráfico apresentando o crescimento diamétrico relativo em função do diâmetro...
 
 ```{r}
-
+ggplot(incEco, aes(rInc, minDBH)) +                                
+  geom_point(alpha = 0.1) + 
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
 ```
-
-
-Plot relative growth by diameter per commercial interest group...
 
 ```{r}
-
+ggplot(incEco, aes(rInc)) +                                
+  geom_density() +
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
 ```
 
-Incremento geral....
+Modelo do crescimento relativo...
 
 ```
 incrementosModel = glm(data = incremento, incAnual ~ minDBH, family=Gamma(link="log"))
 summary(incrementosModel)
 ```
-
-
 
 ## Grupo ecológicos
 
@@ -71,10 +79,25 @@ arvHaEspecie
 Plot relative growth by diameter per ecological group...
 
 ```{r}
-
+ggplot(incEco, aes(rInc, minDBH)) +                                
+  geom_point(alpha = 0.1) + 
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black")) +
+  facet_wrap(~GrupoEco)
 ```
 
-
+```{r}
+ggplot(incEco, aes(rInc, colour = GrupoEco)) +                                
+  geom_density() +
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
+```
 
 ### Pioneiras
 
@@ -328,9 +351,9 @@ Incremento pelo grupo ecológico...
 incrementoGrupo = incEco %>%
   filter(GrupoEco != "OUTROS") %>%
   group_by(GrupoEco) %>%
-  summarise(incDesv = IQR(incAnual, na.rm = TRUE), 
-            incAnual = median(incAnual), 
-            tp = 50 / incAnual)
+  summarise(incDesv = IQR(rInc, na.rm = TRUE), 
+            rInc = median(rInc), 
+            tp = 50 / rInc)
 
 incrementoGrupo
 ```
@@ -365,6 +388,28 @@ arvHaEspecie = inv.paisagens %>%
   summarise(arvha = mean(arvha))
 
 arvHaEspecie
+```
+
+
+```{r}
+ggplot(incComercial, aes(rInc, minDBH)) +                                
+  geom_point(alpha = 0.1) + 
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black")) +
+  facet_wrap(~comercial)
+```
+
+```{r}
+ggplot(incComercial, aes(rInc, colour = factor(comercial))) +                                
+  geom_density() +
+  xlim(0, 0.5) +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
 ```
 
 ```{r}
@@ -415,38 +460,11 @@ plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
 ```
 
 ```{r}
-#for(i in c(0, 1)){
-  numeroArvores = inv.paisagens %>%
-    filter(comercial == 0) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle('non-commercial') + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-Incremento por grupo de interesse comercial...
-
-```{r}
 incrementoGrupo = incComercial %>%
   group_by(comercial) %>%
-  summarise(incDesv = IQR(incAnual, na.rm = TRUE), 
-            incAnual = median(incAnual), 
-            tp = 50 / incAnual)
+  summarise(incDesv = IQR(rInc, na.rm = TRUE), 
+            rInc = median(rInc), 
+            tp = 50 / rInc)
 
 incrementoGrupo
 ```
