@@ -6,33 +6,16 @@ output: html_document
 ```{r packages3}
 require(tidyverse)
 require(magrittr)
-require(plotly)
 require(reshape2)
 require(ggplot2)
 require(V.PhyloMaker)
 require(phytools)
 ```
 
-```{r echo=FALSE}
-inv.paisagens = read.csv("dados/10_invPaisagensMerged.csv")
-inv.paisagens = inv.paisagens %>%
-  filter(type == "O" | is.na(type)) %>%
-  filter(scientific.name != 'NI') %>%
-  drop_na(DBH)
-
-parcelasArea = inv.paisagens %>%
-  group_by(area, plot, subplot, year) %>%
-  summarise(obs = n()) %>%
-  group_by(area, year) %>%
-  summarise(nplots = n()) %>%
-  group_by(area) %>%
-  summarise(nplots = mean(nplots))
-```
-
 Resumo de todo o conjunto de dados....
 
 ```{r hipsometria}
-ggplot(inv.paisagens, aes(DBH, Htot)) +                                
+ggplot(invMerged, aes(DBH, Htot)) +                                
   geom_point(alpha = 0.1) + 
   theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
@@ -40,16 +23,31 @@ ggplot(inv.paisagens, aes(DBH, Htot)) +
                      axis.line = element_line(colour = "black"))
 ```
 
-Modelar de forma bayesiana...
+Plot relative growth by diameter
+
+```{r}
+
+```
+
+
+Plot relative growth by diameter per commercial interest group...
+
+```{r}
+
+```
+
+Incremento geral....
 
 ```
 incrementosModel = glm(data = incremento, incAnual ~ minDBH, family=Gamma(link="log"))
 summary(incrementosModel)
 ```
 
+
+
 ## Grupo ecológicos
 
-Espécies por grupo ecológico...
+Frequência de indivíduos por grupo ecológico...
 
 ```{r}
 arvHaEspecie = inv.paisagens %>%
@@ -69,6 +67,14 @@ arvHaEspecie = inv.paisagens %>%
 
 arvHaEspecie
 ```
+
+Plot relative growth by diameter per ecological group...
+
+```{r}
+
+```
+
+
 
 ### Pioneiras
 
@@ -316,25 +322,11 @@ plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
 #}
 ```
 
-### Incremento por grupo ecológico
+Incremento pelo grupo ecológico...
 
 ```{r}
-incremento = inv.paisagens %>%
-  drop_na(GrupoEco) %>%
-  group_by(area, plot, subplot, tree, scientific.name, GrupoEco) %>%
-  summarise(med = n(),
-            cc = min(cc), 
-            minDBH = min(DBH), 
-            maxDBH = max(DBH), 
-            inc = max(DBH) - min(DBH), 
-            intervMed = max(year) - min(year), 
-            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
-  filter(med > 1)
-  
-```
-
-```{r}
-incrementoGrupo = incremento %>%
+incrementoGrupo = incEco %>%
+  filter(GrupoEco != "OUTROS") %>%
   group_by(GrupoEco) %>%
   summarise(incDesv = IQR(incAnual, na.rm = TRUE), 
             incAnual = median(incAnual), 
@@ -343,7 +335,6 @@ incrementoGrupo = incremento %>%
 incrementoGrupo
 ```
 
-Emtrar com Bayesiana??
 
 ```
 incremento$GrupoEco <- factor(incremento$GrupoEco, 
@@ -354,6 +345,8 @@ summary(grupoEcoModel)
 ```
 
 ## Comercial
+
+Frequência de indivíduos por interesse comercial...
 
 ```{r}
 arvHaEspecie = inv.paisagens %>%
@@ -446,24 +439,10 @@ plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
 #}
 ```
 
-### Incremento por grupo de interesse comercial
+Incremento por grupo de interesse comercial...
 
 ```{r}
-incremento = inv.paisagens %>%
-  drop_na(comercial) %>%
-  group_by(area, plot, subplot, tree, scientific.name, comercial) %>%
-  summarise(med = n(),
-            cc = min(cc), 
-            minDBH = min(DBH), 
-            maxDBH = max(DBH), 
-            inc = max(DBH) - min(DBH), 
-            intervMed = max(year) - min(year), 
-            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
-  filter(med > 1)
-```
-
-```{r}
-incrementoGrupo = incremento %>%
+incrementoGrupo = incComercial %>%
   group_by(comercial) %>%
   summarise(incDesv = IQR(incAnual, na.rm = TRUE), 
             incAnual = median(incAnual), 
@@ -471,8 +450,6 @@ incrementoGrupo = incremento %>%
 
 incrementoGrupo
 ```
-
-Modelar por bayesiana...
 
 ```
 comercialModel = glm(data = incremento, incAnual ~ minDBH + comercial, family=Gamma(link="log"))

@@ -6,7 +6,6 @@ output: html_document
 ```{r packages2}
 require(tidyverse)
 require(magrittr)
-require(plotly)
 require(reshape2)
 require(ggplot2)
 require(V.PhyloMaker)
@@ -18,11 +17,12 @@ Sobre os inventários... processamento e padronização...
 #```{r mergeInventarios, child="02merge.Rmd"}
 #```
 
-Remove não árvores e remove indivíduos sem diâmetro...
+Remove não árvores e remove indivíduos sem diâmetro... falar da necessidade dos dados pareados....
+
 
 ```{r cleanInv}
-inv.paisagens = read.csv("dados/10_invPaisagensMerged.csv")
-inv.paisagens = inv.paisagens %>%
+invMerged = read.csv("dados/10_invPaisagensMerged.csv")
+invMerged = invMerged %>%
   filter(type == "O" | is.na(type)) %>%
   drop_na(DBH)
 ```
@@ -30,7 +30,7 @@ inv.paisagens = inv.paisagens %>%
 Determinar o número de parcelas em cada sítio...
 
 ```{r}
-parcelasArea = inv.paisagens %>%
+parcelasArea = invMerged %>%
   group_by(area, plot, subplot, year) %>%
   summarise(obs = n()) %>%
   group_by(area, year) %>%
@@ -38,6 +38,7 @@ parcelasArea = inv.paisagens %>%
   group_by(area) %>%
   summarise(nplots = mean(nplots))
 ```
+
 Explain growth...
 
 $$growth = \frac{d2 - d1}{t2 - t1}$$
@@ -45,14 +46,6 @@ $$growth = \frac{d2 - d1}{t2 - t1}$$
 Explain relative growth...
 
 $$RGrowth = \frac{growth}{d1}$$
-
-Plot relative growth by diameter
-
-```{r}
-
-```
-
-
 Ecological groups....
 
 ```{r}
@@ -61,16 +54,21 @@ eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
 kable(eco, col.names = c('Ecological groups', 'Number of species'), caption = 'Number of species associated to each ecological group.')
 ```
 
-Plot relative growth by diameter per ecological group...
+Incremento por grupo ecológico...
 
 ```{r}
-
-```
-
-Compute residence time to reach 50 cm...
-
-```{r}
-
+incEco = invMerged %>%
+  drop_na(GrupoEco) %>%
+  group_by(area, plot, subplot, tree, scientific.name, GrupoEco) %>%
+  summarise(med = n(),
+            cc = min(cc), 
+            minDBH = min(DBH), 
+            maxDBH = max(DBH), 
+            inc = max(DBH) - min(DBH), 
+            intervMed = max(year) - min(year), 
+            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
+  filter(med > 1)
+  
 ```
 
 
@@ -82,12 +80,19 @@ commercial = commercialSpecies %>% group_by(comercial) %>% summarise(Species = n
 kable(commercial, col.names = c('Commecial interest', 'Number of species'), caption = 'Number of species associated to commercial intesrest.')
 ```
 
-Plot relative growth by diameter per commercial interest group...
-
 ```{r}
-
+incComercial = invMerged %>%
+  drop_na(comercial) %>%
+  group_by(area, plot, subplot, tree, scientific.name, comercial) %>%
+  summarise(med = n(),
+            cc = min(cc), 
+            minDBH = min(DBH), 
+            maxDBH = max(DBH), 
+            inc = max(DBH) - min(DBH), 
+            intervMed = max(year) - min(year), 
+            incAnual = ifelse(inc == 0, 0, inc / intervMed)) %>%
+  filter(med > 1)
 ```
-
 
 Compute residence time to reach 50 cm...
 
