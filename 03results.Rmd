@@ -494,9 +494,22 @@ incrementoGrupo = incComercial %>%
 incrementoGrupo
 ```
 
+```{r}
+incGrupoCom <- stan_glm(
+  rInc ~ factor(comercial),
+  data = incComercial,
+  family = Gamma(link="log"),
+  prior_intercept = normal(-4, 0.1)
+ )
 ```
-comercialModel = glm(data = incremento, incAnual ~ minDBH + comercial, family=Gamma(link="log"))
-summary(comercialModel)
+
+```{r}
+bayesplot::color_scheme_set("viridis")
+plot(incGrupoCom, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "factor"))
+```
+
+```{r}
+posterior_vs_prior(incGrupoCom, regex_pars = c("(Intercept)", "factor"))
 ```
 
 
