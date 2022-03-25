@@ -10,10 +10,34 @@ require(reshape2)
 require(ggplot2)
 require(V.PhyloMaker)
 require(phytools)
+require(rstanarm)
+require(bayesplot)
 ```
 ## Comunidade
 
 Resumo de todo o conjunto de dados....
+
+```{r}
+numeroArvores = invMerged %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
+  drop_na(ntree) %>%
+  group_by(area, cc) %>%
+  summarise(narv = sum(ntree)) %>%
+  left_join(parcelasArea) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(cc) %>%
+  summarise(arvha = mean(arvha))
+
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
+```
+
 
 ```{r hipsometria}
 ggplot(invMerged, aes(DBH, Htot)) +                                
@@ -24,17 +48,7 @@ ggplot(invMerged, aes(DBH, Htot)) +
                      axis.line = element_line(colour = "black"))
 ```
 
-Gráfico apresentando o crescimento diamétrico relativo em função do diâmetro...
-
-```{r}
-ggplot(incEco, aes(rInc, minDBH)) +                                
-  geom_point(alpha = 0.1) + 
-  xlim(0, 0.5) +
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
-```
+Gráfico apresentando a distribuição do crescimento diamétrico relativo...
 
 ```{r}
 ggplot(incEco, aes(rInc)) +                                
@@ -48,10 +62,20 @@ ggplot(incEco, aes(rInc)) +
 
 Modelo do crescimento relativo...
 
+
+```{r}
+incGeneral <- stan_glm(
+  rInc ~ 1,
+  data = incEco,
+  family = Gamma(link="log"),
+ )
 ```
-incrementosModel = glm(data = incremento, incAnual ~ minDBH, family=Gamma(link="log"))
-summary(incrementosModel)
+
+
+```{r}
+plot(incGeneral, plotfun = "areas", prob = 0.9, pars = c("(Intercept)"))
 ```
+
 
 ## Grupo ecológicos
 
@@ -76,18 +100,8 @@ arvHaEspecie = inv.paisagens %>%
 arvHaEspecie
 ```
 
-Plot relative growth by diameter per ecological group...
+Distribuição dos valores de crescimento relativo do diâmetro por grupo ecologico...
 
-```{r}
-ggplot(incEco, aes(rInc, minDBH)) +                                
-  geom_point(alpha = 0.1) + 
-  xlim(0, 0.5) +
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black")) +
-  facet_wrap(~GrupoEco)
-```
 
 ```{r}
 ggplot(incEco, aes(rInc, colour = GrupoEco)) +                                
@@ -359,13 +373,24 @@ incrementoGrupo
 ```
 
 
+```{r}
+incGrupoEco <- stan_glm(
+  rInc ~ GrupoEco,
+  data = incEco[incEco$GrupoEco != 'OUTROS',],
+  family = Gamma(link="log"),
+  prior_intercept = normal(-4, 0.1)
+ )
 ```
-incremento$GrupoEco <- factor(incremento$GrupoEco, 
-                              levels=c("OUTROS","Pioneer","Light-demanding", 
-                                       "Intermediate", "Shade-tolerant", "Emergent"))
-grupoEcoModel = glm(data = incremento, incAnual ~ minDBH + GrupoEco, family=Gamma(link="log"))
-summary(grupoEcoModel)
+
+```{r}
+bayesplot::color_scheme_set("viridis")
+plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 ```
+
+```{r}
+posterior_vs_prior(incGrupoEco, regex_pars = c("(Intercept)", "Grupo"))
+```
+
 
 ## Comercial
 
