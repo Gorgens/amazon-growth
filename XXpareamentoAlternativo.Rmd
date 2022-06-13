@@ -1,0 +1,105 @@
+---
+title: "Material e Métodos"
+output: html_document
+---
+
+```{r packages2}
+require(tidyverse)
+require(magrittr)
+require(reshape2)
+require(ggplot2)
+require(V.PhyloMaker)
+require(phytools)
+require(knitr)
+```
+Sobre os inventários... processamento e padronização...
+
+#```{r mergeInventarios, child="02merge.Rmd"}
+#```
+
+Remove não árvores e remove indivíduos sem diâmetro... falar da necessidade dos dados pareados.
+
+```{r cleanInv}
+inv.paisagens = read.csv("dados/10_invPaisagensMerged.csv")
+inv.paisagens = inv.paisagens %>%
+  filter(type == "O" | is.na(type)) %>%
+  drop_na(DBH)
+```
+
+Determinar o número de parcelas em cada sítio...
+
+```{r}
+parcelasArea = inv.paisagens %>%
+  group_by(area, plot, subplot, year) %>%
+  summarise(obs = n()) %>%
+  group_by(area, year) %>%
+  summarise(nplots = n()) %>%
+  group_by(area) %>%
+  summarise(nplots = mean(nplots))
+```
+
+
+Pareamento dos dados...
+
+```{r}
+# Pareamento tabela dinâmica
+inv.paired = inv.paisagens %>%
+  filter(area %in% c('CAU_A01', 'CAU_A01_50', 'DUC_A01', 'PAR_A01', 'SAN_A01', 'TAP_A01', 'TAP_A01b', 'TAP_A04', 'TAP_A04')) %>%
+  group_by(area, plot, subplot, tree, scientific.name, family.name, genera.name, epiteto.name, GrupoEco, comercial, eqTree, canopy, light, year) %>%
+  summarise(dbh = min(DBH)) %>%
+  pivot_wider(names_from = year, names_prefix = "a", values_from = dbh)
+
+diff2009_2010 = inv.paired %>% mutate(incremento = a2010 - a2009) %>%
+  mutate(dbh1 = a2009) %>%
+  mutate(dbh2 = a2010) %>%
+  mutate(interMed = 1) %>%
+  drop_na(incremento)
+diff2010_2011 = inv.paired %>% mutate(incremento = a2011 - a2010) %>%
+  mutate(dbh1 = a2010) %>%
+  mutate(dbh2 = a2011) %>%
+  mutate(interMed = 1) %>%
+  drop_na(incremento)
+diff2009_2011 = inv.paired %>% mutate(incremento = (a2011 - a2009)/2) %>%
+  mutate(dbh1 = a2009) %>%
+  mutate(dbh2 = a2011) %>%
+  mutate(interMed = 2) %>%
+  drop_na(incremento)
+diff2012_2014 = inv.paired %>% mutate(incremento = (a2014 - a2012)/2) %>%
+  mutate(dbh1 = a2012) %>%
+  mutate(dbh2 = a2014) %>%
+  mutate(interMed = 2) %>%
+  drop_na(incremento)
+diff2014_2018 = inv.paired %>% mutate(incremento = (a2018 - a2014)/4) %>%
+  mutate(dbh1 = a2014) %>%
+  mutate(dbh2 = a2018) %>%
+  mutate(interMed = 4) %>%
+  drop_na(incremento)
+diff2014_2016 = inv.paired %>% mutate(incremento = (a2016 - a2014)/2) %>%
+  mutate(dbh1 = a2014) %>%
+  mutate(dbh2 = a2016) %>%
+  mutate(interMed = 2) %>%
+  drop_na(incremento)
+diff2015_2016 = inv.paired %>% mutate(incremento = (a2016 - a2015)) %>%
+  mutate(dbh1 = a2015) %>%
+  mutate(dbh2 = a2016) %>%
+  mutate(interMed = 1) %>%
+  drop_na(incremento)
+diff2016_2018 = inv.paired %>% mutate(incremento = (a2018 - a2016)/2) %>%
+  mutate(dbh1 = a2016) %>%
+  mutate(dbh2 = a2018) %>%
+  mutate(interMed = 2) %>%
+  drop_na(incremento)
+diff2013_2018 = inv.paired %>% mutate(incremento = (a2018 - a2013)/5) %>%
+  mutate(dbh1 = a2013) %>%
+  mutate(dbh2 = a2018) %>%
+  mutate(interMed = 5) %>%
+  drop_na(incremento)
+
+inv.paired = rbind(diff2009_2010, diff2010_2011, diff2009_2011,
+                   diff2012_2014, diff2014_2018, diff2014_2016,
+                   diff2015_2016, diff2016_2018, diff2013_2018)
+inv.paired %<>% mutate(cc = floor(dbh1/10.0)*10+(10/2)) %>%
+  mutate(growthMultiplier = dbh2 / dbh1) %>%
+  mutate(pri = log(dbh2 / dbh1) / interMed) %>%
+  filter(incremento >= 0)
+```
