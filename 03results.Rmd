@@ -3,7 +3,7 @@ title: "Resultados"
 output: html_document
 ---
 
-```{r packages3}
+```{r pacotes3}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
@@ -13,12 +13,62 @@ require(phytools)
 require(rstanarm)
 require(bayesplot)
 ```
-## Comunidade
+Frequência de indivíduos por grupo ecológico...
 
-Resumo de todo o conjunto de dados....
+```{r proporcaoGruposEcologicos, echo=FALSE}
+arvHaEspecie = invMerged %>%
+  drop_na(GrupoEco) %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, GrupoEco) %>% 
+  summarise(ntree = sum(eqTree)) %>%
+  drop_na(ntree) %>%
+  group_by(area, plot, subplot, GrupoEco) %>%
+  summarise(ntree = mean(ntree)) %>%
+  group_by(area, GrupoEco) %>%
+  summarise(ntree = sum(ntree)) %>%
+  left_join(parcelasArea) %>%
+  mutate(arvha = ntree / nplots) %>%
+  group_by(GrupoEco) %>%
+  summarise(arvha = mean(arvha)) %>%
+  filter(GrupoEco != "OUTROS") %>%
+  mutate(arvProp = arvha / sum(arvha) * 100)
+
+arvHaEspecie
+```
+
+Incremento pelo grupo ecológico...
+
+```{r mediaIncrementoGruposEcologicos, echo=FALSE}
+incrementoGrupo = incEco %>%
+  filter(GrupoEco != "OUTROS") %>%
+  group_by(GrupoEco) %>%
+  summarise(incDesv = IQR(rInc, na.rm = TRUE), 
+            rInc = median(rInc))
+
+incrementoGrupo
+```
+
+
+```{r estaticaGrupoEcologico, echo=FALSE}
+incGrupoEco <- stan_glm(
+  rInc ~ GrupoEco,
+  data = incEco,
+  family = Gamma(link="log"))
+```
 
 ```{r}
+bayesplot::color_scheme_set("viridis")
+plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
+```
+
+```{r}
+grupo = "Pioneer"
+
+grupoEcologico = invMerged %>%
+  filter(GrupoEco == grupo)
+
 numeroArvores = invMerged %>%
+  filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
   group_by(area, plot, subplot, year, cc) %>% 
   summarise(ntree = sum(eqTree))  %>%
@@ -32,405 +82,63 @@ numeroArvores = invMerged %>%
 
 ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
   xlab('Diameter distribution') + ylab('Trees per hectare') +
+  ggtitle(paste0(grupo)) + 
   theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
                      panel.background = element_blank(),
                      axis.line = element_line(colour = "black"))
 ```
 
-
-```{r hipsometria}
-ggplot(invMerged, aes(DBH, Htot)) +                                
-  geom_point(alpha = 0.1) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
-```
-
-Gráfico apresentando a distribuição do crescimento diamétrico relativo...
-
 ```{r}
-ggplot(incEco, aes(rInc)) +                                
-  geom_density() +
-  xlim(0, 0.5) +
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
-```
+grupo = "Light-demanding"
 
-Modelo do crescimento relativo...
+grupoEcologico = invMerged %>%
+  filter(GrupoEco == grupo)
 
-
-```{r}
-incGeneral <- stan_glm(
-  rInc ~ 1,
-  data = incEco,
-  family = Gamma(link="log"),
- )
-```
-
-
-```{r}
-plot(incGeneral, plotfun = "areas", prob = 0.9, pars = c("(Intercept)"))
-```
-
-
-## Grupo ecológicos
-
-Frequência de indivíduos por grupo ecológico...
-
-```{r}
-arvHaEspecie = inv.paisagens %>%
-  drop_na(GrupoEco) %>%
+numeroArvores = invMerged %>%
+  filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, GrupoEco) %>% 
-  summarise(ntree = sum(eqTree)) %>%
+  group_by(area, plot, subplot, year, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, plot, subplot, GrupoEco) %>%
-  summarise(ntree = mean(ntree)) %>%
-  group_by(area, GrupoEco) %>%
-  summarise(ntree = sum(ntree)) %>%
+  group_by(area, cc) %>%
+  summarise(narv = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots) %>%
-  group_by(GrupoEco) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-arvHaEspecie
-```
-
-Distribuição dos valores de crescimento relativo do diâmetro por grupo ecologico...
-
-
-```{r}
-ggplot(incEco, aes(rInc, colour = GrupoEco)) +                                
-  geom_density() +
-  xlim(0, 0.5) +
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  ggtitle(paste0(grupo)) + 
   theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
                      panel.background = element_blank(),
                      axis.line = element_line(colour = "black"))
 ```
-
-### Pioneiras
-
-```{r}
-grupo = "Pioneer"
-
-grupoEcologico = inv.paisagens %>%
-  filter(GrupoEco == grupo)
-```
-
-```{r}
-filogenia = grupoEcologico %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
-
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
-
-
-```{r}
-#for(i in unique(inv.paisagens.filtered$GrupoEco)){
-  numeroArvores = inv.paisagens %>%
-    filter(GrupoEco == grupo) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle(paste0(grupo)) + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-### Demandantes de luz
-
-```{r}
-grupo = "Light-demanding" 
-
-grupoEcologico = inv.paisagens %>%
-  filter(GrupoEco == grupo)
-```
-
-```{r}
-filogenia = grupoEcologico %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
-
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
-
-```{r}
-#for(i in unique(inv.paisagens.filtered$GrupoEco)){
-  numeroArvores = inv.paisagens %>%
-    filter(GrupoEco == grupo) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle(paste0(grupo)) + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-### Intermediárias
 
 ```{r}
 grupo = "Intermediate"
 
-grupoEcologico = inv.paisagens %>%
+grupoEcologico = invMerged %>%
   filter(GrupoEco == grupo)
-```
 
-```{r}
-filogenia = grupoEcologico %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
-
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
-
-```{r}
-#for(i in unique(inv.paisagens.filtered$GrupoEco)){
-  numeroArvores = inv.paisagens %>%
-    filter(GrupoEco == grupo) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle(paste0(grupo)) + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-### Shade-tolerant
-
-```{r}
-grupo = "Shade-tolerant"
-
-grupoEcologico = inv.paisagens %>%
-  filter(GrupoEco == grupo)
-```
-
-```{r}
-filogenia = grupoEcologico %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
-
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
-
-```{r}
-#for(i in unique(inv.paisagens.filtered$GrupoEco)){
-  numeroArvores = inv.paisagens %>%
-    filter(GrupoEco == grupo) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle(paste0(grupo)) + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-### Emergente demandante de luz
-
-```{r}
-grupo = "Emergent"
-
-grupoEcologico = inv.paisagens %>%
-  filter(GrupoEco == grupo)
-```
-
-```{r}
-filogenia = grupoEcologico %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
-
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
-
-```{r}
-#for(i in unique(inv.paisagens.filtered$GrupoEco)){
-  numeroArvores = inv.paisagens %>%
-    filter(GrupoEco == grupo) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle(paste0(grupo)) + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
-```
-
-Incremento pelo grupo ecológico...
-
-```{r}
-incrementoGrupo = incEco %>%
-  filter(GrupoEco != "OUTROS") %>%
-  group_by(GrupoEco) %>%
-  summarise(incDesv = IQR(rInc, na.rm = TRUE), 
-            rInc = median(rInc), 
-            tp = 50 / rInc)
-
-incrementoGrupo
-```
-
-
-```{r}
-incGrupoEco <- stan_glm(
-  rInc ~ GrupoEco,
-  data = incEco[incEco$GrupoEco != 'OUTROS',],
-  family = Gamma(link="log"),
-  prior_intercept = normal(-4, 0.1)
- )
-```
-
-```{r}
-bayesplot::color_scheme_set("viridis")
-plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
-```
-
-```{r}
-posterior_vs_prior(incGrupoEco, regex_pars = c("(Intercept)", "Grupo"))
-```
-
-
-## Comercial
-
-Frequência de indivíduos por interesse comercial...
-
-```{r}
-arvHaEspecie = inv.paisagens %>%
-  drop_na(comercial) %>%
+numeroArvores = invMerged %>%
+  filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, comercial) %>% 
-  summarise(ntree = sum(eqTree)) %>%
+  group_by(area, plot, subplot, year, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, plot, subplot, comercial) %>%
-  summarise(ntree = mean(ntree)) %>%
-  group_by(area, comercial) %>%
-  summarise(ntree = sum(ntree)) %>%
+  group_by(area, cc) %>%
+  summarise(narv = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots) %>%
-  group_by(comercial) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-arvHaEspecie
-```
-
-
-```{r}
-ggplot(incComercial, aes(rInc, minDBH)) +                                
-  geom_point(alpha = 0.1) + 
-  xlim(0, 0.5) +
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black")) +
-  facet_wrap(~comercial)
-```
-
-```{r}
-ggplot(incComercial, aes(rInc, colour = factor(comercial))) +                                
-  geom_density() +
-  xlim(0, 0.5) +
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  ggtitle(paste0(grupo)) + 
   theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
                      panel.background = element_blank(),
@@ -438,80 +146,79 @@ ggplot(incComercial, aes(rInc, colour = factor(comercial))) +
 ```
 
 ```{r}
-grupo = 1
+grupo = "Shade-tolerant"
 
-comercial = inv.paisagens %>%
-  filter(comercial == grupo)
+grupoEcologico = invMerged %>%
+  filter(GrupoEco == grupo)
+
+numeroArvores = invMerged %>%
+  filter(GrupoEco == grupo) %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
+  drop_na(ntree) %>%
+  group_by(area, cc) %>%
+  summarise(narv = sum(ntree)) %>%
+  left_join(parcelasArea) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(cc) %>%
+  summarise(arvha = mean(arvha))
+
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  ggtitle(paste0(grupo)) + 
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
 ```
 
 ```{r}
-filogenia = comercial %>%                                                    # filogenia das spécies estudadas
-  group_by(scientific.name, genera.name, family.name) %>%
-  summarise(n = n()) %>%
-  drop_na(family.name) %>%
-  filter(!is.na(family.name)) %>%
-  filter(family.name != 'NI')
-```
+grupo = "Emergent"
 
-```{r cache=TRUE}
-phy = phylo.maker(filogenia[,1:3])
-tree = phy$scenario.3
-plotTree(tree, type='fan', fsize=0.5, lwd=1, ftype='i')
-```
+grupoEcologico = invMerged %>%
+  filter(GrupoEco == grupo)
 
-```{r}
-#for(i in c(0, 1)){
-  numeroArvores = inv.paisagens %>%
-    filter(comercial == 1) %>%
-    filter(DBH >= 10) %>%
-    group_by(area, plot, subplot, year, cc) %>% 
-    summarise(ntree = sum(eqTree))  %>%
-    drop_na(ntree) %>%
-    group_by(area, cc) %>%
-    summarise(narv = sum(ntree)) %>%
-    left_join(parcelasArea) %>%
-    mutate(arvha = narv / nplots) %>%
-    group_by(cc) %>%
-    summarise(arvha = mean(arvha))
-  
-  ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-    xlab('Diameter distribution') + ylab('Trees per hectare') +
-    ggtitle('commercial') + 
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                       panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       axis.line = element_line(colour = "black"))
-#}
+numeroArvores = invMerged %>%
+  filter(GrupoEco == grupo) %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
+  drop_na(ntree) %>%
+  group_by(area, cc) %>%
+  summarise(narv = sum(ntree)) %>%
+  left_join(parcelasArea) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(cc) %>%
+  summarise(arvha = mean(arvha))
+
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  ggtitle(paste0(grupo)) + 
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))
 ```
 
 ```{r}
-incrementoGrupo = incComercial %>%
-  group_by(comercial) %>%
-  summarise(incDesv = IQR(rInc, na.rm = TRUE), 
-            rInc = median(rInc), 
-            tp = 50 / rInc)
+modelingCC = invMerged %>%
+  filter(GrupoEco != "OUTROS") %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, GrupoEco, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
+  group_by(area, plot, year, GrupoEco, cc) %>%
+  summarise(ntree = mean(ntree)) %>%
+  group_by(area, year, GrupoEco, cc) %>%
+  summarise(ntree = mean(ntree))
 
-incrementoGrupo
-```
-
-```{r}
-incGrupoCom <- stan_glm(
-  rInc ~ factor(comercial),
-  data = incComercial,
-  family = Gamma(link="log"),
-  prior_intercept = normal(-4, 0.1)
- )
-```
-
-```{r}
-bayesplot::color_scheme_set("viridis")
-plot(incGrupoCom, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "factor"))
-```
-
-```{r}
-posterior_vs_prior(incGrupoCom, regex_pars = c("(Intercept)", "factor"))
+modelingCC$cc
 ```
 
 
-
-
+```{r ddGrupoEcologico, echo=FALSE}
+incGrupoEco <- stan_glm(
+  log(n) ~ cc / GrupoEco,
+  data = modelingCC,
+  family = gaussian(link = 'identity'))
+```

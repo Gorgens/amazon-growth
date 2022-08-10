@@ -3,7 +3,7 @@ title: "Material e Métodos"
 output: html_document
 ---
 
-```{r packages2}
+```{r pacotes2, echo=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
@@ -12,57 +12,49 @@ require(V.PhyloMaker)
 require(phytools)
 require(knitr)
 ```
-Apresentar as áreas... os inventários... locais de estudo...
+Foram utilizados inventarios florestais do projeto Paisagens Sustentáveis Brasil, disponíveis na plataforma (https). Foram considerados 28 inventários distribuídos nos estados do Pará, Amazonas, Mato Grosso, Acre e Rondônia. Foram medidas 355 parcelas, contendo 41079 árvores. Para a sequência da análise, excluímos os indivíduos menores que 10 cm e as palmeiras. Cada espécie foi associada a um grupo ecológico seguindo a proposta de MacPherson (AAAA). Das 415 espécies identificadas em campo, foi possivel associar 90 espécies aos grupos ecológicos. 
 
-#```{r mergeInventarios, child="02merge.Rmd"}
-#```
-
-Remove não árvores e remove indivíduos sem diâmetro... falar do pareamento dos dados....
-
-
-```{r cleanInv}
+```{r limparInventario, echo=FALSE}
 invMerged = read.csv("dados/10_invPaisagensMerged.csv")
+nParcelasAntes = length(unique(paste(invMerged$area, invMerged$plot)))
+
 invMerged = invMerged %>%
   filter(type == "O" | is.na(type)) %>%
   drop_na(DBH) %>%
   filter(DBH >= 10)
 
-parcelasArea = invMerged %>%
-  group_by(area, plot, subplot, year) %>%
-  summarise(obs = n()) %>%
-  group_by(area, year) %>%
-  summarise(nplots = n()) %>%
-  group_by(area) %>%
-  summarise(nplots = mean(nplots))
+nParcelasFiltrado = length(unique(paste(invMerged$area, invMerged$plot)))
 ```
 
-Apresentar calculo do incremento diamétrico anual e o crescimento diamétrico relativo...
+```{r numeroParcelas, echo=FALSE}
+parcelasArea = invMerged %>%
+  group_by(area, plot, subplot, year) %>%
+  summarise(obs = n())  %>%
+  group_by(area, year) %>%
+  summarise(nplots = n())
+
+parcelasArea
+```
+
+
+Apresentar cálculo do incremento diamétrico anual e o crescimento diamétrico relativo...
 
 $$growth = \frac{d_f - d_i}{t_f - t_i}$$
 
 $$RGrowth = \frac{growth}{d_i}$$
 Apresentar os grupos ecológicos... 
 
-```{r}
+```{r gruposEcologicos, echo=FALSE}
 grupoEco = read.csv('auxiliar/grupoEcologico.csv')
 eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
-kable(eco, col.names = c('Ecological groups', 'Number of species'), caption = 'Number of species associated to each ecological group.')
 ```
 
-A apresentar o grupo de interesse comercial...
+Calculo do incremento por grupo ecológico...
 
-```{r}
-commercialSpecies = read.csv('auxiliar/comercial.csv')
-commercial = commercialSpecies %>% group_by(comercial) %>% summarise(Species = n())
-kable(commercial, col.names = c('Commecial interest', 'Number of species'), caption = 'Number of species associated to commercial intesrest.')
-```
-
-
-Calculo do incremento por grupo ecológico e por grupo de interesse comercial...
-
-```{r}
+```{r pareamentoIncremento, echo=FALSE}
 incEco = invMerged %>%
   drop_na(GrupoEco) %>%
+  filter(GrupoEco != "OUTROS") %>%
   group_by(area, plot, subplot, tree, scientific.name, GrupoEco) %>%
   summarise(med = n(),
             cc = min(cc), 
@@ -75,29 +67,5 @@ incEco = invMerged %>%
   filter(med > 1)
   
 ```
-
-```{r}
-incComercial = invMerged %>%
-  drop_na(comercial) %>%
-  group_by(area, plot, subplot, tree, scientific.name, comercial) %>%
-  summarise(med = n(),
-            cc = min(cc), 
-            minDBH = min(DBH), 
-            maxDBH = max(DBH), 
-            inc = max(DBH) - min(DBH), 
-            intervMed = max(year) - min(year), 
-            incAnual = ifelse(inc == 0, 0.01, inc / intervMed),
-            rInc = incAnual / minDBH) %>%
-  filter(med > 1)
-```
-
-Calcularo tempo de residência... para sair do 10 cm e chegar no 50 cm...
-
-$$d_f = d_i (1+r)^t$$
-
-```{r}
-
-```
-
 
 
