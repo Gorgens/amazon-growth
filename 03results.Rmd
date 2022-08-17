@@ -12,7 +12,9 @@ require(V.PhyloMaker)
 require(phytools)
 require(rstanarm)
 require(bayesplot)
+require(forestmangr)
 ```
+
 Frequência de indivíduos por grupo ecológico...
 
 ```{r proporcaoGruposEcologicos, echo=FALSE}
@@ -48,7 +50,6 @@ incrementoGrupo = incEco %>%
 incrementoGrupo
 ```
 
-
 ```{r estaticaGrupoEcologico, echo=FALSE}
 incGrupoEco <- stan_glm(
   rInc ~ GrupoEco,
@@ -62,10 +63,31 @@ plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "
 ```
 
 ```{r}
-grupo = "Pioneer"
+numeroArvores = invMerged %>%
+  filter(GrupoEco != "OUTROS") %>%
+  filter(DBH >= 10) %>%
+  group_by(area, plot, subplot, year, GrupoEco, cc) %>% 
+  summarise(ntree = sum(eqTree))  %>%
+  drop_na(ntree) %>%
+  group_by(area, GrupoEco, cc) %>%
+  summarise(narv = sum(ntree)) %>%
+  left_join(parcelasArea) %>%
+  mutate(arvha = narv / nplots) %>%
+  group_by(GrupoEco, cc) %>%
+  summarise(arvha = mean(arvha))
 
-grupoEcologico = invMerged %>%
-  filter(GrupoEco == grupo)
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Trees per hectare') +
+  theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black")) +
+  facet_wrap(~GrupoEco, ncol = 5)
+```
+
+
+```{r}
+grupo = "Pioneer"
 
 numeroArvores = invMerged %>%
   filter(GrupoEco == grupo) %>%
@@ -80,21 +102,13 @@ numeroArvores = invMerged %>%
   group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-  xlab('Diameter distribution') + ylab('Trees per hectare') +
-  ggtitle(paste0(grupo)) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
+meyerPioneiras = lm(log(arvha)~cc, data = numeroArvores)
+summary(meyerPioneiras)
 ```
 
 ```{r}
 grupo = "Light-demanding"
 
-grupoEcologico = invMerged %>%
-  filter(GrupoEco == grupo)
-
 numeroArvores = invMerged %>%
   filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
@@ -108,21 +122,13 @@ numeroArvores = invMerged %>%
   group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-  xlab('Diameter distribution') + ylab('Trees per hectare') +
-  ggtitle(paste0(grupo)) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
+meyerLight = lm(log(arvha)~cc, data = numeroArvores)
+summary(meyerLight)
 ```
 
 ```{r}
 grupo = "Intermediate"
 
-grupoEcologico = invMerged %>%
-  filter(GrupoEco == grupo)
-
 numeroArvores = invMerged %>%
   filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
@@ -136,21 +142,13 @@ numeroArvores = invMerged %>%
   group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-  xlab('Diameter distribution') + ylab('Trees per hectare') +
-  ggtitle(paste0(grupo)) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
+meyerIntermediarias = lm(log(arvha)~cc, data = numeroArvores)
+summary(meyerIntermediarias)
 ```
 
 ```{r}
 grupo = "Shade-tolerant"
 
-grupoEcologico = invMerged %>%
-  filter(GrupoEco == grupo)
-
 numeroArvores = invMerged %>%
   filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
@@ -164,21 +162,13 @@ numeroArvores = invMerged %>%
   group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-  xlab('Diameter distribution') + ylab('Trees per hectare') +
-  ggtitle(paste0(grupo)) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
+meyerShade = lm(log(arvha)~cc, data = numeroArvores)
+summary(meyerShade)
 ```
 
 ```{r}
 grupo = "Emergent"
 
-grupoEcologico = invMerged %>%
-  filter(GrupoEco == grupo)
-
 numeroArvores = invMerged %>%
   filter(GrupoEco == grupo) %>%
   filter(DBH >= 10) %>%
@@ -192,33 +182,29 @@ numeroArvores = invMerged %>%
   group_by(cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
-  xlab('Diameter distribution') + ylab('Trees per hectare') +
-  ggtitle(paste0(grupo)) + 
-  theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))
+meyerEmergentes = lm(log(arvha)~cc, data = numeroArvores)
+summary(meyerEmergentes)
 ```
 
 ```{r}
-modelingCC = invMerged %>%
-  filter(GrupoEco != "OUTROS") %>%
-  filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, GrupoEco, cc) %>% 
-  summarise(ntree = sum(eqTree))  %>%
-  group_by(area, plot, year, GrupoEco, cc) %>%
-  summarise(ntree = mean(ntree)) %>%
-  group_by(area, year, GrupoEco, cc) %>%
-  summarise(ntree = mean(ntree))
 
-modelingCC$cc
+ccNew = data.frame(cc = seq(15, 245, 10))
+nArvPioneiras = round(exp(predict(meyerPioneiras, newdata = ccNew)), 1)
+nArvLight = round(exp(predict(meyerLight, newdata = ccNew)), 1)
+nArvIntermediarias = round(exp(predict(meyerIntermediarias, newdata = ccNew)), 1)
+nArvShade = round(exp(predict(meyerShade, newdata = ccNew)), 1)
+nArvEmergentes = round(exp(predict(meyerEmergentes, newdata = ccNew)), 1)
+nArvPatterns = data.frame(ccNew, Pion = nArvPioneiras,Light = nArvLight, Inter = nArvIntermediarias, Shade = nArvShade, Emer = nArvEmergentes)
+
+pairs(nArvPatterns)
+```
+
+```{r}
+graybill_f(nArvPatterns, "Light", "Emer", signif = 0.05, output = "simple")
 ```
 
 
-```{r ddGrupoEcologico, echo=FALSE}
-incGrupoEco <- stan_glm(
-  log(n) ~ cc / GrupoEco,
-  data = modelingCC,
-  family = gaussian(link = 'identity'))
+```{r}
+graybill_f(nArvPatterns, "Pion", "Shade", signif = 0.05, output = "simple")
 ```
+
