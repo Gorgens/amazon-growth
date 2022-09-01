@@ -60,7 +60,7 @@ incGrupoEco <- stan_glm(
   family = Gamma(link="log"))
 ```
 
-```{r bayesplotGrupoEco, warning=FALSE, echo=FALSE}
+```{r bayesplotIncGrupoEco, warning=FALSE, echo=FALSE}
 bayesplot::color_scheme_set("viridis")
 plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 ```
@@ -99,7 +99,7 @@ ggplot(transform(numeroArvores,
   facet_wrap(~GrupoEco, ncol = 5)
 ```
 
-```{r}
+```{r testeArvGrupoEco, warning=FALSE, echo=FALSE}
 numeroArvoresPorCc = invMerged %>%
   filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
@@ -119,13 +119,13 @@ arvGrupoEco <- stan_glm(
   family = Gamma(link="log"))
 ```
 
-```{r bayesplotGrupoEco, warning=FALSE, echo=FALSE}
+```{r bayesplotArvGrupoEco, warning=FALSE, echo=FALSE}
 bayesplot::color_scheme_set("viridis")
 #plot(arvGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 
 plot1 = mcmc_intervals(arvGrupoEco, pars = vars(contains("cc:GrupoEco")))
 plot2 = mcmc_intervals(arvGrupoEco, pars = vars(contains("Intercept")))
 
-grid.arrange(plot1, plot2, ncol=2)
+grid.arrange(plot2, plot1, ncol=2)
 ```
 
