@@ -3,11 +3,12 @@ title: "Resultados"
 output: html_document
 ---
 
-```{r pacotes3}
+```{r pacotes3, warning=FALSE, echo=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
 require(ggplot2)
+require(gridExtra)
 require(V.PhyloMaker)
 require(phytools)
 require(rstanarm)
@@ -17,22 +18,24 @@ require(forestmangr)
 
 Frequência de indivíduos por grupo ecológico...
 
-```{r proporcaoGruposEcologicos, echo=FALSE}
+```{r proporcaoGruposEcologicos, warning=FALSE, echo=FALSE}
 arvHaEspecie = invMerged %>%
   drop_na(GrupoEco) %>%
   filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, GrupoEco) %>% 
+  group_by(area, year, plot, subplot, GrupoEco) %>% 
   summarise(ntree = sum(eqTree)) %>%
   drop_na(ntree) %>%
-  group_by(area, plot, subplot, GrupoEco) %>%
+  group_by(area, year, plot, GrupoEco) %>%
   summarise(ntree = mean(ntree)) %>%
-  group_by(area, GrupoEco) %>%
+  group_by(area, year, GrupoEco) %>%
   summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots) %>%
+  mutate(arvha = ntree / nplots) %>% 
+  group_by(area, GrupoEco) %>%
+  summarise(arvha = mean(arvha)) %>%
   group_by(GrupoEco) %>%
   summarise(arvha = mean(arvha)) %>%
-  filter(GrupoEco != "OUTROS") %>%
+  filter(GrupoEco != "Others") %>%
   mutate(arvProp = arvha / sum(arvha) * 100)
 
 arvHaEspecie
@@ -40,9 +43,9 @@ arvHaEspecie
 
 Incremento pelo grupo ecológico...
 
-```{r mediaIncrementoGruposEcologicos, echo=FALSE}
+```{r mediaIncrementoGruposEcologicos, warning=FALSE, echo=FALSE}
 incrementoGrupo = incEco %>%
-  filter(GrupoEco != "OUTROS") %>%
+  filter(GrupoEco != "Others") %>%
   group_by(GrupoEco) %>%
   summarise(incDesv = IQR(rInc, na.rm = TRUE), 
             rInc = median(rInc))
@@ -50,33 +53,44 @@ incrementoGrupo = incEco %>%
 incrementoGrupo
 ```
 
-```{r estaticaGrupoEcologico, echo=FALSE}
+```{r testeIncGrupoEcologico, warning=FALSE, echo=FALSE}
 incGrupoEco <- stan_glm(
   rInc ~ GrupoEco,
   data = incEco,
   family = Gamma(link="log"))
 ```
 
-```{r}
+```{r bayesplotGrupoEco, warning=FALSE, echo=FALSE}
 bayesplot::color_scheme_set("viridis")
 plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 ```
 
-```{r}
+```{r graficoDDgrupoEco, warning=FALSE, echo=FALSE}
 numeroArvores = invMerged %>%
-  filter(GrupoEco != "OUTROS") %>%
+  filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, GrupoEco, cc) %>% 
+  group_by(area, year, plot, subplot, GrupoEco, cc) %>% 
   summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, GrupoEco, cc) %>%
-  summarise(narv = sum(ntree)) %>%
+  group_by(area, year, plot, GrupoEco, cc) %>%
+  summarise(ntree = mean(ntree)) %>%
+  group_by(area, year, GrupoEco, cc) %>%
+  summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
+  mutate(arvha = ntree / nplots) %>%
+  group_by(area, GrupoEco, cc) %>%
+  summarise(arvha = mean(arvha)) %>%
   group_by(GrupoEco, cc) %>%
   summarise(arvha = mean(arvha))
 
-ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
+ggplot(transform(numeroArvores,
+                 GrupoEco = factor(GrupoEco, levels=c('Pioneer',
+                                                      'Light-demanding',
+                                                      'Intermediate',
+                                                      'Shade-tolerant',
+                                                      'Emergent'))),
+       aes(cc, arvha)) + 
+  geom_col() +
   xlab('Diameter distribution') + ylab('Trees per hectare') +
   theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
@@ -85,126 +99,33 @@ ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
   facet_wrap(~GrupoEco, ncol = 5)
 ```
 
-
 ```{r}
-grupo = "Pioneer"
-
-numeroArvores = invMerged %>%
-  filter(GrupoEco == grupo) %>%
+numeroArvoresPorCc = invMerged %>%
+  filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, cc) %>% 
+  group_by(area, year, plot, subplot, GrupoEco, cc) %>% 
   summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, cc) %>%
-  summarise(narv = sum(ntree)) %>%
+  group_by(area, year, plot, GrupoEco, cc) %>%
+  summarise(ntree = mean(ntree)) %>%
+  group_by(area, year, GrupoEco, cc) %>%
+  summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
-  group_by(cc) %>%
-  summarise(arvha = mean(arvha))
+  mutate(arvha = ntree / nplots)
 
-meyerPioneiras = lm(log(arvha)~cc, data = numeroArvores)
-summary(meyerPioneiras)
+arvGrupoEco <- stan_glm(
+  arvha ~ cc:GrupoEco,
+  data = numeroArvoresPorCc,
+  family = Gamma(link="log"))
 ```
 
-```{r}
-grupo = "Light-demanding"
+```{r bayesplotGrupoEco, warning=FALSE, echo=FALSE}
+bayesplot::color_scheme_set("viridis")
+#plot(arvGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 
-numeroArvores = invMerged %>%
-  filter(GrupoEco == grupo) %>%
-  filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, cc) %>% 
-  summarise(ntree = sum(eqTree))  %>%
-  drop_na(ntree) %>%
-  group_by(area, cc) %>%
-  summarise(narv = sum(ntree)) %>%
-  left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
-  group_by(cc) %>%
-  summarise(arvha = mean(arvha))
+plot1 = mcmc_intervals(arvGrupoEco, pars = vars(contains("cc:GrupoEco")))
+plot2 = mcmc_intervals(arvGrupoEco, pars = vars(contains("Intercept")))
 
-meyerLight = lm(log(arvha)~cc, data = numeroArvores)
-summary(meyerLight)
-```
-
-```{r}
-grupo = "Intermediate"
-
-numeroArvores = invMerged %>%
-  filter(GrupoEco == grupo) %>%
-  filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, cc) %>% 
-  summarise(ntree = sum(eqTree))  %>%
-  drop_na(ntree) %>%
-  group_by(area, cc) %>%
-  summarise(narv = sum(ntree)) %>%
-  left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
-  group_by(cc) %>%
-  summarise(arvha = mean(arvha))
-
-meyerIntermediarias = lm(log(arvha)~cc, data = numeroArvores)
-summary(meyerIntermediarias)
-```
-
-```{r}
-grupo = "Shade-tolerant"
-
-numeroArvores = invMerged %>%
-  filter(GrupoEco == grupo) %>%
-  filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, cc) %>% 
-  summarise(ntree = sum(eqTree))  %>%
-  drop_na(ntree) %>%
-  group_by(area, cc) %>%
-  summarise(narv = sum(ntree)) %>%
-  left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
-  group_by(cc) %>%
-  summarise(arvha = mean(arvha))
-
-meyerShade = lm(log(arvha)~cc, data = numeroArvores)
-summary(meyerShade)
-```
-
-```{r}
-grupo = "Emergent"
-
-numeroArvores = invMerged %>%
-  filter(GrupoEco == grupo) %>%
-  filter(DBH >= 10) %>%
-  group_by(area, plot, subplot, year, cc) %>% 
-  summarise(ntree = sum(eqTree))  %>%
-  drop_na(ntree) %>%
-  group_by(area, cc) %>%
-  summarise(narv = sum(ntree)) %>%
-  left_join(parcelasArea) %>%
-  mutate(arvha = narv / nplots) %>%
-  group_by(cc) %>%
-  summarise(arvha = mean(arvha))
-
-meyerEmergentes = lm(log(arvha)~cc, data = numeroArvores)
-summary(meyerEmergentes)
-```
-
-```{r}
-
-ccNew = data.frame(cc = seq(15, 245, 10))
-nArvPioneiras = round(exp(predict(meyerPioneiras, newdata = ccNew)), 1)
-nArvLight = round(exp(predict(meyerLight, newdata = ccNew)), 1)
-nArvIntermediarias = round(exp(predict(meyerIntermediarias, newdata = ccNew)), 1)
-nArvShade = round(exp(predict(meyerShade, newdata = ccNew)), 1)
-nArvEmergentes = round(exp(predict(meyerEmergentes, newdata = ccNew)), 1)
-nArvPatterns = data.frame(ccNew, Pion = nArvPioneiras,Light = nArvLight, Inter = nArvIntermediarias, Shade = nArvShade, Emer = nArvEmergentes)
-
-pairs(nArvPatterns)
-```
-
-```{r}
-graybill_f(nArvPatterns, "Light", "Emer", signif = 0.05, output = "simple")
-```
-
-
-```{r}
-graybill_f(nArvPatterns, "Pion", "Shade", signif = 0.05, output = "simple")
+grid.arrange(plot1, plot2, ncol=2)
 ```
 

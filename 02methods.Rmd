@@ -3,7 +3,7 @@ title: "Material e Métodos"
 output: html_document
 ---
 
-```{r pacotes2, echo=FALSE}
+```{r pacotes2, warning=FALSE, echo=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
@@ -12,9 +12,10 @@ require(V.PhyloMaker)
 require(phytools)
 require(knitr)
 ```
-Foram utilizados inventarios florestais do projeto Paisagens Sustentáveis Brasil, disponíveis na plataforma (https). Foram considerados 28 inventários distribuídos nos estados do Pará, Amazonas, Mato Grosso, Acre e Rondônia. Foram medidas 355 parcelas, contendo 41079 árvores. Para a sequência da análise, excluímos os indivíduos menores que 10 cm e as palmeiras. Cada espécie foi associada a um grupo ecológico seguindo a proposta de MacPherson (AAAA). Das 415 espécies identificadas em campo, foi possivel associar 90 espécies aos grupos ecológicos. 
 
-```{r limparInventario, echo=FALSE}
+Foram utilizados inventarios florestais do projeto Paisagens Sustentáveis Brasil, disponíveis na plataforma (https). Foram considerados 28 inventários distribuídos nos estados do Pará, Amazonas, Mato Grosso, Acre e Rondônia. Foram medidas 353 parcelas, contendo 41580 indivíduos. Para a sequência da análise, excluímos os indivíduos menores que 10 cm e as palmeiras, resultando em 36283 árvores. Cada espécie foi associada a um grupo ecológico seguindo a proposta de MacPherson (2007). Das 415 espécies identificadas em campo, foi possivel associar 90 espécies aos grupos ecológicos. 
+
+```{r limparInventario, warning=FALSE, echo=FALSE}
 invMerged = read.csv("dados/10_invPaisagensMerged.csv")
 nParcelasAntes = length(unique(paste(invMerged$area, invMerged$plot)))
 
@@ -26,7 +27,7 @@ invMerged = invMerged %>%
 nParcelasFiltrado = length(unique(paste(invMerged$area, invMerged$plot)))
 ```
 
-```{r numeroParcelas, echo=FALSE}
+```{r numeroParcelas, warning=FALSE, echo=FALSE}
 parcelasArea = invMerged %>%
   group_by(area, plot, subplot, year) %>%
   summarise(obs = n())  %>%
@@ -36,7 +37,6 @@ parcelasArea = invMerged %>%
 parcelasArea
 ```
 
-
 Apresentar cálculo do incremento diamétrico anual e o crescimento diamétrico relativo...
 
 $$growth = \frac{d_f - d_i}{t_f - t_i}$$
@@ -44,17 +44,17 @@ $$growth = \frac{d_f - d_i}{t_f - t_i}$$
 $$RGrowth = \frac{growth}{d_i}$$
 Apresentar os grupos ecológicos... 
 
-```{r gruposEcologicos, echo=FALSE}
+```{r gruposEcologicos,  warning=FALSE, echo=FALSE}
 grupoEco = read.csv('auxiliar/grupoEcologico.csv')
 eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
 ```
 
 Calculo do incremento por grupo ecológico...
 
-```{r pareamentoIncremento, echo=FALSE}
+```{r pareamentoIncremento, warning=FALSE, echo=FALSE}
 incEco = invMerged %>%
   drop_na(GrupoEco) %>%
-  filter(GrupoEco != "OUTROS") %>%
+  filter(GrupoEco != "Others") %>%
   group_by(area, plot, subplot, tree, scientific.name, GrupoEco) %>%
   summarise(med = n(),
             cc = min(cc), 
@@ -68,4 +68,4 @@ incEco = invMerged %>%
   
 ```
 
-
+Incluir o fluxograma da análise...

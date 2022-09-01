@@ -3,7 +3,7 @@ title: "02methods.Rmd"
 output: html_document
 ---
 
-```{r packages}
+```{r pacotes1, warning=FALSE, echo=FALSE}
 require(dplyr)
 require(tidyr)
 require(splus2R)
@@ -13,12 +13,12 @@ require(stringr)
 require(lubridate)
 ```
 
-```{r folders}
+```{r folders, warning=FALSE, echo=FALSE}
 PATH = 'psb/'
 COMPL = 'auxiliar/'
 ```
 
-```{r processInv}
+```{r processInv, warning=FALSE, echo=FALSE}
 and2013 = read.csv(paste0(PATH, 'AND_A01_2013_Inventory.csv'), encoding='latin-1')
 and2013$date %<>% as.character() %>% as.Date(format =  "%Y%m%d")
 and2013 %<>% rename(subplot = plot, plot = trans.ID)
@@ -865,12 +865,13 @@ tap52011$subplot = 'None'
 tap52011$tree %<>% as.character()
 ```
 
-```{r mergeInv}
+```{r mergeInv, warning=FALSE, echo=FALSE}
 inv.paisagens = merge(ana2015, and2013, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, bon2014, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, cau2012, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, cau2014, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, cau2014b, all.x = TRUE, all.y = TRUE)
+inv.paisagens = merge(inv.paisagens, cau2018, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, duc2009, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, duc2011, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, duc2016, all.x = TRUE, all.y = TRUE)
@@ -906,7 +907,7 @@ inv.paisagens = merge(inv.paisagens, tap52010, all.x = TRUE, all.y = TRUE)
 inv.paisagens = merge(inv.paisagens, tap52011, all.x = TRUE, all.y = TRUE)
 ```
 
-```{r mutate}
+```{r mutate, warning=FALSE, echo=FALSE}
 inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'D', 'E', canopy))
 inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'C ', 'C', canopy))
 inv.paisagens %<>% mutate(canopy = ifelse(canopy == 'c ', 'C', canopy))
@@ -920,6 +921,8 @@ inv.paisagens %<>% mutate(type = ifelse(type == 'o', 'O', type))
 inv.paisagens %<>% mutate(type = ifelse(type == '', NA, type))
 
 inv.paisagens %<>% mutate(light = ifelse(light == '*', NA, light))
+
+inv.paisagens$scientific.name = str_squish(inv.paisagens$scientific.name)
 
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Astrocaryum aculeatum ', 'Astrocaryum aculeatum', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Astrocaryum gynacant', 'Astrocaryum gynacanthum', scientific.name))
@@ -935,6 +938,7 @@ inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Pouteria 
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Pouteria macrophilla', 'Pouteria macrophylla', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Protium hepytaphillum ', 'Protium heptaphyllum', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Schefflera morototonii', 'Schefflera morototoni', scientific.name))
+inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Swietenia macrophylla ', 'Swietenia macrophylla', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Trattinnickia burseraefolia', 'Trattinnickia burserifolia', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Xylopia sp,', 'Xylopia sp.', scientific.name))
 inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == 'Zizyphus itacaiunensis', 'Ziziphus itacaiunensis', scientific.name))
@@ -944,27 +948,30 @@ inv.paisagens %<>% mutate(scientific.name = ifelse(scientific.name == '', NA, sc
 inv.paisagens %<>% mutate(family.name = ifelse(family.name == 'Miconia surinamensis', 'Melastomataceae', family.name))
 inv.paisagens %<>% mutate(family.name = ifelse(family.name == 'Ramnaceae', 'Rhamnaceae', family.name))
 
+inv.paisagens$scientific.name = str_remove(inv.paisagens$scientific.name, '\\.')
+
 inv.paisagens$scientific = inv.paisagens$scientific.name
 inv.paisagens %<>% separate(scientific, c('genera.name', 'epiteto.name'), " ")
 
 inv.paisagens %<>% mutate(cc = floor(DBH/10.0)*10+(10/2))
 
+inv.paisagens %<>% filter(!is.na(date))
 inv.paisagens %<>% mutate(year = year(date))
 
 inv.paisagens %<>% mutate(plot = ifelse(is.na(plot), 'None', plot))
 ```
 
-```{r grupoEcologico}
+```{r grupoEcologico, warning=FALSE, echo=FALSE}
 grupoEcologico = read.csv(paste0(COMPL, 'grupoEcologico.csv'))
 inv.paisagens %<>% left_join(grupoEcologico, by = c('scientific.name' = 'Especie'))
 ```
 
-```{r comercial}
+```{r comercial, warning=FALSE, echo=FALSE}
 comercial = read.csv(paste0(COMPL, 'comercial.csv'))
 inv.paisagens %<>% left_join(comercial, by = c('scientific.name' = 'especie'))
 ```
 
-```{r areaRelativa}
+```{r areaRelativa, warning=FALSE, echo=FALSE}
 dimensao = read.csv(paste0(COMPL, 'dimensaoParcelas.csv'))
 calcularArea = function(dap, nome.area, dim.df){
   temp = subset(dimensao, area == nome.area)
@@ -999,7 +1006,7 @@ inv.paisagens$areaPlot = mapply(calcularArea, inv.paisagens$DBH, inv.paisagens$a
 inv.paisagens %<>% mutate(eqTree = 1/areaPlot)
 ```
 
-```{r export}
+```{r export, warning=FALSE, echo=FALSE}
 write.csv(inv.paisagens, 'dados/10_invPaisagensMerged.csv')
 ```
 
