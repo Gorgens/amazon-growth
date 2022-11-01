@@ -1,22 +1,21 @@
 ---
 title: "Introdução"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
-Dinâmica florestal e seus componentes (ingresso, crescimento, mortalidade)...
+A exploração madeireira legal é executada através do plano de manejo florestal sustentável, no qual é baseado em instrumentos reguladores para embasar a intensidade da atividade de retirada da madeira, sendo diretamente relacionada com o estoque de crescimento [@Oliveira2020].
 
-Falar sobre o ingresso…
+O incremento das árvores, ou crescimento, é consequente das atividades meristemáticas que fornecem alterações nas suas características diamétricas, altimétricas e volumétricas das árvores. No qual, os fatores tanto genéticos quanto ambientais influenciem na forma e tamanho dessas dimensões [@SetteJr2010; @Canhoto2018]. 
 
-Falar sobre mortalidade...
+Em geral, os parâmetros de avaliação do crescimento diamétrico das espécies ocorrem de modo generalista, onde as tomadas de decisões no manejo florestal influenciam no desaparecimento ou taxas de crescimento não significativas de espécies importantes para fins ambientais e econômicos [@Condé2022]. 
 
-Falar sobre crescimento...
+No intuito de se compreender melhor a dinâmica de crescimento das florestas nativas da Amazônia, diminuindo o efeito da complexidade de sua biodiversidade, efetua-se o agrupamento por grupos conforme suas estratégias de vida e requisitos de iluminação [@Denslow1987; @Swaine1988; @Withmore1989; @Clark1992; @Campanello2007; @DeAlmeida2016]. 
 
-Mostrar que a floresta é formada por espécies com diferentes características. Falar de grupos ecológicos... 
+Avaliar o crescimento diamétrico em função das especificidades de cada grupo ecológico, apresenta perspectivas de fornecimento de subsídios para novos níveis de critérios de cortes, diâmetros mínimos de corte e intensidade de exploração  que favorecem um manejo florestal que promova menos distúrbios e melhores recuperações das florestas ao seu estado natural [@Siviero2020; @Andrade2022]. 
 
-Falar sobre as espécies com interesse comercial... como elas se relacionam aos grupos ecológicos...
+Assumindo-se que esses diferentes grupos ecológicos apresentam distintos papéis nas comunidades florestais, em razão das suas estruturas populacionais. Tem-se a hipótese que apresentam diferentes taxas de crescimentos diamétricos. Com isso, o objetivo do presente trabalho foi avaliar o incremento diamétrico e distribuição diamétrica de árvores de floresta nativas da Amazônia brasileira. 
 
-Apresentar critérios de exploração... DMC... ciclo de corte... taxa de corte... taxa de crescimento...
-
-Discutir os critérios de colheita aplicados hoje e o risco de não se considerar as diferenças ecológicas...
 
 

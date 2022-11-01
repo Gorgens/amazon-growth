@@ -3,22 +3,23 @@ title: "Resultados"
 output: html_document
 ---
 
-```{r pacotes3, warning=FALSE, echo=FALSE}
+
+```{r pacotes3, echo=FALSE, warning=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
 require(ggplot2)
-require(gridExtra)
-require(V.PhyloMaker)
+#require(V.PhyloMaker)
 require(phytools)
 require(rstanarm)
 require(bayesplot)
-require(forestmangr)
+require(gridExtra)
 ```
 
-Frequência de indivíduos por grupo ecológico...
 
-```{r proporcaoGruposEcologicos, warning=FALSE, echo=FALSE}
+Das 415 espécies inventariadas, apenas 90 foram associadas com sucesso a um grupo: 13 pioneiras, 13 demadantes de luz, 34 intermediárias, 20 tolerantes à sombra e 10 emergentes. Calculou-se a frequência de indíviduos para os grupos das Pioneiras, Demandantes de luz, Intermediárias, Tolerantes à sombra e Emergentes. 
+
+```{r proporcaoGruposEcologicos, echo=FALSE, warning=FALSE}
 arvHaEspecie = invMerged %>%
   drop_na(GrupoEco) %>%
   filter(DBH >= 10) %>%
@@ -27,105 +28,124 @@ arvHaEspecie = invMerged %>%
   drop_na(ntree) %>%
   group_by(area, year, plot, GrupoEco) %>%
   summarise(ntree = mean(ntree)) %>%
-  group_by(area, year, GrupoEco) %>%
+  group_by(area, year,  GrupoEco) %>%
   summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots) %>% 
+  mutate(arvha = ntree / nplots) %>%
   group_by(area, GrupoEco) %>%
   summarise(arvha = mean(arvha)) %>%
   group_by(GrupoEco) %>%
   summarise(arvha = mean(arvha)) %>%
   filter(GrupoEco != "Others") %>%
-  mutate(arvProp = arvha / sum(arvha) * 100)
+  mutate(arvProp=arvha/sum(arvha)*100)
 
-arvHaEspecie
 ```
 
-Incremento pelo grupo ecológico...
+Observa-se na tabela 1 as frequências dos indivíduos por grupo ecológico. Assumimos que as espécies que não foram associadas a grupo ecológicos seguem a mesma proporção das espécies identificadas. Com isso, observa-se que maior parte dos indíviduos ocorrem nos grupos das Intermediárias e Tolerantes à sombra. 
 
-```{r mediaIncrementoGruposEcologicos, warning=FALSE, echo=FALSE}
+Efetuou-se o cálculo das tendências centrais do incremento diamétrico relativo dos grupos ecológicos. 
+
+
+```{r medianIncrementoGrupoEcologicoRelativo, echo=FALSE, warning=FALSE}
 incrementoGrupo = incEco %>%
   filter(GrupoEco != "Others") %>%
   group_by(GrupoEco) %>%
   summarise(incDesv = IQR(rInc, na.rm = TRUE), 
             rInc = median(rInc))
 
-incrementoGrupo
+inner_join(arvHaEspecie, incrementoGrupo, by = 'GrupoEco') %>%
+  select(GrupoEco, arvProp, incDesv, rInc)
+
 ```
 
-```{r testeIncGrupoEcologico, warning=FALSE, echo=FALSE}
+
+Nota-se na tabela 2, os valores de incremento relativo por grupo ecológico e o grau de variabilidade das tendências centrais, em que foi possível verificar que as demandantes de luz apresentaram tendências centrais com valores mais destacados que os demais grupos, porém, os valores da faixa interquatil apresentam-se com menores agrupamentos, acusando uma distribuição de dados de incremento relativo diferente.  Enquanto as Tolarantes à sombra obtiveram menos valores para medianas e para os desvios. 
+
+Gerou-se o modelo bayesiano generalizado do incremento diamétrico relativo em função dos grupos ecológicos para avaliação das provavéis distribuições. 
+
+```{r testeIncGrupoEco, echo=FALSE, warning=FALSE}
 incGrupoEco <- stan_glm(
   rInc ~ GrupoEco,
   data = incEco,
   family = Gamma(link="log"))
 ```
 
-```{r bayesplotIncGrupoEco, warning=FALSE, echo=FALSE}
+A partir do modelo linear generalizado bayesiano, nota-se na figura 1 as provavéis distribuições do incremento relativo em funções dos grupos ecológicos, no qual observa-se que em contribuição aos valores de tendências centrais, o grupo das demandantes de luz destacam-se com uma provavél distribuição diferente. Ou seja, taxas de incremento relativo que diferm dos demais grupos. 
+
+
+```{r bayesPlotIncGrupoEco, echo=FALSE, warning=FALSE}
 bayesplot::color_scheme_set("viridis")
 plot(incGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 ```
 
-```{r graficoDDgrupoEco, warning=FALSE, echo=FALSE}
+Para cada grupo ecológico foi gerado o número de índividuos por classe de diâmetros para avaliar as suas distribuições diamétricas. 
+
+```{r graficoDDGrupoEco, echo=FALSE, warning=FALSE, }
 numeroArvores = invMerged %>%
   filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
   group_by(area, year, plot, subplot, GrupoEco, cc) %>% 
   summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, year, plot, GrupoEco, cc) %>%
+  group_by(area, year, plot, GrupoEco, cc)%>%
   summarise(ntree = mean(ntree)) %>%
-  group_by(area, year, GrupoEco, cc) %>%
+  group_by(area, year, GrupoEco, cc)%>%
   summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots) %>%
+  mutate(arvha = ntree/ nplots) %>%
   group_by(area, GrupoEco, cc) %>%
   summarise(arvha = mean(arvha)) %>%
   group_by(GrupoEco, cc) %>%
-  summarise(arvha = mean(arvha))
+  summarise(arvha = mean(arvha)) 
 
-ggplot(transform(numeroArvores,
-                 GrupoEco = factor(GrupoEco, levels=c('Pioneer',
-                                                      'Light-demanding',
-                                                      'Intermediate',
-                                                      'Shade-tolerant',
-                                                      'Emergent'))),
-       aes(cc, arvha)) + 
-  geom_col() +
+
+ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
   xlab('Diameter distribution') + ylab('Trees per hectare') +
-  theme_bw() + theme(panel.grid.major = element_blank(),
+    theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
                      panel.background = element_blank(),
-                     axis.line = element_line(colour = "black")) +
-  facet_wrap(~GrupoEco, ncol = 5)
+                     axis.line = element_line(colour = "black"))+
+  facet_wrap(~GrupoEco, ncol=5)
+
+
 ```
 
-```{r testeArvGrupoEco, warning=FALSE, echo=FALSE}
-numeroArvoresPorCc = invMerged %>%
+Em relação a distribuição diamétrica em relação aos grupos ecológicos, na figura 2 verifica-se que todos os grupos seguem a distribuição de florestas nativa em exponencial negativa, conhecida como "J-invertido", exceto os grupos da emergentes que apresentam forte assimetria em sua distribuição. 
+
+Modelou-se a distribuição diamétrica em função dos grupos ecológicos através de um modelo bayesiano generalizado para efetuar comparação entre as possíveis distribuições. 
+
+```{r testeArvGrupoEco, echo=FALSE, warning=FALSE}
+numeroArvoresPorCC= invMerged %>%
   filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
   group_by(area, year, plot, subplot, GrupoEco, cc) %>% 
   summarise(ntree = sum(eqTree))  %>%
   drop_na(ntree) %>%
-  group_by(area, year, plot, GrupoEco, cc) %>%
+  group_by(area, year, plot, GrupoEco, cc)%>%
   summarise(ntree = mean(ntree)) %>%
-  group_by(area, year, GrupoEco, cc) %>%
+  group_by(area, year, GrupoEco, cc)%>%
   summarise(ntree = sum(ntree)) %>%
   left_join(parcelasArea) %>%
-  mutate(arvha = ntree / nplots)
+  mutate(arvha = ntree/ nplots)
 
-arvGrupoEco <- stan_glm(
-  arvha ~ cc:GrupoEco,
-  data = numeroArvoresPorCc,
-  family = Gamma(link="log"))
+  arvGrupoEco = stan_glm(
+    arvha~cc:GrupoEco, 
+    data=numeroArvoresPorCC, 
+    family=Gamma(link="log"))
+  
+
 ```
 
-```{r bayesplotArvGrupoEco, warning=FALSE, echo=FALSE}
-bayesplot::color_scheme_set("viridis")
-#plot(arvGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
 
-plot1 = mcmc_intervals(arvGrupoEco, pars = vars(contains("cc:GrupoEco")))
-plot2 = mcmc_intervals(arvGrupoEco, pars = vars(contains("Intercept")))
+```{r bayesplotArvGrupoEco, echo=FALSE, warning=FALSE}
+bayesplot::color_scheme_set("viridis")
+
+plot1=mcmc_intervals(arvGrupoEco, pars=vars(contains("cc:GrupoEco")))
+plot2=mcmc_intervals(arvGrupoEco, pars=vars(contains("Intercept")))
 
 grid.arrange(plot2, plot1, ncol=2)
+
 ```
+
+Nota-se que as tolerantes à sombra e as intermediárias apresentaram possíveis semelhanças de distribuição diamétrica, em contrapartida o grupos das emergentes, pioneiras e demandantes de luz demonstraram prováveis diferenças. 
 
