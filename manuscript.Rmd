@@ -1,28 +1,32 @@
 ---
 title: "Padrões de crescimento de árvores em floresta Amazônica"
-subtitle:
-titlerunning: Padrões de crescimento
-date: "`r format(Sys.time(), '%d %b %Y %H:%M:%S %Z')`"
 author: "Eric Bastos Gorgens, UFVJM"
+date: "`r format(Sys.time(), '%d %b %Y %H:%M:%S %Z')`"
 output:
-  bookdown::word_document2: default
-  pdf_document: default
+  word_document: default
   bookdown::html_document2: default
+  bookdown::word_document2: default
   bookdown::pdf_book:
     base_format: rticles::springer_article
     extra_dependencies: booktabs
+  pdf_document: default
+subtitle: null
+titlerunning: Padrões de crescimento
 abstract: "Entrar com o resumo aqui \n"
 bibliography: bibliography.bib
 biblio-style: spbasic
 authors:
 - name: Anthoinny Vittória dos Santos Silva
-  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG, Brasil. CEP 39.100-000
+  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG,
+    Brasil. CEP 39.100-000
   email: anthoinny.silva@ufvjm.edu.br
 - name: Eric Bastos Gorgens
-  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG, Brasil. CEP 39.100-000
+  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG,
+    Brasil. CEP 39.100-000
   email: eric.gorgens@ufvjm.edu.br
 - name: Vitor Hugo dos Santos Simplício
-  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG, Brasil. CEP 39.100-000
+  address: Departamento de Engenharia Florestal, Campus JK, UFVJM. Diamantina, MG,
+    Brasil. CEP 39.100-000
   email: vitor.simplicio@ufvjm.edu.br
 csl: abnt.csl
 ---
