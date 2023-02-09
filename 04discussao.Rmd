@@ -3,70 +3,40 @@ title: "Discussão"
 output: html_document
 ---
 
-Embora exista variados tipos de agrupamento de espécies de acordo com sua ecofisiologia, como apresentado por @Budowski1965, @Kuchler1976, @Swaine1988, @DeAlmeida2016 e @Macpherson2007 que foi adotado nesse estudo, influencia em uma maior diversidade de comparativos e também da impossibilidade de agrupamento de algumas espécies nesses grupos.
+Os indivíduos caracterizados como pioneiros, são conhecidas como “colonizadores”, ou seja, apresentam-se de modo primário no ecossistema florestal [@Santiago2021]. Necessitam de iluminação, no qual suas características fisiológicas favorecem um crescimento inicial mais rápido [@Swinfield2016, @Andrzjewski2020, @Schaffer2020], com uma das maiores taxas de incremento diamétrico relativo em relação as espécies em estágios sucessionais posteriores, como verificado na análise desse estudo.
 
-Como apresentado por @narducci2020 em seu estudo identificou 104 espécies, no qual apenas 61 espécies, ou seja, 58,7% foram classificadas em grupos ecológicos, onde 35 pertenciam ao grupo das pioneiras, 13 da secundárias inicias e 23 nas secundárias tardias. Em comparativo a frequência apresentada nesse estudo, as secundárias inicias se assemelham as características das demandantes de luz e as secundárias tardias como intermediárias e tolerantes à sombra. 
+Como resultado dessas características, as espécies desse grupo possuem um ciclo de vida mais curto [@Bowman2012, @Gil2022], já que as suas madeiras são de baixas densidade [@Novais2022], sendo então menos resistentes, ou seja, mais susceptíveis a mortalidade, com isso resulta em uma menor quantidade de indivíduos arbóreos em maiores classes diamétricas. 
 
-Assim como nesse estudo, @Oliveira2017 verificou que o grupo das tolerantes à sombra e intermediárias foram o com maior expressividade de frequência de indivíduos por espécie, com cerca de 45,55% respectivamente. 
+Semelhantemente as pioneiras, o grupo das demandantes de luz crescem com uma maior rapidez [@DeAlmeida2016], observou-se essa característica nos resultados das taxas de incremento diamétrico, que em relação aos demais grupos as espécies do grupo obtiveram maiores valores. 
 
-A menor quantidade de indivíduos de espécies inseridas no grupo das pioneiras, em contrapartida aos maiores valores de número de espécies nas tolerantes à sombra e intermediária, é um indicativo que essas comunidades florestais podem apresentar um maior grau de maturidade, como demonstrado por @Lau2020.
+Tendo em vista que para a árvore investir em crescimento secundário (diâmetro), é necessário o fornecimento de luz ideal para o crescimento inicial (altura), principalmente para essas espécies que necessitam de lugares luminosos e abertos ou semiabertos [@Luambua2021], é provável então que essas comunidades florestais apresentem as características edafoclimáticas que favoreceram o crescimento de indivíduos do grupo.
 
-Em geral, o incremento diamétrico (G) é avaliado a partir da diferença entre o diâmetro final e o diâmetro inicial em determinado tempo [@Vatraz2018;@Amaral2019]. E o incremento diamétrico anual (Growth) é a divisão do G pelos períodos entre as duas medições [@Pereira2020].  Porém, esse cálculo apresenta influência da forma da árvore. Em alternativa a essa problemática se tem a implementação do incremento diamétrico relativo.
+Como os solos de áreas de terra firme da Amazônia são caracterizados por serem mais pobres em nutrientes e baixa capacidade de disponibilização de água para plantas [@Neta2018; @Neta2018], a alta eficiência em transportar água que as espécies demandantes de luz possuem, auxiliam seu crescimento nesses ambientes mais escassos [@Campanello2007].
 
-Avaliando-se em função dos grupos ecológicos, verificou-se que as tolerantes à sombra, que são espécies que geralmente apresentam maiores densidades, obtiveram taxas de crescimento relativo mais baixos que os demais grupos, refletindo em um crescimento mais lento [@Worbes2019]. 
+Observa-se que as distribuições diamétricas das demandantes de luz e pioneiras apresentam ligeiras semelhanças, em razão das suas características biológicas. Porém, as demandantes de luz apresentaram uma maior presença de indivíduos em classes diamétricas de 100 cm.  
 
-@Vatraz2018 também verificou em seu estudo que as tolerantes à sombra apresentam taxas de incremento diamétrico menores que comparado aos demais grupos ecológicos. Possivelmente sendo uma resposta fisiológica do seu custo de investimento de construção de tecidos para sustentação de suas copas e proteção a danos físicos, o que favorece indivíduos com ciclo de vida maiores em contrapartida aos exigentes de luminosidade [@King2006;@Poorte2006]
+Em contrapartida, o grupo das tolerantes à sombra é composto por espécies com maiores densidades [@Ferraz2004, @Novais2022], cuja as respostas fisiológicas ao crescimento é mais lento comparado aos demais grupos, como apresentado nas análises. Onde, essa menor taxa de crescimento é consequência de um maior investimento dos indivíduos em tecidos para a sustentação de suas copas e proteção a danos físicos, permitindo ciclos de vida maiores [@King2006; @Poorte2006; @Vatraz2018]. 
 
+Apesar dessas espécies terem uma maior vantagem na produção de indivíduos arbóreos com ciclos mais longos e mais adaptados à sombra, podem ser prejudicados pelas espécies que demandam luminosidade, tanto em ambientes luminosos quanto em sutilmente luminosos [@Swienfield2016] dependendo da dinâmica da comunidade florestal, em razão de suas menores taxas de crescimento. 
 
-@DeAlmeida2016 diz que as espécies com características das demandantes de luz apresentam rápido crescimento vegetativo, justificando suas maiores taxas de incremento diamétrico relativo. Essas árvores apresentam uma alta resposta reprodutiva em função da luz, crescendo em locais abertos, semiabertos e em clareiras na floresta [@Luambua2021], além de baixas densidades de madeira e uma alta eficiência em transportar água [@Campanello2007]. 
+Já as espécies intermediárias caracterizam-se por atributos medianos aos demais grupos, combinando principalmente das demandantes de luz e as tolerantes à sombra, com um crescimento rápido na exposição de luz, apresentando maior tolerância à sombra que as pioneiras [@Sambuichi2009] e média a alta densidade de madeira [@Ferraz2004, @Novais2022]. Observou-se a partir dos resultados a influência desses atributos nos valores de incremento relativo apresentar valor médio entre os demais. 
 
-Em colaboração aos resultados desse estudo, @loregian2012 verificou ao analisar os padrões ecológicos e espaciais de espécies de florestas naturais que o maior grupo de indivíduos amostradas estudados foram espécies caracterizadas como demandantes de luz, em que relacionou essa frequência como uma resposta de condições de desenvolvimento e estabelecimento inicial de espécies.
+A distribuição diamétrica desses indivíduos apresentou similaridade com a das tolerantes à sombra, porém, foi possível observar a sua característica de uma ligeira diminuição na taxa de regeneração em contrapartida as espécies das tolerantes à sombra.
 
-De modo geral, @Schöngart2015 enfatiza que o favorecimento de crescimento mais rápidos de espécies da Amazônia é bastante influenciado pelas áreas com maiores riqueza em nutrientes, embora os solos de terra firme que caracterizam a maior parte das áreas das bases estudadas sejam caracterizados por serem ácidos e mais pobres em nutrientes [@Neta2018; @Neta2018]. 
+As emergentes caracterizam-se como um grupo à parte no processo de sucessão ecológica, pois faz combinação de características dos demais grupos como uma intolerância à sombra, taxas de crescimento mais lento em contrapartida aos grupos de que necessita luz e densidades de madeiras mais altas [@Macpherson2007, @Paula2016].   
 
-@Gouveia2011 ao avaliar o crescimento de espécies por grupo ecológico em áreas na FLONA do Tapajós, verificou que a média do incremento diamétrico através do método convencional das pioneiras foi de 0,70, as secundárias inicias com 0,69, secundárias tardias 0,39 e clímax (0,29). 
+Embora as taxas crescimento de diamétrico das emergentes tenham apresentado valores semelhantes aos das intermediárias e pioneiras, esses indivíduos possui uma distribuição diamétrica diferente com uma baixa taxa de ingresso, onde a concentração é maior de indivíduos adultos mais velhos e com maiores diâmetros [@Macpherson2007].
 
-@Amaral2019 a partir do estudo da dinâmica de floresta da Amazônia Central após 25 anos de corte experimental, notou que o crescimento médio de diâmetro de espécies foi de 0,25 a 0,30 cm/ano. 
+É provável que as espécies das emergentes se enquadram como as que necessitam de maior tempo para uma maior taxa de regeneração [@Felfili, 1997], com isso gera uma distribuição que não segue a estrutura de “J-invertido” [@Braz2010; @Bettinger2009; @Dawakins1998; @Canetti2019].
+Esse maior tempo de regeneração pode ser ocasionado pela relação das características fisiológicas das árvores responderem melhor em ambientes com ocorrência de distúrbios, ocasionando em populações com comportamento desbalanceado [@DeLiocourt1989, @Meyer1952].
 
-@Pereira2020 ao apresentar os resultados do incremento diamétrico anual médio nos grupos ecológicos verificou que o grupo das tolerantes à sombra com 0,49 cm/ano foi o que apresentou menores valores em contrapartida aos demais. 
+As clareiras são um dos distúrbios que mais favorecem a ocorrência das espécies, em consequência do processo de mortalidade dos indivíduos arbóreos concentrado nas últimas classes diamétricas. Frequentemente ocasionado pelas espécies dos grupos das pioneiras e demandantes de luz, que possuem madeiras menos densas, consequentemente mais propensas a rupturas e tombamentos [@Maciel2003]. 
 
-Com relação as distribuições dos incrementos relativos obtidos através do modelo bayesiano generalizado, os resultados gerados demonstraram uma provável diferença entre as distribuições incremento diamétrico relativo das demandantes de luz em relação aos demais grupos.
+Esses distúrbios favorecem a características das emergentes de demandarem luz para o seu crescimento, porém, tem um crescimento relativamente mais lento que as pioneiras, demandantes de luz e intermediárias, como consequência possui árvores com densidades mais altas, semelhantemente as tolerantes à sombra.  Então se espera que seu banco de plântulas e mudas sejam mais resilientes na espera por esses distúrbios que favoreçam seu crescimento [@Murphy1981, @Maciel2003].
 
-É possível que as taxas de crescimento mais elevadas para esse grupo justifiquem sua distribuição diferenciada, enquanto, que os valores dos outros grupos foram ligeiramente menores apresentaram possível semelhanças nas distribuições.
+De modo geral, as espécies de madeira de média a alta densidade são as que recebem maior atenção para a exploração florestal com fins madeireiros, sendo então necessário que essas espécies apresentem uma alta taxa de regeneração, conforme a distribuição diamétrica em “J-invertido”, para que a floresta tenha capacidade de repor os indivíduos com DAP > 50 cm retirados. 
 
-Como consequência disso, não é possível inferir que as espécies sejam manejadas de modo igual, mas sim acentuar a necessidade de um olhar mais específico do manejador em perceber que em determinados locais esses grupos ecológicos apresentarão taxas de crescimento menores. 
+O grupo das emergentes contém espécies exploradas em razão das suas madeiras com média a alta densidade, porém, seu banco de plântulas e mudas para reposição é mais baixo, então poucos indivíduos irão conseguir se desenvolver e se tornar árvores adultas. Com um plano de manejo elaborada a nível de comunidade, pode ocorrer dessas espécies não conseguirem fazer reposição dentro do ciclo de 30 a 35 anos, conforme Normativa nº 5, do Ministério do Meio Ambiente, de 11 de dezembro de 2006.
 
-Se há diferença em um dos grupos, é possível que as inferências empregadas nos parâmetros das tomadas de decisões do manejo florestal devam ser reavaliadas, de forma a incentivar o conhecimento sobre o crescimento das árvores, para entendimento da dinâmica das florestas tropicais, além do seu desenvolvimento em relação as interferências sofridas no ecossistema em função do tempo [@Veloso2017; @Martins2019]. 
-
-Com relação aos dados biométricos obtidos pela avaliação das distribuições diamétrica dos grupos ecológicos apresentaram a tendência de distribuírem-se em exponencial negativa, conhecido como “J-invertido, exceto o grupo das emergentes. 
-
-A tendência de distribuição de diâmetros que a maior parte dos grupos apresentaram, demonstra que as populações que compõem esses grupos ecológicos apresentam um melhor balanço entre a mortalidade e o ingresso de indivíduos. Todavia, nem todas as todas distribuições diamétricas de florestas nativas seguirão de modo obrigatório o formato de exponencial negativo, ou, será balanceada. 
-
-Pois, algumas espécies precisam de um maior tempo e espaço para uma maior taxa de regeneração (FELFILI, 1997). Com isso, apresentam uma distribuição que não segue a estrutura de “J-invertido” e diferentes valores de incremento [@Braz2010; @Bettinger2009; @Dawakins1998; @Canetti2019].
-
-O que ocorre com as emergentes que contém espécies com um forte potencial silvicultural e ecológico, porém, apresentam uma distribuição com uma alta simetria à esquerda, refletindo uma baixa taxa de ingresso, com uma maior quantidade de indivíduos adultos mais velhos e com maiores diâmetros [@Macpherson2007]. 
-
-Supõem-se que essas espécies fornecem o reabastecimento das classes de suas classes diamétricas através de distúrbios, pois, apresentam um comportamento desbalanceado, por não seguirem um padrão de exponencial negativo, como apresentado pelas teorias de @DeLiocourt1989 e @Meyer1952.
-
-Tendo em vista da importância que a regeneração é extremamente importante para a produção sustentável e recomposição de madeiras, é necessário maiores entendimentos sobre essas espécies que não possuem número expressivos de regenerantes, para possíveis intervenções silviculturais [@Putz2004; @Dickinson2000; @Erdmann2019]
-
-As avaliações das distribuições diamétricas são relevantes tanto do ponto de vista silvicultural, por sugerir melhores critérios de exploração, quanto do ponto de vista ecológico por fornecer melhores caracterizações dos traços dos determinados grupos de espécie [@Inga2017].
-
-Do ponto de vista ecológico, @Carvalho2009 apontaram que o fato das espécies que podem ser classificados como demandantes de luz, intermediárias e tolerantes à sombra apresentarem essa concentração de indivíduos nas classes inicias de diamétrico, indica um provável avanço de estágios sucessionais maduros, em razão da elevada regeneração. 
-
-@Oliveira2017 em seu estudo sobre prognose da distribuição diamétrica de espécies arbóreas classificadas em grupos ecológicos em uma floresta tropical de terra firme, também apresentou que os indivíduos tolerantes à sombra e intermediárias apresentam de modo evidente a distribuição diamétrica como “J-invertido”. 
-
-@Santos2018 verificou também que as espécies com característica das demandantes de luz, intermediárias e tolerantes à sombra apresentaram comportamento de exponencial negativo. 
-
-A partir do modelo bayesiano generalizado da distribuição diamétrica em função dos grupos ecológicos, observou-se que os grupo das intermediárias e tolerantes à sombra apresentam prováveis semelhanças nas distribuições. Enquanto que o grupo das pioneiras, demandantes de luz e emergentes apresentam prováveis diferenças nas distribuições diamétricas.
-
-A avaliação da distribuição diamétrica é uma ferramenta eficaz para descrição das propriedades florestais @Canetti2019, já que o diâmetro é uma variável que pode ser obtida por métodos não destrutivos e está fortemente correlacionada com a variável de importância comercial que é o volume, sendo então um dos critérios empregados para o corte de árvores. 
-
-Porém, ao se avaliar que há possíveis diferenças nas distribuições diamétricas das árvores estudadas, é possível que as práticas de manejo estejam retirando indivíduos em classes que não consigam gerar indivíduos suficientes durante os ciclos de corte. 
-
-Já que, segundo @Cysneiros2017, o grupo ecológico e porte das espécies de florestas tropicais em função do estágio sucessional que predomina a comunidade florestal que estão inseridas, são fatores que podem influenciar diretamente na distribuição diamétrica.  
-
-Portanto, os resultados obtidos em função dos grupos ecológicos demonstraram que as avaliações em função de comunidades florestais que fornecem suporte para os parâmetros legais, abrem lacunas para o exercimento de atividades florestais que comprometem a sustentabilidade do manejo. 
- 
- 
+A partir da compreensão que esses diferentes nichos de regeneração e variadas densidades da madeira formam os indivíduos desses grupos ecológicos que apresentam diferenças em taxas de incremento e distribuição diamétrica, enfatiza a exigência de um manejo diferenciado [@Silvertown2004, @Chave2006, @Poorter2007, @Swinfield2016].
 

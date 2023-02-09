@@ -5,17 +5,17 @@ output:
   html_document: default
 ---
 
+As comunidades florestais apresentam um complexo ecossistema com diferentes inter-relações funcionais, em diferentes estágios de sucessão que crescem, reproduzem-se e morrem [@Withmore1989, @Schorn2009].
+
+As espécies apresentam similaridades, tanto em relação às suas estratégias de vida quanto aos requisitos de iluminação. Essas semelhanças permitem o agrupamento das espécies em diferentes grupos ecológicos [@Denslow1987, @Swaine1988, @Clark1992, @Campelo2007, @Dealmeida2016].
+
+Considerar os agrupamentos ecológicos ajuda a compreender a dinâmica e a estrutura da floresta, resultando em resultados mais eficazes dos instrumentos reguladores do manejo florestal, promovendo atividades exploratórias que não modifiquem a composição e estrutura da comunidade, e auxiliando em práticas mais sustentáveis [@Oliver1996].
+
 A exploração madeireira legal é executada através do plano de manejo florestal sustentável, no qual é baseado em instrumentos reguladores para embasar a intensidade da atividade de retirada da madeira, sendo diretamente relacionada com o estoque de crescimento [@Oliveira2020].
 
-O incremento das árvores, ou crescimento, é consequente das atividades meristemáticas que fornecem alterações nas suas características diamétricas, altimétricas e volumétricas das árvores. No qual, os fatores tanto genéticos quanto ambientais influenciem na forma e tamanho dessas dimensões [@SetteJr2010; @Canhoto2018]. 
+O incremento das árvores, ou crescimento, é consequência das atividades meristemáticas que fornecem alterações nas suas características diamétricas, altimétricas e volumétricas. No qual, os fatores tanto genéticos quanto ambientais influenciam na forma e tamanho [@SetteJr2010, @Canhoto2018].
 
-Em geral, os parâmetros de avaliação do crescimento diamétrico das espécies ocorrem de modo generalista, onde as tomadas de decisões no manejo florestal influenciam no desaparecimento ou taxas de crescimento não significativas de espécies importantes para fins ambientais e econômicos [@Condé2022]. 
+Em geral, os parâmetros de avaliação do crescimento diamétrico e distribuição das espécies tropicais ocorrem de modo generalista, onde as tomadas de decisões no manejo florestal podem influenciar no desaparecimento ou taxas de crescimento não significativas de espécies importantes para fins ambientais e econômicos [@Conde2022].
 
-No intuito de se compreender melhor a dinâmica de crescimento das florestas nativas da Amazônia, diminuindo o efeito da complexidade de sua biodiversidade, efetua-se o agrupamento por grupos conforme suas estratégias de vida e requisitos de iluminação [@Denslow1987; @Swaine1988; @Withmore1989; @Clark1992; @Campanello2007; @DeAlmeida2016]. 
-
-Avaliar o crescimento diamétrico em função das especificidades de cada grupo ecológico, apresenta perspectivas de fornecimento de subsídios para novos níveis de critérios de cortes, diâmetros mínimos de corte e intensidade de exploração  que favorecem um manejo florestal que promova menos distúrbios e melhores recuperações das florestas ao seu estado natural [@Siviero2020; @Andrade2022]. 
-
-Assumindo-se que esses diferentes grupos ecológicos apresentam distintos papéis nas comunidades florestais, em razão das suas estruturas populacionais. Tem-se a hipótese que apresentam diferentes taxas de crescimentos diamétricos. Com isso, o objetivo do presente trabalho foi avaliar o incremento diamétrico e distribuição diamétrica de árvores de floresta nativas da Amazônia brasileira. 
-
-
+Avaliar a dinâmica dos diferentes grupos ecológicos a partir da distribuição diamétrica, do incremento diamétrico anual e do tempo de passagem. Espera-se fornecer subsídios para a definição de critérios de corte mais adequados e que promovam um manejo florestal sustentável.
 

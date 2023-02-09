@@ -38,10 +38,9 @@ parcelasArea = invMerged %>%
 
 O incremento diamétrico anual ($d_{growth}$) foi determinado pela da divisão do incremento diamétrico observado entre o diâmetro da primeira e da segunda medição, pelo período em anos entre as medições.
 
-
 $$d_{growth} = \frac{d_f - d_i}{t_f - t_i}$$
-$d_{growth}$ é o incremento diamétrico anual, $d_f$ é o diâmetro a 1,30m obtido no último ano de medição, $d_i$ é o diâmetro a 1,30 m obtido no primeiro ano de medição, $t_f$ é a data da última medição e $t_i$ é a data da primeira medição. 
 
+$d_{growth}$ é o incremento diamétrico anual, $d_f$ é o diâmetro a 1,30m obtido no último ano de medição, $d_i$ é o diâmetro a 1,30 m obtido no primeiro ano de medição, $t_f$ é a data da última medição e $t_i$ é a data da primeira medição. 
 
 O incremento diamétrico relativo ($d_{rGrowth}$) pôde ser calculado dividindo o incremento diamétrico anual pelo diâmetro a 1,30 obtido na primeira medição:
 
