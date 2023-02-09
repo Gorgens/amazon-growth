@@ -121,8 +121,23 @@ Incremento anual...
 
 ```{r graficoDDInc, echo=FALSE, warning=FALSE, fig.cap = 'Distribuição do incremento diamétrico anual para cada grupo ecológico por centro de classe.'}
 
+incMedGrupo = incEco %>%
+  filter(GrupoEco != "Others") %>%
+  group_by(GrupoEco, cc) %>%
+  summarise(incMediaAnual = mean(incAnual))
+
+ggplot(incMedGrupo, aes(cc, incMediaAnual)) + 
+  geom_col() +
+  xlab('Diameter distribution') + ylab('Incremento Anual') +
+    theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))+
+  facet_wrap(~GrupoEco, ncol=2)
+
 ggplot(incEco, aes(cc, incAnual)) + 
-  geom_smooth(method = lm, formula = y ~ splines::bs(x,3), se = TRUE) +
+  #geom_smooth(method = lm, formula = y ~ splines::bs(x,3), se = TRUE) +
+  geom_point(alpha=0.3) +
   xlab('Diameter distribution') + ylab('Incremento Anual') +
     theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
@@ -134,12 +149,12 @@ ggplot(incEco, aes(cc, incAnual)) +
 
 ```{r testeIncMedioGrupoEco, echo=FALSE, warning=FALSE, cache=TRUE, fig.cap = 'Análise bayesiana comparando o incremento relativo entre grupos ecológicos.'}
 incMedGrupoEco <- stan_glm(
-  incAnual ~ cc|GrupoEco,
+  incAnual ~ -1 + GrupoEco,
   data = incEco,
   family = gaussian(link="identity"))
 
 bayesplot::color_scheme_set("viridis")
-plot(incMedGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
+plot(incMedGrupoEco, plotfun = "areas", prob = 0.9)
 ```
 
 A partir do modelo linear generalizado bayesiano, observa-se que o grupo das demandantes de luz possui um parâmetro que difere dos demais grupos que estão alinhados. Os grupos (Figure \@ref(fig:testeIncGrupoEco)). Tendo o grupo das Emergentes como referência (intercept), os grupos Intermediárias e Pionerias em média possuem a mesma taxa de incremento relativo (distribuição engloba o zero). O grupo das tolerantes a sombra possui um tendência de apresentar taxa de incrementos relativos menores que o grupo das emergentes. Já o grupo das demandantes de luz possuem uma taxa de crescimento relativo superior ao grupo das emergentes.
