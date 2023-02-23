@@ -4,7 +4,7 @@ output: html_document
 ---
 
 
-```{r pacotes3, echo=FALSE, warning=FALSE}
+```{r pacotes3, echo=FALSE, warning=FALSE, message=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
@@ -14,9 +14,9 @@ require(ggplot2)
 require(gridExtra)
 ```
 
-Das 415 espécies inventariadas, 90 foram associadas a um dos 5 grupos ecológicos: 13 espécies foram assinaladas como pioneiras, 13 como demadantes de luz, 34 como intermediárias, 20 como tolerantes à sombra e 10 como emergentes. O grupo ecológico das demandantes de luz apresentou o maior incremento diamétrico relativo esperado e também a maior variação: mediana de 1.7% ao ano, com distância interquartil de 3.0%. Em ordem decrescente, observou-se o grupo das pioneiras (0.9%, IQR: 1.6%), das intermediárias (0.7%, IQR: 1.3%), das emergentes (0.6%, IQR: 1.8%) e das tolerantes à sombra (0.6%, IQR: 1.0%) (Table \@ref(tab:tableR1)).   
+Das 415 espécies inventariadas, 90 foram associadas a um dos 5 grupos ecológicos: 13 espécies foram assinaladas como pioneiras, 13 como demadantes de luz, 34 como intermediárias, 20 como tolerantes à sombra e 10 como emergentes. Os grupos ecológicos das intermediárias e das tolerantes a sombra apresentaram a maior proporção de indivíduos na amostra (31% e 29,6% dos indivíduos respectivamente). O grupo das emergentes é o menor grupo, contendo apenas 3.1% das árvores. Os grupos das pioneiras e das demantantes de luz foram compostos por indivíduos numa porporção de 17% e 19% respectivamente (Table \@ref(tab:tableR1)).
 
-```{r proporcaoGruposEcologicos, echo=FALSE, warning=FALSE}
+```{r proporcaoGruposEcologicos, echo=FALSE, warning=FALSE, message=FALSE}
 arvHaEspecie = invMerged %>%
   drop_na(GrupoEco) %>%
   filter(DBH >= 10) %>%
@@ -53,11 +53,69 @@ knitr::kable(
     )
 ```
 
-O grupo das emergentes é o menor grupo, contendo 3.1% das árvores. O grupo mais numeroso é o grupo das intermediárias (31%) seguindo pelo grupo das tolerantes a sombra (29%). Os grupos das pioneiras e das demantantes de luz representam as demais espécies, numa porporção de 17% e 19% respectivamente (Table \@ref(tab:tableR1)).
+O incremento diamétrico médio por centro classe indica picos de incremento para os grupos ecológicos das pionerias, demandante de luz, intermediárias e tolerantes a sombra. O grupo das pioneiras apresentou o maior valor de incremento diamétrico anual na classe de 25 cm. Os grupos das intermediárias e das demandantes de luz apresentaram picos de incremento diamétrico anual na classe de 65. O grupo das tolerantes a sombra apresentou pico de incremento diamétrico anual na classe de 85. Para o grupo das emergentes, o incremento apresentou padrão bastante caótico.
 
-A distribuição diamétrica de todos os grupos ecológicos apresentaram forte assimetria a esquerda, com um  comportamento exponencial negativo, também conhecido como "J-invertido", mas com taxas de descréscimo diferentes (Figure \@ref(fig:graficoDDGrupoEco)). O grupo das emergentes apesar de também apresentar uma forma expoencial, o decréscimo entre classes foi inferior se comparados aos demais grupos (diferenças menores entre os números de árvores das classes diamétricas). 
+```{r graficoDDInc, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = 'Distribuição do incremento diamétrico anual para cada grupo ecológico por centro de classe.'}
 
-```{r graficoDDGrupoEco, echo=FALSE, warning=FALSE, fig.cap = 'Distribuição diamétrica para cada grupo ecológico.'}
+incMedGrupo = incEco %>%
+  filter(GrupoEco != "Others") %>%
+  group_by(GrupoEco, cc) %>%
+  summarise(incMediaAnual = mean(incAnual))
+
+ggplot(incMedGrupo, aes(cc, incMediaAnual)) + 
+  geom_col() +
+  xlab('Diameter distribution') + ylab('Incremento Anual') +
+  ylim(0, 2.5) +
+    theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))+
+  facet_wrap(~factor(GrupoEco,levels=c("Pioneer","Light-demanding",
+                                       "Intermediate", "Shade-tolerant", "Emergent")), ncol=2)
+# 
+# ggplot(incEco, aes(cc, incAnual)) + 
+#   #geom_smooth(method = lm, formula = y ~ splines::bs(x,3), se = TRUE) +
+#   geom_point(alpha=0.3) +
+#   xlab('Diameter distribution') + ylab('Incremento Anual') +
+#     theme_bw() + theme(panel.grid.major = element_blank(),
+#                      panel.grid.minor = element_blank(),
+#                      panel.background = element_blank(),
+#                      axis.line = element_line(colour = "black"))+
+#   facet_wrap(~GrupoEco, ncol=2)
+
+```
+
+Os incrementos diamétricos anuais médios das pionerias e das demandantes de luz foram semelhantes entre si, mas diferentes dos demais grupos. O grupo das emergentes possuem um incremento diamétrico anual médio superior aos demais grupos, ao passo que o grupo das tolerantes a sombra apresenta a menor média de incremento anual, seguido pelo grupo das intermediárias.
+
+```{r testeIncMedioGrupoEco, echo=FALSE, warning=FALSE, cache=TRUE, fig.cap = 'Análise bayesiana comparando o incremento relativo entre grupos ecológicos.'}
+incMedGrupoEco <- stan_glm(
+  incAnual ~ -1 + GrupoEco,
+  data = incEco,
+  family = gaussian(link="identity"))
+
+bayesplot::color_scheme_set("viridis")
+#plot(incMedGrupoEco, plotfun = "areas", prob = 0.9)
+mcmc_areas(incMedGrupoEco, prob = 0.9, pars=vars(contains("Grupo")))
+
+```
+
+A taxa de crescimento diamétrico das demandantes de luz foi a maior dentre os grupos analisados. Seguido pelos grupos das emergentes, das intemediárias e das pioneiras, com taxas semelhantes. A menor taxa de crescimento foi apresentado pelo grupo das tolerantes a sombra (Figure \@ref(fig:testeIncGrupoEco)). Como resultado da análise bayesiana, em relação à taxa de crescimento diamétrico, os grupos ecológicos podem ser organizados em três agrupamentos: um contendo os grupos das pioneiras, das demandantes de luz e das intermediária; outro contendo apenas as emergentes e outro contendo apenas as tolerantes a sombra.
+
+```{r testeIncRelGrupoEco, echo=FALSE, warning=FALSE, cache=TRUE, fig.cap = 'Análise bayesiana comparando o incremento relativo entre grupos ecológicos.'}
+incRelGrupoEco <- stan_glm(
+  rInc ~ -1 + GrupoEco,
+  data = incEco,
+  family = Gamma(link="log"))
+
+bayesplot::color_scheme_set("viridis")
+#plot(incRelGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
+mcmc_areas(incRelGrupoEco, prob = 0.9, pars=vars(contains("Grupo")))
+```
+
+Todos os grupos ecológicos apresentaram distribuição diamétrica assimétrica, com comportamento exponencial negativo, também conhecido como "J-invertido". No entanto, as taxas de descréscimo foram diferentes entre os grupos estudados (Figure \@ref(fig:graficoDDGrupoEco)). O grupo das emergentes apresentou um número de árvores mais constante entre classes diamétricas sequenciais. Já os grupos ecológicos das intermediárias e das tolerantes a sombra apresentaram uma grande quantidade de indivíduos jovens (diâmetros menores) em comparação com os demais grupos, seguidos pela demandante de luz e pelas pioneiras. No entanto, o grupo das pioneiras apresentou o menor valor para o diâmetro máximo da distribuição.
+
+
+```{r graficoDDGrupoEco, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = 'Distribuição diamétrica para os grupos ecológicos.'}
 numeroArvores = invMerged %>%
   filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
@@ -75,22 +133,23 @@ numeroArvores = invMerged %>%
   group_by(GrupoEco, cc) %>%
   summarise(arvha = mean(arvha)) 
 
-
 ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
   xlab('Diameter distribution') + ylab('Trees per hectare') +
     theme_bw() + theme(panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
                      panel.background = element_blank(),
                      axis.line = element_line(colour = "black"))+
-  facet_wrap(~GrupoEco, ncol=2)
+  facet_wrap(~factor(GrupoEco,levels=c("Pioneer","Light-demanding",
+                                       "Intermediate", "Shade-tolerant", "Emergent")), ncol=2)
 
 
 ```
 
+Outro ponto relevante na distribuição diamétrica dos grupos ecológicos é o momento em que a distribuição diamétrica começa a falhar (classes sem árvores presentes). Com exceção das emergentes, todos os demais grupos apresentam falhas na distribuição. As demandantes de luz com 13 classes vazias, seguido pelo grupo das intermediárias com 4 classes vazias as tolerantes a sombra com três classes vazias e as pioneiras com 1 classe vazia (Figure \@ref(fig:graficoDDGrupoEco)).
 
-O coeficiente angular do modelo de Meyer linearizado evidencia o grupo ecológico das emergentes com a menor taxa de decréscimo (Figure \@ref(fig:testeArvGrupoEco)). Já o grupo das pioneiras possui a maior taxa de decréscimo. Os grupos das intermediárias, das tolerantes a sombra e das demantantes de luz ocupam postos entre os grupos já mencionados, em posições crescentes. O interceto do modelo, indica o grupo das emergentes apresentando o menor número de árvores na classe inicial dentre os grupos. Seguido pelas demandantes de luz, e por um grupo formado pelas intermediárias, pioneiras e tolerantes à sombra, com a maior quantidade de indivíduos na classe diamétrica inicial. 
+O coeficiente angular do modelo de Meyer linearizado evidencia o grupo ecológico das emergentes com a menor taxa de decréscimo (i.e. menor inclinação) (Figure \@ref(fig:testeArvGrupoEco)). Já o grupo das pioneiras possui a maior taxa de decréscimo. Os grupos das intermediárias, das tolerantes a sombra e das demantantes de luz ocupam postos entre os grupos já mencionados, em posições crescentes. O intercepto do modelo, indica que o grupo das emergentes apresenta o menor número de árvores jovens (classe inicial) dentre os grupos. Seguido pelas demandantes de luz. As intermediárias, pioneiras e tolerantes à sombra são os grupos com maiores estoques de árvores jovens. 
 
-```{r testeArvGrupoEco, echo=FALSE, warning=FALSE, fig.cap = 'Análise bayesiana comparando a taxa de descréscimo exponencial para o número de árvores por classe diamétrica entre grupos ecológicos.'}
+```{r testeArvGrupoEco, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = 'Análise bayesiana comparando a taxa de descréscimo exponencial para o número de árvores por classe diamétrica entre grupos ecológicos.'}
 numeroArvoresPorCC= invMerged %>%
   filter(GrupoEco != "Others") %>%
   filter(DBH >= 10) %>%
@@ -117,56 +176,3 @@ plot2 = mcmc_areas(arvGrupoEco, pars=vars(!contains(":cc") & contains("Grupo")))
 grid.arrange(plot2, plot1, ncol=2)
 
 ```
-Incremento anual...
-
-```{r graficoDDInc, echo=FALSE, warning=FALSE, fig.cap = 'Distribuição do incremento diamétrico anual para cada grupo ecológico por centro de classe.'}
-
-incMedGrupo = incEco %>%
-  filter(GrupoEco != "Others") %>%
-  group_by(GrupoEco, cc) %>%
-  summarise(incMediaAnual = mean(incAnual))
-
-ggplot(incMedGrupo, aes(cc, incMediaAnual)) + 
-  geom_col() +
-  xlab('Diameter distribution') + ylab('Incremento Anual') +
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))+
-  facet_wrap(~GrupoEco, ncol=2)
-
-ggplot(incEco, aes(cc, incAnual)) + 
-  #geom_smooth(method = lm, formula = y ~ splines::bs(x,3), se = TRUE) +
-  geom_point(alpha=0.3) +
-  xlab('Diameter distribution') + ylab('Incremento Anual') +
-    theme_bw() + theme(panel.grid.major = element_blank(),
-                     panel.grid.minor = element_blank(),
-                     panel.background = element_blank(),
-                     axis.line = element_line(colour = "black"))+
-  facet_wrap(~GrupoEco, ncol=2)
-
-```
-
-```{r testeIncMedioGrupoEco, echo=FALSE, warning=FALSE, cache=TRUE, fig.cap = 'Análise bayesiana comparando o incremento relativo entre grupos ecológicos.'}
-incMedGrupoEco <- stan_glm(
-  incAnual ~ -1 + GrupoEco,
-  data = incEco,
-  family = gaussian(link="identity"))
-
-bayesplot::color_scheme_set("viridis")
-plot(incMedGrupoEco, plotfun = "areas", prob = 0.9)
-```
-
-A partir do modelo linear generalizado bayesiano, observa-se que o grupo das demandantes de luz possui um parâmetro que difere dos demais grupos que estão alinhados. Os grupos (Figure \@ref(fig:testeIncGrupoEco)). Tendo o grupo das Emergentes como referência (intercept), os grupos Intermediárias e Pionerias em média possuem a mesma taxa de incremento relativo (distribuição engloba o zero). O grupo das tolerantes a sombra possui um tendência de apresentar taxa de incrementos relativos menores que o grupo das emergentes. Já o grupo das demandantes de luz possuem uma taxa de crescimento relativo superior ao grupo das emergentes.
-
-```{r testeIncRelGrupoEco, echo=FALSE, warning=FALSE, cache=TRUE, fig.cap = 'Análise bayesiana comparando o incremento relativo entre grupos ecológicos.'}
-incRelGrupoEco <- stan_glm(
-  rInc ~ GrupoEco,
-  data = incEco,
-  family = Gamma(link="log"))
-
-bayesplot::color_scheme_set("viridis")
-plot(incRelGrupoEco, plotfun = "areas", prob = 0.9, regex_pars = c("(Intercept)", "Grupo"))
-```
-
-Como resultado da análise bayesiana, em relação à taxa de crescimento diamétrico relativo, os grupos ecológicos podem ser separados em três agrupamentos: um contendo os grupos das emergentes, das pioneiras e das intermediária; outro contendo apenas as demandantes de luz e outro contendo apenas as tolerantes a sombra.

@@ -3,7 +3,7 @@ title: "Material e Métodos"
 output: html_document
 ---
 
-```{r pacotes2, echo=FALSE, warning=FALSE}
+```{r pacotes2, echo=FALSE, warning=FALSE, message=FALSE}
 require(tidyverse)
 require(magrittr)
 require(reshape2)
@@ -12,9 +12,12 @@ require(phytools)
 require(knitr)
 ```
 
-Este estudo incluiu 28 inventários contínuos distribuidos nos estados do Pará, Amazonas, Acre, Rondônia e Mato Grosso. No total, foram analisadas 355 parcelas contendo 41580 indíviduos. Os dados fazem parte do projeto Paisagens Sustentáveis Brasil e estão disponíveis para download na plataforma do projeto  (https://www.embrapa.br/en/busca-de-solucoes-tecnologicas/-/produto-servico/3862/paisagens-sustentaveis). Após descartadar todas as árvores com diâmetros menores que 10 cm, e também as palmeiras, restaram 36283 árvores. 
+Foram considerado 28 inventários contínuos distribuidos nos estados do Pará, Amazonas, Acre, Rondônia e Mato Grosso. No total, foram analisadas 355 parcelas contendo 41580 indíviduos. Os dados fazem parte do projeto Paisagens Sustentáveis Brasil e estão disponíveis para download na plataforma do projeto  (https://www.embrapa.br/en/busca-de-solucoes-tecnologicas/-/produto-servico/3862/paisagens-sustentaveis). Após descartadar as árvores com diâmetros menores que 10 cm, e também as palmeiras, restaram 36283 árvores. 
 
-```{r limparInventario, echo=FALSE, warning=FALSE}
+As espécies presentes no inventário foram agrupadas considerando cinco grupos ecológicos: pioneiras, demandante de luz, intermediárias, tolerantes à sombra e emergentes [@Macpherson2007]. As espécies cujo grupo ecológico não foi possível determinar a partir do trabalho de referência, foram desconsideradas na análise. Cada árvore foi associada a um centro de classe, considerando intervalo de 10 cm e diâmetro de inclusão de 10 cm.
+
+
+```{r limparInventario, echo=FALSE, warning=FALSE, message=FALSE}
 invMerged = read.csv("dados/10_invPaisagensMerged.csv")
 nParcelasAntes= length(unique(paste(invMerged$area, invMerged$plot)))
 invMerged = invMerged %>%
@@ -27,7 +30,7 @@ invMerged = invMerged %>%
 
 ```
 
-```{r numeroParcelas, echo=FALSE, warning=FALSE}
+```{r numeroParcelas, echo=FALSE, warning=FALSE, message=FALSE}
 parcelasArea = invMerged %>%
   group_by(area, plot, subplot, year) %>%
   summarise(obs = n()) %>%
@@ -35,37 +38,32 @@ parcelasArea = invMerged %>%
   summarise(nplots = n())
  
 ```
-
-O incremento diamétrico anual ($d_{growth}$) foi determinado pela da divisão do incremento diamétrico observado entre o diâmetro da primeira e da segunda medição, pelo período em anos entre as medições.
+Cada árvore teve o incremento diamétrico anual ($d_{growth}$) determinado pela da divisão do incremento diamétrico observado entre medições consecutivas, pelo período em anos entre as medições.
 
 $$d_{growth} = \frac{d_f - d_i}{t_f - t_i}$$
 
-$d_{growth}$ é o incremento diamétrico anual, $d_f$ é o diâmetro a 1,30m obtido no último ano de medição, $d_i$ é o diâmetro a 1,30 m obtido no primeiro ano de medição, $t_f$ é a data da última medição e $t_i$ é a data da primeira medição. 
+em que $d_{growth}$ é o incremento diamétrico anual, $d_f$ é o diâmetro a 1,30 m obtido no último ano de medição, $d_i$ é o diâmetro a 1,30 m obtido no primeiro ano de medição, $t_f$ é a data da última medição e $t_i$ é a data da primeira medição. 
 
-O incremento diamétrico relativo ($d_{rGrowth}$) pôde ser calculado dividindo o incremento diamétrico anual pelo diâmetro a 1,30 obtido na primeira medição:
+A taxa de crescimento diamétrico ($rGrowth$) foi calculado dividindo o incremento diamétrico anual pelo diâmetro a 1,30 obtido na primeira medição. Esta métrica é capaz de avaliar a taxa real de crescimento diamétrico sem a inflência do tamanho da árvore:
 
-$$d_{rGrowth} = \frac{d_{growth}}{d_i}$$
+$$rGrowth = \frac{d_{growth}}{d_i}$$
 
-Em que $d_{rGrowth}$ é o incremento diamétrico relativo, $d_{growth}$ é o incremento diamétrico anual e $d_i$ é o diâmetro a 1,30 m obtido na primeira medição.
+em que $rGrowth$ é o incremento diamétrico relativo, $d_{growth}$ é o incremento diamétrico anual e $d_i$ é o diâmetro a 1,30 m obtido na primeira medição.
 
-As espécies foram agrupadas com base nos grupos ecológicos propostos por @Macpherson2007. As espécies cujo grupo ecológico foram indeterminar, foram excluídas da comparação. Os grupos foram comparados quanto ao incremento diamétrico relativo e quanto à distribuição diamétrica. A comparação entre grupos foi feita utilizando a estatística bayesiana implementada no pacote *rstanarm* e *bayesplot*, ambos para linguagem R de programação.
-
-O modelo linear generalizado da função gama, com ligação logarítmica, foi usado para comparar o efeito dos grupos ecológicos no incremento relativo. Para analisar o efeito dos grupos eológicos na distribuição diamétrica, foi utilizado o modelo de Meyer linearizado, com a função de ligação identidade.  The statistical analysis performed a Bayesian estimation via MCMC of the generalized linear models. The Bayesian model adds priors on the coefficients of the GLM, and compute the posterior values based on observed data [@muth2018].
-
-O modelo de Meyer é definido como:
+Para analisar o efeito dos grupos eológicos na distribuição diamétrica, foi utilizado o modelo de Meyer linearizado, com a função de ligação identidade. O modelo de Meyer para descrever a distribuição diamétrica é definido como:
 
 $$N_j = e^{\beta_0 + \beta_1 D_j}$$
 
-em que $N_j$ indica o número de indivíduos na classe de diâmetro $j$ e $D_j$ indica o centro da classe $j$. E pode ser generalizado por meio da transformação logaritmica da variáveis dependente:
+em que $N_j$ indica o número de indivíduos na classe de diâmetro $j$ e $D_j$ indica o centro da classe $j$. E pode ser linearizado por meio da transformação logaritmica da variáveis dependentes:
 
 $$log(N_j) = \beta_0 + \beta_1 D_j$$
 
-```{r gruposEcologicos, echo=FALSE, warning=FALSE}
+```{r gruposEcologicos, echo=FALSE, warning=FALSE, message=FALSE}
 grupoEco = read.csv('auxiliar/grupoEcologico.csv')
 eco = grupoEco %>% group_by(GrupoEco) %>% summarise(Species = n())
 ```
 
-```{r pareamentoIncremento, echo=FALSE, warning=FALSE}
+```{r pareamentoIncremento, echo=FALSE, warning=FALSE, message=FALSE}
 incEco = invMerged %>%
   drop_na(GrupoEco) %>%
   filter(GrupoEco != "Others") %>%
@@ -82,8 +80,4 @@ incEco = invMerged %>%
   
 ```
 
-
-
-
-
-
+O modelo linear generalizado da função gama, com ligação identidade, foi empregado para avaliar se os grupos ecológicos influencia a distribuição dos incrementos diamétricos. Enquanto que um modelo com ligação logarítmica, foi usado para comparar o efeito dos grupos ecológicos na distribuição dos incrementos relativos. A comparação entre grupos foi feita utilizando a estatística bayesiana implementada no pacote *rstanarm* e *bayesplot*, ambos para linguagem R de programação. Os parâmetros do modelo foram estimados de forma bayesiana via MCMC (Monte Carlo Cadeia de Markov). Os valores _a priori_ dos coeficientes do GLM são atualizados a partir dos dados observados [@muth2018]. 
