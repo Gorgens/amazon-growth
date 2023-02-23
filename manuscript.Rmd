@@ -3,9 +3,9 @@ title: "Padrões de crescimento de árvores em floresta Amazônica"
 author: "Eric Bastos Gorgens, UFVJM"
 date: "`r format(Sys.time(), '%d %b %Y %H:%M:%S %Z')`"
 output:
-  word_document: default
-  bookdown::html_document2: default
   bookdown::word_document2: default
+  bookdown::html_document2: default
+  word_document: default
   bookdown::pdf_book:
     base_format: rticles::springer_article
     extra_dependencies: booktabs
