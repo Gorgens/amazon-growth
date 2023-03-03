@@ -131,7 +131,8 @@ numeroArvores = invMerged %>%
   group_by(area, GrupoEco, cc) %>%
   summarise(arvha = mean(arvha)) %>%
   group_by(GrupoEco, cc) %>%
-  summarise(arvha = mean(arvha)) 
+  summarise(arvha = mean(arvha))
+
 
 ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
   xlab('Diameter distribution') + ylab('Trees per hectare') +
@@ -146,6 +147,43 @@ ggplot(numeroArvores, aes(cc, arvha)) + geom_col() +
 ```
 
 Outro ponto relevante na distribuição diamétrica dos grupos ecológicos é o momento em que a distribuição diamétrica começa a falhar (classes sem árvores presentes). Com exceção das emergentes, todos os demais grupos apresentam falhas na distribuição. As demandantes de luz com 13 classes vazias, seguido pelo grupo das intermediárias com 4 classes vazias as tolerantes a sombra com três classes vazias e as pioneiras com 1 classe vazia (Figure \@ref(fig:graficoDDGrupoEco)).
+
+```{r graficoDDGrupoEcoAcumulado, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = 'Distribuição diamétrica acumulada para os grupos ecológicos.'}
+
+arvAcumuladas = c()
+centroClasse = c()
+grupoEcologico = c()
+
+for(g in unique(numeroArvores$GrupoEco)){
+  arvoresPorGrupo = subset(numeroArvores, GrupoEco == g)
+  acumulado = 0
+  for(i in seq(15, max(arvoresPorGrupo$cc), 10)){
+    if(i %in% arvoresPorGrupo$cc){
+      grupoEcologico = c(grupoEcologico, g)
+      centroClasse = c(centroClasse, i)
+      acumulado = acumulado + as.numeric(arvoresPorGrupo[arvoresPorGrupo$cc == i, 'arvha'])
+      arvAcumuladas = c(arvAcumuladas, acumulado)
+    } else {
+      grupoEcologico = c(grupoEcologico, g)
+      centroClasse = c(centroClasse, i)
+      acumulado = acumulado + 0
+      arvAcumuladas = c(arvAcumuladas, acumulado)
+    }
+  }
+}
+
+numeroArvoresAcumulado = data.frame(grupoEcologico, centroClasse, arvAcumuladas)
+
+ggplot(numeroArvoresAcumulado, aes(centroClasse, arvAcumuladas)) + geom_col() +
+  xlab('Diameter distribution') + ylab('Accumulated trees per hectare') +
+    theme_bw() + theme(panel.grid.major = element_blank(),
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(),
+                     axis.line = element_line(colour = "black"))+
+  facet_wrap(~factor(grupoEcologico,levels=c("Pioneer","Light-demanding",
+                                       "Intermediate", "Shade-tolerant", "Emergent")), ncol=2)
+```
+
 
 O coeficiente angular do modelo de Meyer linearizado evidencia o grupo ecológico das emergentes com a menor taxa de decréscimo (i.e. menor inclinação) (Figure \@ref(fig:testeArvGrupoEco)). Já o grupo das pioneiras possui a maior taxa de decréscimo. Os grupos das intermediárias, das tolerantes a sombra e das demantantes de luz ocupam postos entre os grupos já mencionados, em posições crescentes. O intercepto do modelo, indica que o grupo das emergentes apresenta o menor número de árvores jovens (classe inicial) dentre os grupos. Seguido pelas demandantes de luz. As intermediárias, pioneiras e tolerantes à sombra são os grupos com maiores estoques de árvores jovens. 
 
